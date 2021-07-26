@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: 3fbb44467585ba143a025ff52249a5e2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7201133546162223644
+    second: lara full_0
+  - first:
+      213: 8489584192927782348
+    second: lara full_1
+  - first:
+      213: 2661675450119951145
+    second: lara full_2
+  - first:
+      213: -1463875558356818481
+    second: lara full_3
+  - first:
+      213: -998347992359586807
+    second: lara full_4
+  - first:
+      213: -340641117165817813
+    second: lara full_8
+  - first:
+      213: -2526789760118890893
+    second: lara full_8
+  - first:
+      213: -2469722329202047515
+    second: lara full_8
+  - first:
+      213: 1264212743783123017
+    second: lara full_17
+  - first:
+      213: 3136830372321855108
+    second: lara full_9
+  - first:
+      213: 5102452637777591254
+    second: lara full_5
+  - first:
+      213: 8427192457090336343
+    second: lara full_12
+  - first:
+      213: -7905099557664182830
+    second: lara full_13
+  - first:
+      213: -3051036172516615927
+    second: lara full_15
+  - first:
+      213: 4626530524330555261
+    second: lara full_16
+  - first:
+      213: 7060394049354980260
+    second: lara full_11
+  - first:
+      213: -5666674804900243692
+    second: lara full_14
+  - first:
+      213: 6176522700596217450
+    second: lara full_10
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lara full_0
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 151
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1af5279ec09fe360800000000000000
+      internalID: 7201133546162223644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 151
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc55b3ef7df01d570800000000000000
+      internalID: 8489584192927782348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 151
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92317cf38bb20f420800000000000000
+      internalID: 2661675450119951145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 87
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5e3c48fe44fabe0800000000000000
+      internalID: -1463875558356818481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_4
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 87
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904be295ac72522f0800000000000000
+      internalID: -998347992359586807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_6
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 87
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20707f65bcc54bf0800000000000000
+      internalID: -340641117165817813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_7
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 87
+        width: 24
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ed406c91a0fecd0800000000000000
+      internalID: -2526789760118890893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_8
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 87
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5cf0270a8c9bdd0800000000000000
+      internalID: -2469722329202047515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_17
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 125
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94807b9dac26b8110800000000000000
+      internalID: 1264212743783123017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 87
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48686ee9a92488b20800000000000000
+      internalID: 3136830372321855108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 87
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbfcfdd3ad8fc640800000000000000
+      internalID: 5102452637777591254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_12
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 24
+        width: 35
+        height: 29
+      alignment: 9
+      pivot: {x: 0.9, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75688baf3e663f470800000000000000
+      internalID: 8427192457090336343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_13
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 25
+        width: 34
+        height: 31
+      alignment: 9
+      pivot: {x: 0.8, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd2457d5d17b4290800000000000000
+      internalID: -7905099557664182830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_15
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 24
+        width: 25
+        height: 41
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909974424ca88a5d0800000000000000
+      internalID: -3051036172516615927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_16
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 24
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77793ddffcb43040800000000000000
+      internalID: 4626530524330555261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_11
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 24
+        width: 48
+        height: 20
+      alignment: 9
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abd516fafe8bf160800000000000000
+      internalID: 7060394049354980260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_14
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 24
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417d34cc94deb51b0800000000000000
+      internalID: -5666674804900243692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lara full_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 24
+        width: 69
+        height: 9
+      alignment: 9
+      pivot: {x: 1.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a668c2cebaa67b550800000000000000
+      internalID: 6176522700596217450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
