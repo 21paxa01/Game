@@ -71,11 +71,12 @@ public class shoting : MonoBehaviour
 
     public void Shot()
     {
-        if (reload != Reload)
-        {
-            fireFrequency = StartCoroutine(FireDelay());
+        
+            
+        fireFrequency = StartCoroutine(FireDelay());
 
-        }
+
+        
     }
     public int i = 0;
     public int Reload;

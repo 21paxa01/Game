@@ -30,17 +30,9 @@ public class ammo : MonoBehaviour
     {
         if (other.name == "road u")
         {
-            StartCoroutine(Die());
+            Destroy(gameObject);
         }
     }
-    IEnumerator Die()
-    {
-        speed = 0;
-        death = true;
-        anim.SetBool("death", death);
-        yield return new WaitForSeconds(death_time);
-        Destroy(gameObject);
-        
-    }
+    
 
 }
