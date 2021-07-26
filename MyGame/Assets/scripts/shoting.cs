@@ -31,10 +31,6 @@ public class shoting : MonoBehaviour
 
         float rotateZ = Mathf.Atan2(joystick.Vertical, joystick.Horizontal) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offset);
-        if (reload == Reload)
-        {
-            fireFrequency = StartCoroutine(RELOAD());
-        }
 
 
         Vector3 LocalScale = Vector3.one;
@@ -97,6 +93,11 @@ public class shoting : MonoBehaviour
                 Instantiate(ammo, shotDir.position, transform.rotation);
                 yield return new WaitForSeconds(startTime);
             }
+            else
+            {
+                yield return new WaitForSeconds(ReloadTime);
+                reload = 0; 
+            }
             if (shot==false)
             {
                 i=10;
@@ -106,14 +107,7 @@ public class shoting : MonoBehaviour
         }
         
     }
-    IEnumerator RELOAD()
-    {
-        while (reload == Reload)
-        {
-            yield return new WaitForSeconds(ReloadTime);
-            reload = 0;
-        }
-    }
+    
 
     
 }
