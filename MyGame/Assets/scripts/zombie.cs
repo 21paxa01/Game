@@ -10,10 +10,12 @@ public class zombie : MonoBehaviour
     public Animator anim;
     public bool fight ;
     public bool death;
-    public float death_time;
     public float zombie_damage;
     public float atack_time;
     private float distToPlayer;
+
+   // public GameObject money;
+
 
 
     public float speed;
@@ -25,6 +27,7 @@ public class zombie : MonoBehaviour
     public float dist_to_player;
     void Update()
     {
+
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player)
         {
@@ -54,27 +57,33 @@ public class zombie : MonoBehaviour
         }
     }
     public int HP;
-    private int hp=0;
-    IEnumerator Die()
-    {
-        death = true;
-        anim.SetBool("death", death);
-        yield return new WaitForSeconds(death_time);
-        Destroy(gameObject);
-        hp = 0;
-    }
+    private int hp = 0;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "pistol_bullet(Clone)")
+        if (other.name == "pistol_bullet(Clone)"&&death==false)
         {
-            hp+= 1;
+            hp += 1;
             Destroy(other.gameObject);
             if (hp == HP)
             {
-                StartCoroutine(Die());
+                death = true;
+                //Instantiate(money, transform.position, transform.rotation);
+
+            }
+        }
+        else if (other.name == "ak47_bullet(Clone)" && death == false)
+        {
+            hp += 1;
+            Destroy(other.gameObject);
+            if (hp == HP)
+            {
+                death = true;
+                //Instantiate(money, transform.position, transform.rotation);
+
             }
         }
     }
+    
     
 
 

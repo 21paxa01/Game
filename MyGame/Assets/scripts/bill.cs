@@ -9,7 +9,6 @@ public class bill : MonoBehaviour
     public Animator anim;
     public Joystick joystick_move;
     public Joystick joystick_shot;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

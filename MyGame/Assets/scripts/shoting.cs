@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class shoting : MonoBehaviour
 {
@@ -68,13 +69,19 @@ public class shoting : MonoBehaviour
         
         
     }
-
+    public bool change;
+    public void Change()
+    {
+        change = !change;
+    }
     public void Shot()
     {
-        
-            
-        fireFrequency = StartCoroutine(FireDelay());
 
+
+        if (change == true)
+        {
+            fireFrequency = StartCoroutine(FireDelay());
+        }
 
         
     }
