@@ -9,19 +9,31 @@ public class bill : MonoBehaviour
     public Animator anim;
     public Joystick joystick_move;
     public Joystick joystick_shot;
+    public float hp;
+    public static float HP;
+   
+    public Image bar;
+    public Image back;
+    public float fill;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         GroundCheckRadius = GroundCheck.GetComponent<CircleCollider2D>().radius;
+        fill = 1f;
+        HP = hp;
+        
     }
     
     void Update()
     {
+        bar.fillAmount = fill;
+        fill =HP / hp;
         Walk();
         Reflect();
         Jump();
         CheckingGround();
+       
     }
     
     public Vector2 moveVector;

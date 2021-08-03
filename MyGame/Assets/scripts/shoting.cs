@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class shoting : MonoBehaviour
 {
   
-    public float offset;
+    private int offset;
+    public int recoil;
+    public AudioSource shot_sound;
 
     public GameObject zombie;
     public Transform spawn_point;
@@ -96,9 +98,11 @@ public class shoting : MonoBehaviour
             if (reload < Reload)
             {
                 reload += 1;
+                offset = Random.Range(-recoil, recoil);
                 float rotateZ = Mathf.Atan2(joystick.Vertical, joystick.Horizontal) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offset);
                 Instantiate(ammo, shotDir.position, transform.rotation);
+                shot_sound.Play();
                 yield return new WaitForSeconds(startTime);
             }
             else

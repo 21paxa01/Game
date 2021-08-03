@@ -51,11 +51,6 @@ public class spawn : MonoBehaviour
         {
             Instantiate(zombie,spawn_point.position,transform.rotation);
             yield return new WaitForSeconds(spawn_time);
-            if (Input.GetKey(KeyCode.Q))
-            {
-                a = 2;
-                
-            }
         }
 
     }

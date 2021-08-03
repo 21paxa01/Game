@@ -11,8 +11,12 @@ public class zombie : MonoBehaviour
     public bool fight ;
     public bool death;
     public float zombie_damage;
+    private float zomb_damage;
     public float atack_time;
+    private float at_time = 0f;
     private float distToPlayer;
+    Coroutine damage;
+
 
    // public GameObject money;
 
@@ -23,6 +27,7 @@ public class zombie : MonoBehaviour
     {
         physik = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        zomb_damage = zombie_damage;
     }
     public float dist_to_player;
     void Update()
@@ -33,6 +38,14 @@ public class zombie : MonoBehaviour
         {
             physik.velocity = new Vector2(0, 0);
             fight = true;
+            dam = 0;
+            if (test == 100f)
+            {
+                at_time = atack_time;
+                damage = StartCoroutine(BillDamage());
+            }        
+
+            
         }
         else
         {
@@ -82,6 +95,34 @@ public class zombie : MonoBehaviour
 
             }
         }
+    }
+    private int dam=0;
+    public float test = 100f;
+    IEnumerator BillDamage()
+    {
+        while (dam == 0) 
+        {
+            //yield return new WaitForSeconds(at_time);
+            at_time = 0f;
+            if (distToPlayer <= dist_to_player)
+            {
+                bill.HP -= zombie_damage;
+                test -= zombie_damage;
+                yield return new WaitForSeconds(atack_time);
+
+            }
+            else
+            {
+                dam= 1;
+                test = 100f;
+            }
+
+        }
+    }
+    void Damage()
+    {
+        bill.HP -= zombie_damage;
+        zombie_damage = 0f;
     }
     
     
