@@ -5,6 +5,7 @@ using UnityEngine;
 public class money : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public int test = 0;
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -19,7 +20,9 @@ public class money : MonoBehaviour
     {
         if (other.name == "road u")
         {
-            rb.gravityScale = 0f;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         }
+        
     }
+    
 }

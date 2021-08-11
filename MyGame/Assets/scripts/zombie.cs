@@ -18,8 +18,8 @@ public class zombie : MonoBehaviour
     Coroutine damage;
 
 
-   // public GameObject money;
-
+   public GameObject money;
+    public Transform money_spawn;
 
 
     public float speed;
@@ -80,7 +80,8 @@ public class zombie : MonoBehaviour
             if (hp == HP)
             {
                 death = true;
-                //Instantiate(money, transform.position, transform.rotation);
+                Instantiate(money, money_spawn.position, transform.rotation);
+                zombie_damage = 0;
 
             }
         }
@@ -91,7 +92,8 @@ public class zombie : MonoBehaviour
             if (hp == HP)
             {
                 death = true;
-                //Instantiate(money, transform.position, transform.rotation);
+                zombie_damage = 0;
+                Instantiate(money, money_spawn.position, transform.rotation);
 
             }
         }
@@ -102,7 +104,7 @@ public class zombie : MonoBehaviour
     {
         while (dam == 0) 
         {
-            //yield return new WaitForSeconds(at_time);
+            
             at_time = 0f;
             if (distToPlayer <= dist_to_player)
             {

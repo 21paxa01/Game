@@ -111,5 +111,14 @@ public class bill : MonoBehaviour
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
         anim.SetBool("onGround", onGround);
     }
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "money(Clone)")
+        {
+            MoneyCount.mon++;
+            
+            Destroy(other.gameObject);
+        }
+    }
+
 }
