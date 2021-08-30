@@ -11,6 +11,11 @@ public class MoneyCount : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
+        if (PlayerPrefs.HasKey("money"))
+        {
+            mon = PlayerPrefs.GetInt("money");
+            money = mon;
+        }
     }
 
     // Update is called once per frame
@@ -21,6 +26,7 @@ public class MoneyCount : MonoBehaviour
             mon--;
             
         }
+        PlayerPrefs.SetInt("money", mon);
         money = mon;
         text.text = money.ToString();
         

@@ -38,7 +38,7 @@ public class bill : MonoBehaviour
     
     public Vector2 moveVector;
     public Vector2 moveVector_1;
-    public int speed = 3;
+    public float speed = 3f;
     private bool right = false;
     private bool left = false;
     void Walk()
@@ -92,6 +92,7 @@ public class bill : MonoBehaviour
     
     public int jumpForce = 10;
     
+    
     void Jump()
     {
         float verticalMove = joystick_move.Vertical;
@@ -109,16 +110,16 @@ public class bill : MonoBehaviour
     void CheckingGround()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
+        if (!onGround)
+        {
+            speed = 1.5f;
+        }
+        else
+        {
+            speed = 1f;
+        }
         anim.SetBool("onGround", onGround);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.name == "money(Clone)")
-        {
-            MoneyCount.mon++;
-            
-            Destroy(other.gameObject);
-        }
-    }
+    
 
 }
