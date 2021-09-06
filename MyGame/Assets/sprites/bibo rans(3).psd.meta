@@ -1,40 +1,43 @@
 fileFormatVersion: 2
-guid: 3b5c19763e5d96f4ab67e7f5120dcae0
+guid: cb91138529306b2438ecbb2bdca64470
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8003260396191338441
-    second: coins_0
+      213: -7847986713742442931
+    second: bibo rans(3)_0
   - first:
-      213: 2154074400079490951
-    second: coins_1
+      213: 4691043445743522347
+    second: bibo rans(3)_1
   - first:
-      213: -8722020019358736109
-    second: coins_2
+      213: 8471218976436118399
+    second: bibo rans(3)_2
   - first:
-      213: 7432920796079150873
-    second: coins_3
+      213: -2303029329223152369
+    second: bibo rans(3)_3
   - first:
-      213: -3076578299200870413
-    second: coins_4
+      213: -446183674481158470
+    second: bibo rans(3)_4
   - first:
-      213: -6129140024025953609
-    second: coins_5
+      213: -4895832869139758711
+    second: bibo rans(3)_5
   - first:
-      213: 7858416400693487702
-    second: coins_6
+      213: -7229459485443921173
+    second: bibo rans(3)_6
   - first:
-      213: 7944876737930998293
-    second: coins_7
+      213: 4698792836537898307
+    second: bibo rans(3)_7
   - first:
-      213: 6795138796809377442
-    second: coins_8
+      213: -3586380267886608136
+    second: bibo rans(3)_8
   - first:
-      213: -4838284008990525270
-    second: coins_9
+      213: -5915377768689757794
+    second: bibo rans(3)_9
   - first:
-      213: 5223116911468453440
-    second: coins_10
+      213: 5349626528968959722
+    second: bibo rans(3)_10
+  - first:
+      213: 6256927257225849361
+    second: bibo rans(3)_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coins_0
+      name: bibo rans(3)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 20
-        width: 17
-        height: 11
+        x: 26
+        y: 193
+        width: 27
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,218 +153,239 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cfcfef5dea411f60800000000000000
-      internalID: 8003260396191338441
+      spriteID: d4e756d0aa9561390800000000000000
+      internalID: -7847986713742442931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coins_1
+      name: bibo rans(3)_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 193
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b229771e82fe91140800000000000000
+      internalID: 4691043445743522347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 193
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73e501d6c0df8570800000000000000
+      internalID: 8471218976436118399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 192
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d095ce60ff900e0800000000000000
+      internalID: -2303029329223152369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 192
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6d8f1ef46dec9f0800000000000000
+      internalID: -446183674481158470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_5
       rect:
         serializedVersion: 2
         x: 28
-        y: 20
-        width: 20
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78f208c014fc4ed10800000000000000
-      internalID: 2154074400079490951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coins_2
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 19
+        y: 133
         width: 21
-        height: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9814e3bd1f18e0cb0800000000000000
+      internalID: -4895832869139758711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 134
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea690cb6eccbab90800000000000000
+      internalID: -7229459485443921173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_7
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 135
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345ddf68037753140800000000000000
+      internalID: 4698792836537898307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bibo rans(3)_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 72
+        width: 27
+        height: 43
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 311e64ee00925f680800000000000000
-      internalID: -8722020019358736109
+      spriteID: 8f00627d52e9a3ec0800000000000000
+      internalID: -3586380267886608136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coins_3
+      name: bibo rans(3)_9
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 9
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 68
+        y: 72
+        width: 34
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91759ed251a072760800000000000000
-      internalID: 7432920796079150873
+      spriteID: e911109a24b58eda0800000000000000
+      internalID: -5915377768689757794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coins_4
+      name: bibo rans(3)_10
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 119
+        y: 72
+        width: 47
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f7e478565ccd45d0800000000000000
-      internalID: -3076578299200870413
+      spriteID: ae6633c0cf0bd3a40800000000000000
+      internalID: 5349626528968959722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coins_5
+      name: bibo rans(3)_12
       rect:
         serializedVersion: 2
-        x: 25
-        y: 0
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 186
+        y: 72
+        width: 41
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bacd492f9be0faa0800000000000000
-      internalID: -6129140024025953609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coins_6
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 0
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 658607ca414be0d60800000000000000
-      internalID: 7858416400693487702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coins_7
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 4
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51234a4ac4fd14e60800000000000000
-      internalID: 7944876737930998293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coins_8
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 0
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a65c47cbbe2d4e50800000000000000
-      internalID: 6795138796809377442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coins_9
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa8baa10456fadcb0800000000000000
-      internalID: -4838284008990525270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: coins_10
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04e9960682d3c7840800000000000000
-      internalID: 5223116911468453440
+      spriteID: 11ae768903215d650800000000000000
+      internalID: 6256927257225849361
       vertices: []
       indices: 
       edges: []
