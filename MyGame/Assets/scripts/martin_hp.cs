@@ -29,12 +29,19 @@ public class martin_hp : MonoBehaviour
     }
     public float HP;
     private float hp = 0;
+    public bool dam_to_bill = false;
     IEnumerator Die()
     {
         death = true;
         anim.SetBool("death", death);
+        dam_to_bill = true;
         Destroy(back);
         yield return new WaitForSeconds(death_time);
+        if(dam_to_bill == true)
+        {
+            bill.HP -= martin.zombie_damage;
+            martin.zombie_damage = 0f;
+        }
         Destroy(gameObject);
         hp = 0;
     }
@@ -59,6 +66,10 @@ public class martin_hp : MonoBehaviour
             {
                 StartCoroutine(Die());
             }
+        }
+        if (other.name == "Bill")
+        {
+            dam_to_bill = true;
         }
     }
 }

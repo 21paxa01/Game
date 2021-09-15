@@ -4275,7 +4275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1257.1, y: -393.6}
+  m_AnchoredPosition: {x: -1257.1, y: -401}
   m_SizeDelta: {x: 42.67, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083743494
@@ -4480,6 +4480,7 @@ GameObject:
   - component: {fileID: 1104943822}
   - component: {fileID: 1104943827}
   - component: {fileID: 1104943826}
+  - component: {fileID: 1104943828}
   m_Layer: 0
   m_Name: martin
   m_TagString: zombie
@@ -4495,7 +4496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104943820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.59, y: -0.99, z: 30.444614}
+  m_LocalPosition: {x: 2.85, y: 0.14, z: 30.444614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 591427199}
@@ -4629,6 +4630,7 @@ MonoBehaviour:
   death_time: 0.3
   death: 0
   HP: 1
+  dam_to_bill: 0
 --- !u!114 &1104943827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4642,16 +4644,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1846733902}
-  anim: {fileID: 0}
   fight: 0
   death: 0
-  zombie_damage: 10
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 62262125}
   speed: 0.7
   dist_to_player: 0.4
   HP: 0
   test: 100
+--- !u!70 &1104943828
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104943820}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05066538, y: 0.2800088}
+  m_Size: {x: 2.9355545, y: 1.930357}
+  m_Direction: 1
 --- !u!1 &1109539183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,7 +7116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1035.8, y: -311.4}
+  m_AnchoredPosition: {x: -995.8999, y: -302.6}
   m_SizeDelta: {x: 32.32, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1729241928
@@ -8941,7 +8957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1035.8002, y: -311.39996}
+  m_AnchoredPosition: {x: -995.9, y: -302.6}
   m_SizeDelta: {x: 35.92, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993397635
@@ -9636,7 +9652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1257.0999, y: -393.5999}
+  m_AnchoredPosition: {x: -1257.0999, y: -400.99997}
   m_SizeDelta: {x: 38.4, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057069114

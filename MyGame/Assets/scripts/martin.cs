@@ -7,11 +7,11 @@ public class martin : MonoBehaviour
 {
     private Rigidbody2D physik;
     public GameObject player;
-    public Animator anim;
+
     public bool fight;
     public bool death;
-    public float zombie_damage;
-    private float zomb_damage;
+    public static float zombie_damage=10f;
+    
     private float distToPlayer;
     public static bool Death;
     Coroutine damage;
@@ -25,8 +25,7 @@ public class martin : MonoBehaviour
     void Start()
     {
         physik = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        zomb_damage = zombie_damage;
+        
     }
     public float dist_to_player;
     void Update()
@@ -36,22 +35,15 @@ public class martin : MonoBehaviour
         if (distToPlayer <= dist_to_player)
         {
             physik.velocity = new Vector2(0, 0);
-            fight = true;
-            dam = 0;
             if (test == 100f)
             {
-                bill.HP -= zombie_damage;
-                zombie_damage = 0f;
+               
                 Death = true;
             }
 
 
         }
-        else
-        {
-            fight = false;
-        }
-        anim.SetBool("fight", fight);
+       
 
 
         if (player.transform.position.x < transform.position.x && distToPlayer > dist_to_player && death == false)
@@ -92,13 +84,12 @@ public class martin : MonoBehaviour
             if (hp == HP)
             {
                 death = true;
-                zombie_damage = 0;
+                //zombie_damage = 0;
                 Instantiate(money, money_spawn.position, transform.rotation);
 
             }
         }
     }
-    private int dam = 0;
     public float test = 100f;
    
     
