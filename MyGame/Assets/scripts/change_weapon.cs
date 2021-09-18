@@ -8,6 +8,7 @@ public class change_weapon : MonoBehaviour
     public GameObject pistol;
     public GameObject ak47;
     private bool change = false;
+    public AudioSource change_sound;
     void Start()
     {
         ak47.SetActive(false);
@@ -21,6 +22,7 @@ public class change_weapon : MonoBehaviour
     public void Change()
     {
         pistol.SetActive(change);
+        change_sound.Play();
         change = !change;
         ak47.SetActive(change);
     }

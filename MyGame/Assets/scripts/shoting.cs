@@ -108,7 +108,7 @@ public class shoting : MonoBehaviour
             else
             {
                 yield return new WaitForSeconds(ReloadTime);
-                reload = 0; 
+                reload = 0;
             }
             if (shot==false)
             {
@@ -119,7 +119,13 @@ public class shoting : MonoBehaviour
         }
         
     }
-    
+    IEnumerator ReloaD()
+    {
+        yield return new WaitForSeconds(ReloadTime);
+        reload = 0;
+    }
 
-    
+
+
+
 }
