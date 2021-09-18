@@ -69,7 +69,8 @@ public class martin : MonoBehaviour
         {
             hp += 1;
             Destroy(other.gameObject);
-            physik.constraints = RigidbodyConstraints2D.FreezePositionX;
+            death = true;
+            Instantiate(money, money_spawn.position, transform.rotation);
             if (hp == HP)
             {
                 physik.constraints = RigidbodyConstraints2D.FreezePositionX;
@@ -82,7 +83,9 @@ public class martin : MonoBehaviour
         else if (other.name == "ak47_bullet(Clone)" && death == false)
         {
             hp += 1;
-            physik.constraints = RigidbodyConstraints2D.FreezePositionX;
+            
+            death = true;
+            Instantiate(money, money_spawn.position, transform.rotation);
             Destroy(other.gameObject);
             if (hp == HP)
             {

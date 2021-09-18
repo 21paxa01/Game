@@ -70,7 +70,7 @@ public class spawn : MonoBehaviour
     }
     void Zombies()
     {
-        int zombie_value = Random.Range(0, 1290);
+        int zombie_value = Random.Range(0, 129);
         if (zombie_value<10)
         {
             zombie = bo_zombie;
@@ -87,7 +87,7 @@ public class spawn : MonoBehaviour
         {
             zombie = lara_zombie;
         }
-        else if (zombie_value >= 55 && zombie_value < 1290)
+        else if (zombie_value >= 55 && zombie_value < 85)
         {
             zombie = martin_zombie;
         }
