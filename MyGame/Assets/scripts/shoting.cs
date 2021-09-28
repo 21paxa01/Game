@@ -12,8 +12,6 @@ public class shoting : MonoBehaviour
 
     public GameObject zombie;
     public Transform spawn_point;
-    Coroutine spawn_zombie;
-
 
     public GameObject ammo;
     public Transform shotDir;
@@ -70,6 +68,7 @@ public class shoting : MonoBehaviour
         }
         
         
+        
     }
     public bool change;
     public void Change()
@@ -80,9 +79,9 @@ public class shoting : MonoBehaviour
     {
 
 
-        if (change == true)
+        if (change == true&&ReloaD==false)
         {
-            fireFrequency = StartCoroutine(FireDelay());
+            StartCoroutine(FireDelay());
         }
 
         
@@ -90,7 +89,8 @@ public class shoting : MonoBehaviour
     public int i = 0;
     public int Reload;
     private int reload = 0;
-    public float ReloadTime;
+    public static float ReloadTime=3f;
+    public static bool ReloaD;
     IEnumerator FireDelay()
     {
         while (i<10)
@@ -107,9 +107,10 @@ public class shoting : MonoBehaviour
             }
             else
             {
-                yield return new WaitForSeconds(ReloadTime);
-                reload = 0;
-            }
+                ReloaD = true;
+                i=10;
+            } 
+
             if (shot==false)
             {
                 i=10;
@@ -119,11 +120,7 @@ public class shoting : MonoBehaviour
         }
         
     }
-    IEnumerator ReloaD()
-    {
-        yield return new WaitForSeconds(ReloadTime);
-        reload = 0;
-    }
+   
 
 
 

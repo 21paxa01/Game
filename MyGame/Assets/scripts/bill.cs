@@ -9,9 +9,14 @@ public class bill : MonoBehaviour
     public Animator anim;
     public Joystick joystick_move;
     public Joystick joystick_shot;
+    private bool move=true;
     public float hp;
     public static float HP;
-   
+
+    public GameObject stairs;
+    private bool upStairs = false;
+
+    public Collider2D coll;
     public Image bar;
     public Image back;
     public float fill;
@@ -19,6 +24,7 @@ public class bill : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
         GroundCheckRadius = GroundCheck.GetComponent<CircleCollider2D>().radius;
         fill = 1f;
         HP = hp;
@@ -33,6 +39,7 @@ public class bill : MonoBehaviour
         Reflect();
         Jump();
         CheckingGround();
+        Stairs();
        
     }
     
@@ -55,21 +62,24 @@ public class bill : MonoBehaviour
             right = false;
             left = true;
         }
-        if (transform.position.x > -3.7f && transform.position.x < 16.5f)
+        if (move == true)
         {
-            rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
-        }
-        else if(transform.position.x <= -3.7f&& right)
-        {
-            rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
-        }
-        else if (transform.position.x >= 16.5f && left)
-        {
-            rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            if (transform.position.x > -3.7f && transform.position.x < 16.5f)
+            {
+                rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
+            }
+            else if (transform.position.x <= -3.7f && right)
+            {
+                rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
+            }
+            else if (transform.position.x >= 16.5f && left)
+            {
+                rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
         anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
     }
@@ -120,6 +130,38 @@ public class bill : MonoBehaviour
         }
         anim.SetBool("onGround", onGround);
     }
-    
+    void Stairs()
+    {
+        if (transform.position.x >= 6.458f && transform.position.x <= 6.739f && transform.position.y < -2.838f)
+        {
+            stairs.SetActive(true);
+            if (upStairs == true)
+            {
+                move = false;
+                coll.isTrigger = true;
+                rb.velocity = new Vector2(0f, speed);
+            }
+        }
+        else if(transform.position.x < 6.458f && transform.position.x > 6.739f)
+        {
+            stairs.SetActive(false);
+        }
+        if (transform.position.y >= -2.838f)
+        {
+            move = true;
+            stairs.SetActive(false);
+            coll.isTrigger = false;
+            upStairs = false;
+        }
+        
+        
+
+
+
+    }
+    public void UpStairs()
+    {
+        upStairs = true;
+    }
 
 }
