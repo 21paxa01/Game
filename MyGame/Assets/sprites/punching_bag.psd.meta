@@ -1,43 +1,28 @@
 fileFormatVersion: 2
-guid: cb91138529306b2438ecbb2bdca64470
+guid: 4cdcfbd68a7891945aa985b61f389ebe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7847986713742442931
-    second: bibo rans(3)_0
+      213: 7520249651027846342
+    second: punching_bag_0
   - first:
-      213: 4691043445743522347
-    second: bibo rans(3)_1
+      213: 8091534039919643594
+    second: punching_bag_1
   - first:
-      213: 8471218976436118399
-    second: bibo rans(3)_2
+      213: 5824714278385283994
+    second: punching_bag_2
   - first:
-      213: -2303029329223152369
-    second: bibo rans(3)_3
+      213: 2090883229856499396
+    second: punching_bag_3
   - first:
-      213: -446183674481158470
-    second: bibo rans(3)_4
+      213: 3069708197792491476
+    second: punching_bag_4
   - first:
-      213: -4895832869139758711
-    second: bibo rans(3)_5
+      213: 1817168518082504203
+    second: punching_bag_5
   - first:
-      213: -7229459485443921173
-    second: bibo rans(3)_6
-  - first:
-      213: 4698792836537898307
-    second: bibo rans(3)_7
-  - first:
-      213: -3586380267886608136
-    second: bibo rans(3)_8
-  - first:
-      213: -5915377768689757794
-    second: bibo rans(3)_9
-  - first:
-      213: 5349626528968959722
-    second: bibo rans(3)_10
-  - first:
-      213: 6256927257225849361
-    second: bibo rans(3)_12
+      213: 2230877676744950715
+    second: punching_bag_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,253 +124,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bibo rans(3)_0
+      name: punching_bag_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 193
-        width: 27
-        height: 43
+        x: 0
+        y: 7
+        width: 37
+        height: 65
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.76, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4e756d0aa9561390800000000000000
-      internalID: -7847986713742442931
+      spriteID: 6c425cfa63b4d5860800000000000000
+      internalID: 7520249651027846342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_1
+      name: punching_bag_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 193
+        x: 44
+        y: 2
         width: 27
-        height: 42
+        height: 67
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.64, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b229771e82fe91140800000000000000
-      internalID: 4691043445743522347
+      spriteID: acb4469a657ea4070800000000000000
+      internalID: 8091534039919643594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_2
+      name: punching_bag_2
       rect:
         serializedVersion: 2
-        x: 111
-        y: 193
-        width: 27
-        height: 43
+        x: 84
+        y: 3
+        width: 23
+        height: 67
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.58, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f73e501d6c0df8570800000000000000
-      internalID: 8471218976436118399
+      spriteID: a93fc4986ca85d050800000000000000
+      internalID: 5824714278385283994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_3
+      name: punching_bag_3
       rect:
         serializedVersion: 2
-        x: 156
-        y: 192
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0d095ce60ff900e0800000000000000
-      internalID: -2303029329223152369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_4
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 192
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab6d8f1ef46dec9f0800000000000000
-      internalID: -446183674481158470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_5
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 133
+        x: 126
+        y: 3
         width: 21
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9814e3bd1f18e0cb0800000000000000
-      internalID: -4895832869139758711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_6
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 134
-        width: 21
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bea690cb6eccbab90800000000000000
-      internalID: -7229459485443921173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_7
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 135
-        width: 21
-        height: 21
+        height: 67
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 345ddf68037753140800000000000000
-      internalID: 4698792836537898307
+      spriteID: 4c60b66383f440d10800000000000000
+      internalID: 2090883229856499396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_8
+      name: punching_bag_4
       rect:
         serializedVersion: 2
-        x: 20
-        y: 72
-        width: 27
-        height: 43
+        x: 167
+        y: 3
+        width: 22
+        height: 67
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.435, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f00627d52e9a3ec0800000000000000
-      internalID: -3586380267886608136
+      spriteID: 4d7a685875bc99a20800000000000000
+      internalID: 3069708197792491476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_9
+      name: punching_bag_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 72
+        x: 213
+        y: 0
+        width: 25
+        height: 68
+      alignment: 9
+      pivot: {x: 0.46, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06a451b321e73910800000000000000
+      internalID: 1817168518082504203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punching_bag_6
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1
         width: 34
-        height: 44
+        height: 67
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.27, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e911109a24b58eda0800000000000000
-      internalID: -5915377768689757794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_10
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 72
-        width: 47
-        height: 46
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae6633c0cf0bd3a40800000000000000
-      internalID: 5349626528968959722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_12
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 72
-        width: 41
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11ae768903215d650800000000000000
-      internalID: 6256927257225849361
+      spriteID: bb34bb36d6ba5fe10800000000000000
+      internalID: 2230877676744950715
       vertices: []
       indices: 
       edges: []

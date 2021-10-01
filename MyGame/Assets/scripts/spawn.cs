@@ -17,8 +17,6 @@ public class spawn : MonoBehaviour
     public Transform spawn_point_2;
 
     private float fill;
-    private float zomb_koll = 0f;
-    public float max_zomb_koll;
     public Image bar;
 
     
@@ -43,12 +41,9 @@ public class spawn : MonoBehaviour
     private int b = 0;
     public void spawn_zombies()
     {
-        a = 0;
-        if (b < 1)
-        {
-           // spawn_zombie = StartCoroutine(Spawn());
-        }
-        b = 2;
+        StartCoroutine(Wave());
+        StartCoroutine(Spawn());
+
     }
     public int a = 0;
     IEnumerator Spawn()
@@ -57,8 +52,6 @@ public class spawn : MonoBehaviour
         while (a<1)
         {
             Instantiate(zombie,spawn_point.position,transform.rotation);
-            zomb_koll++;
-            fill = zomb_koll / max_zomb_koll;
             yield return new WaitForSeconds(spawn_time);
         }
 
@@ -78,7 +71,7 @@ public class spawn : MonoBehaviour
     }
     void Zombies()
     {
-        int zombie_value = Random.Range(0, 1290);
+        int zombie_value = Random.Range(0, 125);
         if (zombie_value<10)
         {
             zombie = bo_zombie;
@@ -92,7 +85,7 @@ public class spawn : MonoBehaviour
         {
             zombie = karl_zombie;
         }
-        else if (zombie_value >= 40 && zombie_value < 1290)
+        else if (zombie_value >= 40 && zombie_value < 55)
         {
             zombie = lara_zombie;
         }
@@ -103,6 +96,15 @@ public class spawn : MonoBehaviour
         else
         {
             zombie = default_zombie;
+        }
+    }
+    public int wave_time;
+    IEnumerator Wave()
+    {
+        while (a < 1)
+        {
+            yield return new WaitForSeconds(0.01f);
+            fill += (0.01f / wave_time);
         }
     }
 }

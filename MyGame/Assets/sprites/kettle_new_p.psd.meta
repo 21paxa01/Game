@@ -1,28 +1,43 @@
 fileFormatVersion: 2
-guid: 55f797396e4e1104b9e1a3ccc18c3f34
+guid: 3ad6fbf103f15a44e8468c713fab113c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9192638271177797499
-    second: death_0
+      213: -384046796511940294
+    second: kettle_new_p_0
   - first:
-      213: 8559509556701815258
-    second: death_1
+      213: -4826525669306106325
+    second: kettle_new_p_1
   - first:
-      213: -5286180679089938723
-    second: death_2
+      213: 7639260092402444304
+    second: kettle_new_p_2
   - first:
-      213: -1891855120789479077
-    second: death_3
+      213: 90854073917695502
+    second: kettle_new_p_3
   - first:
-      213: -5582970244224541034
-    second: death_4
+      213: -4514433900292320436
+    second: kettle_new_p_4
   - first:
-      213: 830680230883465780
-    second: death_5
+      213: -6755622219875294692
+    second: kettle_new_p_5
   - first:
-      213: 6596258498841548387
-    second: death_6
+      213: -7652573125025877455
+    second: kettle_new_p_6
+  - first:
+      213: 8240829142648081337
+    second: kettle_new_p_7
+  - first:
+      213: 7852690753392374799
+    second: kettle_new_p_8
+  - first:
+      213: -7719516375891576830
+    second: kettle_new_p_9
+  - first:
+      213: -1435046814833316826
+    second: kettle_new_p_10
+  - first:
+      213: -1291492516513931624
+    second: kettle_new_p_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: death_0
+      name: kettle_new_p_0
       rect:
         serializedVersion: 2
-        x: 519
-        y: 43
-        width: 25
-        height: 41
+        x: 11
+        y: 8
+        width: 34
+        height: 33
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,134 +153,239 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58059c172303d6080800000000000000
-      internalID: -9192638271177797499
+      spriteID: a3177cc29779baaf0800000000000000
+      internalID: -384046796511940294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_1
+      name: kettle_new_p_1
       rect:
         serializedVersion: 2
-        x: 455
-        y: 43
-        width: 32
+        x: 48
+        y: 8
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e74bdc97cb40db0800000000000000
+      internalID: -4826525669306106325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 8
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018277a549a140a60800000000000000
+      internalID: 7639260092402444304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 8
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06e2428c47c24100800000000000000
+      internalID: 90854073917695502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 8
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43581349428951c0800000000000000
+      internalID: -4514433900292320436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_5
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 8
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12e89342653f32a0800000000000000
+      internalID: -6755622219875294692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_6
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 8
+        width: 34
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132b121b9499cc590800000000000000
+      internalID: -7652573125025877455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_7
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 34
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbc936817e4d5270800000000000000
+      internalID: 8240829142648081337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kettle_new_p_8
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 8
+        width: 34
         height: 39
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1e5c2779c79c670800000000000000
-      internalID: 8559509556701815258
+      spriteID: f0472f682ac5afc60800000000000000
+      internalID: 7852690753392374799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_2
+      name: kettle_new_p_9
       rect:
         serializedVersion: 2
-        x: 337
-        y: 44
+        x: 405
+        y: 8
         width: 34
-        height: 30
+        height: 34
       alignment: 9
-      pivot: {x: 0.7, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dde9f440ea6b3a6b0800000000000000
-      internalID: -5286180679089938723
+      spriteID: 208fb2181c4ced490800000000000000
+      internalID: -7719516375891576830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_3
+      name: kettle_new_p_10
       rect:
         serializedVersion: 2
-        x: 286
-        y: 43
-        width: 35
-        height: 29
+        x: 461
+        y: 8
+        width: 34
+        height: 36
       alignment: 9
-      pivot: {x: 0.8, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51e6d68ac7ceb5e0800000000000000
-      internalID: -1891855120789479077
+      spriteID: 62cedcd6680b51ce0800000000000000
+      internalID: -1435046814833316826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_4
+      name: kettle_new_p_11
       rect:
         serializedVersion: 2
-        x: 204
-        y: 42
-        width: 48
-        height: 20
+        x: 509
+        y: 8
+        width: 34
+        height: 37
       alignment: 9
-      pivot: {x: 0.9, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69e9b69842e4582b0800000000000000
-      internalID: -5582970244224541034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: death_5
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 41
-        width: 69
-        height: 9
-      alignment: 9
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43a9fb3d44b278b00800000000000000
-      internalID: 830680230883465780
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: death_6
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 41
-        width: 69
-        height: 9
-      alignment: 9
-      pivot: {x: 1.1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3661a1ef72e9a8b50800000000000000
-      internalID: 6596258498841548387
+      spriteID: 89e9c1b1662b31ee0800000000000000
+      internalID: -1291492516513931624
       vertices: []
       indices: 
       edges: []

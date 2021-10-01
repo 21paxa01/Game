@@ -10,11 +10,13 @@ public class bill : MonoBehaviour
     public Joystick joystick_move;
     public Joystick joystick_shot;
     private bool move=true;
+    private bool jump = false;
     public float hp;
     public static float HP;
 
+    public AudioSource stairs_sound;
     public GameObject stairs;
-    private bool upStairs = false;
+    public bool upStairs = false;
 
     public Collider2D coll;
     public Image bar;
@@ -106,9 +108,12 @@ public class bill : MonoBehaviour
     void Jump()
     {
         float verticalMove = joystick_move.Vertical;
-        if (onGround && verticalMove>=0.5f)
+        if (jump == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if (onGround && verticalMove >= 0.5f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
         }
     }
 
@@ -117,6 +122,8 @@ public class bill : MonoBehaviour
     public LayerMask Ground;
     public Transform GroundCheck;
     private float GroundCheckRadius;
+
+    public bool test;
     void CheckingGround()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
@@ -132,23 +139,31 @@ public class bill : MonoBehaviour
     }
     void Stairs()
     {
-        if (transform.position.x >= 6.458f && transform.position.x <= 6.739f && transform.position.y < -2.838f)
+        if (transform.position.y < -2.9f)
         {
-            stairs.SetActive(true);
-            if (upStairs == true)
+            if (transform.position.x >= 6.458f && transform.position.x <= 6.739f)
             {
-                move = false;
-                coll.isTrigger = true;
-                rb.velocity = new Vector2(0f, speed);
+                stairs.SetActive(true);
+                if(off==true)
+                    stairs.SetActive(false);
+                if (upStairs == true)
+                {
+                    transform.position = new Vector2(6.574f, transform.position.y);
+                    move = false;
+                    coll.isTrigger = true;
+                    rb.velocity = new Vector2(0f, speed);
+                }
+            }
+            if (transform.position.x < 6.458f || transform.position.x > 6.739f)
+            {
+                stairs.SetActive(false);
             }
         }
-        else if(transform.position.x < 6.458f && transform.position.x > 6.739f)
+        else 
         {
-            stairs.SetActive(false);
-        }
-        if (transform.position.y >= -2.838f)
-        {
+            luk_off.off_luk = true;
             move = true;
+            jump = true;
             stairs.SetActive(false);
             coll.isTrigger = false;
             upStairs = false;
@@ -162,6 +177,29 @@ public class bill : MonoBehaviour
     public void UpStairs()
     {
         upStairs = true;
+        stairs_sound.Play();
+    }
+    private bool off;
+    public void Button_off()
+    {
+        off = true;
+    }
+    public AudioSource shag;
+    public void Start_shag()
+    {
+        StartCoroutine(Shag());
+    }
+    public void Stop_shag()
+    {
+        StopCoroutine(Shag());
+    }
+    IEnumerator Shag()
+    {
+        while (1 > 0)
+        {
+            shag.Play();
+            yield return new WaitForSeconds(0.8f);
+        }
     }
 
 }

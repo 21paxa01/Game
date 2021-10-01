@@ -1,43 +1,58 @@
 fileFormatVersion: 2
-guid: cb91138529306b2438ecbb2bdca64470
+guid: 67bf3a8187a5bcb4ea9a93df20bef8bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7847986713742442931
-    second: bibo rans(3)_0
+      213: 1097435652087523743
+    second: health(1)_0
   - first:
-      213: 4691043445743522347
-    second: bibo rans(3)_1
+      213: 6253918278788080967
+    second: health(1)_1
   - first:
-      213: 8471218976436118399
-    second: bibo rans(3)_2
+      213: -4689831164165774819
+    second: health(1)_2
   - first:
-      213: -2303029329223152369
-    second: bibo rans(3)_3
+      213: -6379809148005461015
+    second: health(1)_3
   - first:
-      213: -446183674481158470
-    second: bibo rans(3)_4
+      213: -6989786874134249188
+    second: health(1)_4
   - first:
-      213: -4895832869139758711
-    second: bibo rans(3)_5
+      213: -8880510425519321699
+    second: health(1)_5
   - first:
-      213: -7229459485443921173
-    second: bibo rans(3)_6
+      213: -579055016459460684
+    second: health(1)_6
   - first:
-      213: 4698792836537898307
-    second: bibo rans(3)_7
+      213: 6306630914426762960
+    second: health(1)_7
   - first:
-      213: -3586380267886608136
-    second: bibo rans(3)_8
+      213: -3412154733197757128
+    second: health(1)_8
   - first:
-      213: -5915377768689757794
-    second: bibo rans(3)_9
+      213: -5126201910131725206
+    second: health(1)_9
   - first:
-      213: 5349626528968959722
-    second: bibo rans(3)_10
+      213: 8375730995350403509
+    second: health(1)_10
   - first:
-      213: 6256927257225849361
-    second: bibo rans(3)_12
+      213: 2713778035815606459
+    second: health(1)_11
+  - first:
+      213: 4575503222200337750
+    second: health(1)_12
+  - first:
+      213: -1862342380552616780
+    second: health(1)_13
+  - first:
+      213: -2960871161938534805
+    second: health(1)_14
+  - first:
+      213: -2724006042899294495
+    second: health(1)_15
+  - first:
+      213: 6295399216259556225
+    second: health(1)_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,253 +154,358 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bibo rans(3)_0
+      name: health(1)_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 193
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4e756d0aa9561390800000000000000
-      internalID: -7847986713742442931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 193
-        width: 27
-        height: 42
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b229771e82fe91140800000000000000
-      internalID: 4691043445743522347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_2
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 193
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f73e501d6c0df8570800000000000000
-      internalID: 8471218976436118399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_3
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 192
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0d095ce60ff900e0800000000000000
-      internalID: -2303029329223152369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_4
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 192
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab6d8f1ef46dec9f0800000000000000
-      internalID: -446183674481158470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibo rans(3)_5
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 133
-        width: 21
-        height: 21
+        x: 3
+        y: 91
+        width: 139
+        height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9814e3bd1f18e0cb0800000000000000
-      internalID: -4895832869139758711
+      spriteID: f99a68e39efda3f00800000000000000
+      internalID: 1097435652087523743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_6
+      name: health(1)_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 61
+        width: 139
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7456c753a816ac650800000000000000
+      internalID: 6253918278788080967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 61
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12a75b676f5aeeb0800000000000000
+      internalID: -4689831164165774819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 37
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3d85ea16d5677a0800000000000000
+      internalID: -6379809148005461015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 37
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c114a871fd94ffe90800000000000000
+      internalID: -6989786874134249188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_5
       rect:
         serializedVersion: 2
         x: 55
-        y: 134
-        width: 21
-        height: 21
+        y: 38
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bea690cb6eccbab90800000000000000
-      internalID: -7229459485443921173
+      spriteID: d9d84c6a1d612c480800000000000000
+      internalID: -8880510425519321699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_7
+      name: health(1)_6
       rect:
         serializedVersion: 2
-        x: 82
-        y: 135
-        width: 21
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        x: 67
+        y: 38
+        width: 3
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 345ddf68037753140800000000000000
-      internalID: 4698792836537898307
+      spriteID: 4bf968ec788c6f7f0800000000000000
+      internalID: -579055016459460684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_8
+      name: health(1)_7
       rect:
         serializedVersion: 2
-        x: 20
-        y: 72
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
+        x: 80
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f00627d52e9a3ec0800000000000000
-      internalID: -3586380267886608136
+      spriteID: 0d677e71767a58750800000000000000
+      internalID: 6306630914426762960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_9
+      name: health(1)_8
       rect:
         serializedVersion: 2
-        x: 68
-        y: 72
-        width: 34
-        height: 44
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
+        x: 87
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e911109a24b58eda0800000000000000
-      internalID: -5915377768689757794
+      spriteID: 8357419395795a0d0800000000000000
+      internalID: -3412154733197757128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_10
+      name: health(1)_9
       rect:
         serializedVersion: 2
-        x: 119
-        y: 72
-        width: 47
-        height: 46
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
+        x: 94
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae6633c0cf0bd3a40800000000000000
-      internalID: 5349626528968959722
+      spriteID: a6c6ba3c5821cd8b0800000000000000
+      internalID: -5126201910131725206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibo rans(3)_12
+      name: health(1)_10
       rect:
         serializedVersion: 2
-        x: 186
-        y: 72
-        width: 41
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
+        x: 101
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11ae768903215d650800000000000000
-      internalID: 6256927257225849361
+      spriteID: 5b9f618b6f29c3470800000000000000
+      internalID: 8375730995350403509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_11
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8eb00deb649a520800000000000000
+      internalID: 2713778035815606459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65508e340f37f7f30800000000000000
+      internalID: 4575503222200337750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_13
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b48105d871a726e0800000000000000
+      internalID: -1862342380552616780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_14
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e94f69d5fd8e6d0800000000000000
+      internalID: -2960871161938534805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_15
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 38
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e658f6bfe2623ad0800000000000000
+      internalID: -2724006042899294495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health(1)_16
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 46
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1836c649b30cd5750800000000000000
+      internalID: 6295399216259556225
       vertices: []
       indices: 
       edges: []
