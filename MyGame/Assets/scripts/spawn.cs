@@ -38,7 +38,6 @@ public class spawn : MonoBehaviour
         Zombies();
        
     }
-    private int b = 0;
     public void spawn_zombies()
     {
         StartCoroutine(Wave());
@@ -71,25 +70,25 @@ public class spawn : MonoBehaviour
     }
     void Zombies()
     {
-        int zombie_value = Random.Range(0, 125);
+        int zombie_value = Random.Range(0, 135);
         if (zombie_value<10)
         {
             zombie = bo_zombie;
             
         }
-        else if(zombie_value>=10&&zombie_value<25)
+        else if(zombie_value>=10&&zombie_value<35)
         {
             zombie =bibo_zombie;
         }
-        else if (zombie_value >= 25 && zombie_value < 40)
+        else if (zombie_value >= 35 && zombie_value < 50)
         {
             zombie = karl_zombie;
         }
-        else if (zombie_value >= 40 && zombie_value < 55)
+        else if (zombie_value >= 50 && zombie_value <65)
         {
             zombie = lara_zombie;
         }
-        else if (zombie_value >= 55 && zombie_value < 85)
+        else if (zombie_value >= 65 && zombie_value < 95)
         {
             zombie = martin_zombie;
         }

@@ -14,7 +14,7 @@ public class poison : MonoBehaviour
     public GameObject head;
     void Start()
     {
-
+        poison_icon.SetActive(false);
     }
 
     void Update()

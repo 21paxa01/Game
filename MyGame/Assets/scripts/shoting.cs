@@ -11,7 +11,6 @@ public class shoting : MonoBehaviour
     public AudioSource shot_sound;
 
     public GameObject zombie;
-    public Transform spawn_point;
 
     public GameObject ammo;
     public Transform shotDir;
@@ -70,16 +69,19 @@ public class shoting : MonoBehaviour
         
         
     }
-    public bool change;
+    public int change;
+    public int Cons_change;
     public void Change()
     {
-        change = !change;
+        change ++;
+        if (change == 4)
+            change = 1;
     }
     public void Shot()
     {
 
 
-        if (change == true&&ReloaD==false)
+        if (change == Cons_change&&ReloaD==false)
         {
             StartCoroutine(FireDelay());
         }
@@ -107,8 +109,8 @@ public class shoting : MonoBehaviour
             }
             else
             {
-                ReloaD = true;
-                i=10;
+                yield return new WaitForSeconds(ReloadTime);
+                reload = 0;
             } 
 
             if (shot==false)

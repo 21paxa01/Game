@@ -77,7 +77,7 @@ public class zombie : MonoBehaviour
         {
             hp += 1;
             Destroy(other.gameObject);
-            if (hp == HP)
+            if (hp >= HP)
             {
                 death = true;
                 Instantiate(money, money_spawn.position, transform.rotation);
@@ -89,7 +89,19 @@ public class zombie : MonoBehaviour
         {
             hp += 1;
             Destroy(other.gameObject);
-            if (hp == HP)
+            if (hp >= HP)
+            {
+                death = true;
+                zombie_damage = 0;
+                Instantiate(money, money_spawn.position, transform.rotation);
+
+            }
+        }
+        else if (other.name == "awp_bullet(Clone)" && death == false)
+        {
+            hp += 2;
+            Destroy(other.gameObject);
+            if (hp >= HP)
             {
                 death = true;
                 zombie_damage = 0;

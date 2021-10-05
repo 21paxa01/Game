@@ -17,6 +17,9 @@ public class martin_hp : MonoBehaviour
     public float dist_to_player;
     public float boom_radius;
 
+    public GameObject money;
+    public Transform money_spawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,7 @@ public class martin_hp : MonoBehaviour
         anim.SetBool("death", death);
         Destroy(back);
         yield return new WaitForSeconds(death_time);
+        Instantiate(money, money_spawn.position, transform.rotation);
         if (distToPlayer <= boom_radius)
             dam_to_bill = true;
         if(dam_to_bill == true)
@@ -72,6 +76,16 @@ public class martin_hp : MonoBehaviour
                 StartCoroutine(Die());
             }
         }
-       
+        else if (other.name == "awp_bullet(Clone)" && death == false)
+        {
+            hp += 1;
+            fill = 1 - hp / HP;
+            Destroy(other.gameObject);
+            if (hp >= HP)
+            {
+                StartCoroutine(Die());
+            }
+        }
+
     }
 }

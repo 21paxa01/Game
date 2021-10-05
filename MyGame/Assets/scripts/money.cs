@@ -14,7 +14,6 @@ public class money : MonoBehaviour
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
     }
-    private bool drop = false;
     void Update()
     {
         if(transform.position.y<= -3.011614f)

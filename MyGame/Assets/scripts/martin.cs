@@ -17,8 +17,8 @@ public class martin : MonoBehaviour
     Coroutine damage;
 
 
-    public GameObject money;
-    public Transform money_spawn;
+    //public GameObject money;
+    //public Transform money_spawn;
 
 
     public float speed;
@@ -70,12 +70,12 @@ public class martin : MonoBehaviour
             hp += 1;
             Destroy(other.gameObject);
             death = true;
-            Instantiate(money, money_spawn.position, transform.rotation);
+            //Instantiate(money, money_spawn.position, transform.rotation);
             if (hp == HP)
             {
                 physik.constraints = RigidbodyConstraints2D.FreezePositionX;
                 physik.velocity = new Vector2(0, 0);
-                Instantiate(money, money_spawn.position, transform.rotation);
+                //Instantiate(money, money_spawn.position, transform.rotation);
                 zombie_damage = 0;
 
             }
@@ -85,14 +85,30 @@ public class martin : MonoBehaviour
             hp += 1;
             
             death = true;
-            Instantiate(money, money_spawn.position, transform.rotation);
+            //Instantiate(money, money_spawn.position, transform.rotation);
             Destroy(other.gameObject);
             if (hp == HP)
             {
                 
                 physik.velocity = new Vector2(0, 0);
                 //zombie_damage = 0;
-                Instantiate(money, money_spawn.position, transform.rotation);
+                //Instantiate(money, money_spawn.position, transform.rotation);
+
+            }
+        }
+        else if (other.name == "awp_bullet(Clone)" && death == false)
+        {
+            hp += 1;
+
+            death = true;
+            //Instantiate(money, money_spawn.position, transform.rotation);
+            Destroy(other.gameObject);
+            if (hp == HP)
+            {
+
+                physik.velocity = new Vector2(0, 0);
+                //zombie_damage = 0;
+                //Instantiate(money, money_spawn.position, transform.rotation);
 
             }
         }

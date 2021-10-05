@@ -7,11 +7,13 @@ public class change_weapon : MonoBehaviour
 {
     public GameObject pistol;
     public GameObject ak47;
-    private bool change = false;
+    public GameObject awp;
+    public int change = 1;
     public AudioSource change_sound;
     void Start()
     {
         ak47.SetActive(false);
+        awp.SetActive(false);
     }
 
     
@@ -21,9 +23,27 @@ public class change_weapon : MonoBehaviour
     }
     public void Change()
     {
-        pistol.SetActive(change);
+        change++;
+        if (change == 4)
+            change = 1;
+        if (change == 1)
+        {
+            pistol.SetActive(true);
+            ak47.SetActive(false);
+            awp.SetActive(false);
+        }
+        if (change == 2)
+        {
+            pistol.SetActive(false);
+            ak47.SetActive(true);
+            awp.SetActive(false);
+        }
+        if(change==3)
+        {
+            pistol.SetActive(false);
+            ak47.SetActive(false);
+            awp.SetActive(true);
+        }
         change_sound.Play();
-        change = !change;
-        ak47.SetActive(change);
     }
 }

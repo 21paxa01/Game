@@ -58,5 +58,16 @@ public class bibo_hp : MonoBehaviour
                 StartCoroutine(Die());
             }
         }
+        else if (other.name == "awp_bullet(Clone)" && death == false)
+        {
+            hp += 2;
+            fill = 1 - hp / HP;
+            Destroy(other.gameObject);
+            if (hp >= HP)
+            {
+                StartCoroutine(Die());
+            }
+        }
+
     }
 }

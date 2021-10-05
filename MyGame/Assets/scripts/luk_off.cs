@@ -9,6 +9,7 @@ public class luk_off : MonoBehaviour
     void Start()
     {
         anim_luk = GetComponent<Animator>();
+        off_luk = false;
     }
 
     void Update()

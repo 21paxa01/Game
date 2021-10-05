@@ -139,7 +139,7 @@ public class bill : MonoBehaviour
     }
     void Stairs()
     {
-        if (transform.position.y < -2.9f)
+        if (transform.position.y < -3f)
         {
             if (transform.position.x >= 6.458f && transform.position.x <= 6.739f)
             {
@@ -159,6 +159,8 @@ public class bill : MonoBehaviour
                 stairs.SetActive(false);
             }
         }
+        else if(transform.position.y < -2.95f&&move==false)
+            rb.velocity = new Vector2(speed*1.5f, speed*2.5f);
         else 
         {
             luk_off.off_luk = true;
@@ -187,10 +189,12 @@ public class bill : MonoBehaviour
     public AudioSource shag;
     public void Start_shag()
     {
-        StartCoroutine(Shag());
+        if (transform.position.y < -2.9f)
+            StartCoroutine(Shag());
     }
     public void Stop_shag()
     {
+   
         StopCoroutine(Shag());
     }
     IEnumerator Shag()
