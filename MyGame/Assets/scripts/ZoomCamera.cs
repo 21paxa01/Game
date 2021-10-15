@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ZoomCamera : MonoBehaviour
 {
     public float zoomMin;
     public float zoomMax;
+    public CinemachineVirtualCamera cum;
+    public Transform bill;
     void Start()
     {
-       
+       cum= GetComponent<CinemachineVirtualCamera>();
+       cum.m_Lens.OrthographicSize = 1f;
     }
 
     void Update()
@@ -25,12 +29,13 @@ public class ZoomCamera : MonoBehaviour
             float currentDistTouch = (touchZero.position - touchOne.position).magnitude;
 
             float difference = currentDistTouch - distTouch;
-            zoom(difference * 0.01f);
-        }     
-
+            //zoom(difference * 0.01f);
+        }
+        if (bill.position.y>-2.9f)
+            cum.m_Lens.OrthographicSize = 2f;
     }
     void zoom(float increment)
     {
-        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, zoomMin, zoomMax);
+        cum.m_Lens.OrthographicSize = Mathf.Clamp(cum.m_Lens.OrthographicSize - increment, zoomMin, zoomMax);
     }
 }

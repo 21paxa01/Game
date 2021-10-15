@@ -47,7 +47,7 @@ public class zombie : MonoBehaviour
 
             
         }
-        else
+        if(distToPlayer > dist_to_player&&WALL==false)
         {
             fight = false;
         }
@@ -64,13 +64,17 @@ public class zombie : MonoBehaviour
             physik.velocity = new Vector2(+speed, 0);
             transform.localScale = new Vector2(1, 1);
         }
-        if (death == true)
+        if (death == true||WALL==true)
         {
             physik.velocity = new Vector2(0, 0);
+            fight = true;
         }
     }
     public int HP;
     private int hp = 0;
+    private bool WALL;
+    private float zomb_wall_pos;
+    private wall script_w;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name == "pistol_bullet(Clone)"&&death==false)
@@ -109,9 +113,38 @@ public class zombie : MonoBehaviour
 
             }
         }
+        if (other.name == "wall(Clone)")
+        {
+            WALL = true;
+            zomb_wall_pos = transform.position.x - player.transform.position.x;
+            StartCoroutine(WallDamage(other.gameObject));
+
+        }
     }
     private int dam=0;
     public float test = 100f;
+    IEnumerator WallDamage(GameObject w)
+    {
+        script_w = w.gameObject.GetComponent<wall>();
+        while (WALL == true)
+        {
+            if (zomb_wall_pos >= 0)
+            {
+                yield return new WaitForSeconds(atack_time);
+                script_w.hp -= zombie_damage;
+                if (zomb_wall_pos < 0|| script_w.hp<=0)
+                    WALL = false;
+            }
+            if (zomb_wall_pos < 0)
+            {
+                yield return new WaitForSeconds(atack_time);
+                script_w.hp -= zombie_damage;
+                if (zomb_wall_pos >= 0 || script_w.hp <= 0)
+                    WALL = false;
+            }
+
+        }
+    }
     IEnumerator BillDamage()
     {
         while (dam == 0) 

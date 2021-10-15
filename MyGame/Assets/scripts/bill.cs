@@ -32,13 +32,16 @@ public class bill : MonoBehaviour
         HP = hp;
         
     }
-    
+    public bool test;
     void Update()
     {
         bar.fillAmount = fill;
         fill =HP / hp;
+        if(fill<=0)
+            anim.SetBool("death", true);
         Walk();
         Reflect();
+        test = faceRight;
         Jump();
         CheckingGround();
         Stairs();
@@ -86,7 +89,7 @@ public class bill : MonoBehaviour
         anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
     }
     
-    public bool faceRight = true;
+    public static bool faceRight = true;
     void Reflect()
     {
         moveVector_1.x = joystick_shot.Horizontal;
@@ -123,7 +126,7 @@ public class bill : MonoBehaviour
     public Transform GroundCheck;
     private float GroundCheckRadius;
 
-    public bool test;
+
     void CheckingGround()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
@@ -141,25 +144,25 @@ public class bill : MonoBehaviour
     {
         if (transform.position.y < -3f)
         {
-            if (transform.position.x >= 6.458f && transform.position.x <= 6.739f)
+            if (transform.position.x >= 5.959f && transform.position.x <= 6.16f)
             {
                 stairs.SetActive(true);
                 if(off==true)
                     stairs.SetActive(false);
                 if (upStairs == true)
                 {
-                    transform.position = new Vector2(6.574f, transform.position.y);
+                    transform.position = new Vector2(6.078f, transform.position.y);
                     move = false;
                     coll.isTrigger = true;
                     rb.velocity = new Vector2(0f, speed);
                 }
             }
-            if (transform.position.x < 6.458f || transform.position.x > 6.739f)
+            if (transform.position.x < 5.959f || transform.position.x > 6.16f)
             {
                 stairs.SetActive(false);
             }
         }
-        else if(transform.position.y < -2.95f&&move==false)
+        else if(transform.position.y < -3.1f&&move==false)
             rb.velocity = new Vector2(speed*1.5f, speed*2.5f);
         else 
         {
@@ -189,7 +192,7 @@ public class bill : MonoBehaviour
     public AudioSource shag;
     public void Start_shag()
     {
-        if (transform.position.y < -2.9f)
+        if (transform.position.y < -3.1f)
             StartCoroutine(Shag());
     }
     public void Stop_shag()

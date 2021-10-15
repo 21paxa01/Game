@@ -30,6 +30,7 @@ public class bibo  : MonoBehaviour
         zomb_damage = zombie_damage;
     }
     public float dist_to_player;
+    private bool wall;
     void Update()
     {
 
@@ -74,6 +75,8 @@ public class bibo  : MonoBehaviour
             else
                 poison.pois = false;
         }
+        if(wall==true)
+            physik.velocity = new Vector2(0, 0);
     }
     public int HP;
     private int hp = 0;
@@ -115,6 +118,8 @@ public class bibo  : MonoBehaviour
 
             }
         }
+        if (other.name == "wall(Clone)")
+            wall = true;
     }
     private int dam = 0;
     public float test = 100f;

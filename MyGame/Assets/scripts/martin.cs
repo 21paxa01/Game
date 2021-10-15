@@ -56,12 +56,13 @@ public class martin : MonoBehaviour
             physik.velocity = new Vector2(+speed, 0);
             transform.localScale = new Vector2(1, 1);
         }
-        if (death == true)
+        if (death == true||wall==true)
         {
             physik.velocity = new Vector2(0, 0);
         }
     }
     public int HP;
+    private bool wall;
     private int hp = 0;
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -112,6 +113,8 @@ public class martin : MonoBehaviour
 
             }
         }
+        if (other.name == "wall(Clone)")
+            wall = true;
     }
     public float test = 100f;
    
