@@ -19,15 +19,13 @@ public class martin_hp : MonoBehaviour
 
     public GameObject money;
     public Transform money_spawn;
+    private bool wall;
 
-    // Start is called before the first frame update
     void Start()
     {
         fill = 1f;
         anim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
@@ -48,6 +46,25 @@ public class martin_hp : MonoBehaviour
         if (distToPlayer <= boom_radius)
             dam_to_bill = true;
         if(dam_to_bill == true)
+        {
+            bill.HP -= martin.zombie_damage;
+        }
+        Destroy(gameObject);
+        hp = 0;
+    }
+    private wall script_w;
+    IEnumerator WALL_Die(GameObject w)
+    {
+        script_w = w.gameObject.GetComponent<wall>();
+        death = true;
+        anim.SetBool("death", death);
+        Destroy(back);
+        yield return new WaitForSeconds(death_time);
+        Instantiate(money, money_spawn.position, transform.rotation);
+        script_w.hp -= martin.zombie_damage;
+        if (distToPlayer <= boom_radius)
+            dam_to_bill = true;
+        if (dam_to_bill == true)
         {
             bill.HP -= martin.zombie_damage;
         }
@@ -84,6 +101,16 @@ public class martin_hp : MonoBehaviour
             if (hp >= HP)
             {
                 StartCoroutine(Die());
+            }
+        }
+        if (other.name == "wall(Clone)" || other.name == "boom(Clone)")
+        {
+            wall = true;
+            hp += 1;
+            fill = 1 - hp / HP;
+            if (hp >= HP)
+            {
+                StartCoroutine(WALL_Die(other.gameObject));
             }
         }
 

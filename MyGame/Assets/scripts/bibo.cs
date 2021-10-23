@@ -30,7 +30,6 @@ public class bibo  : MonoBehaviour
         zomb_damage = zombie_damage;
     }
     public float dist_to_player;
-    private bool wall;
     void Update()
     {
 
@@ -48,7 +47,7 @@ public class bibo  : MonoBehaviour
 
 
         }
-        else
+        if (distToPlayer > dist_to_player && WALL == false)
         {
             fight = false;
         }
@@ -68,18 +67,23 @@ public class bibo  : MonoBehaviour
         if (death == true)
         {
             physik.velocity = new Vector2(0, 0);
-            //if(player.transform.position.x > transform.position.x)
 
             if (distToPlayer <= dist_to_player)
                 poison.pois = true;
             else
                 poison.pois = false;
         }
-        if(wall==true)
+        if (WALL == true)
+        {
             physik.velocity = new Vector2(0, 0);
+            fight = true;
+        }
     }
     public int HP;
     private int hp = 0;
+    private bool WALL;
+    private float zomb_wall_pos;
+    private wall script_w;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name == "pistol_bullet(Clone)" && death == false)
@@ -118,8 +122,12 @@ public class bibo  : MonoBehaviour
 
             }
         }
-        if (other.name == "wall(Clone)")
-            wall = true;
+        if (other.name == "wall(Clone)" || other.name == "boom(Clone)")
+        {
+            WALL = true;
+            zomb_wall_pos = transform.position.x - player.transform.position.x;
+            StartCoroutine(WallDamage(other.gameObject));
+        }
     }
     private int dam = 0;
     public float test = 100f;
@@ -140,6 +148,28 @@ public class bibo  : MonoBehaviour
             {
                 dam = 1;
                 test = 100f;
+            }
+
+        }
+    }
+    IEnumerator WallDamage(GameObject w)
+    {
+        script_w = w.gameObject.GetComponent<wall>();
+        while (WALL == true)
+        {
+            if (zomb_wall_pos >= 0)
+            {
+                yield return new WaitForSeconds(atack_time);
+                script_w.hp -= zombie_damage;
+                if (zomb_wall_pos < 0 || script_w.hp <= 0)
+                    WALL = false;
+            }
+            if (zomb_wall_pos < 0)
+            {
+                yield return new WaitForSeconds(atack_time);
+                script_w.hp -= zombie_damage;
+                if (zomb_wall_pos >= 0 || script_w.hp <= 0)
+                    WALL = false;
             }
 
         }

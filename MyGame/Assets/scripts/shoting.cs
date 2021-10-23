@@ -19,7 +19,7 @@ public class shoting : MonoBehaviour
     private float timeShot;
     public float startTime;
     Coroutine fireFrequency;
-    private bool shot;
+    public bool shot;
 
     public bool faceRight = true;
     void Start()
@@ -52,19 +52,11 @@ public class shoting : MonoBehaviour
         }
   
         
-        if(joystick.Vertical != 0 || joystick.Horizontal != 0)
-        {
-            shot = true;
-        }
-        else
+        if(joystick.Vertical == 0 || joystick.Horizontal == 0)
         {
             shot = false;
         }
-        if (shot==true)
-        {
-            i = 0;
-            
-        }
+        
         
         
         
@@ -79,10 +71,11 @@ public class shoting : MonoBehaviour
     }
     public void Shot()
     {
-
+        shot = true;
 
         if (change == Cons_change&&ReloaD==false)
         {
+            i = 0;
             StartCoroutine(FireDelay());
         }
 
@@ -92,10 +85,10 @@ public class shoting : MonoBehaviour
     public int Reload;
     private int reload = 0;
     public static float ReloadTime=3f;
-    public static bool ReloaD;
+    public  bool ReloaD;
     IEnumerator FireDelay()
     {
-        while (i<10)
+        while (shot==true)
         {
             if (reload < Reload)
             {
@@ -109,13 +102,15 @@ public class shoting : MonoBehaviour
             }
             else
             {
+                ReloaD = true;
                 yield return new WaitForSeconds(ReloadTime);
                 reload = 0;
+                ReloaD = false;
             } 
 
-            if (shot==false)
+            if (shot==false&&ReloaD==false)
             {
-                i=10;
+                shot = false;
             }
             
 

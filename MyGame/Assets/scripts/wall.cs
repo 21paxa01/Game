@@ -5,13 +5,20 @@ using UnityEngine;
 public class wall : MonoBehaviour
 {
     public int count;
-    public  float hp = 200;
+    public  float hp ;
+    public SpriteRenderer sp;
+    public Animator anim;
+    public Collider2D coll;
+    private int a=0;
+    public float death_time;
     void Start()
     {
-        
+        sp = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         /*if (Input.touchCount > 0 && rapt_menu.GameIsPaused == true)
@@ -22,7 +29,19 @@ public class wall : MonoBehaviour
                 rapt_menu.GameIsPaused = false;
         }
         count = Input.touchCount;*/
-        if (hp <= 0f)
-            Destroy(gameObject);
+        
+        anim.SetFloat("hp", hp);
+        if (hp <= 0 && a == 0)
+        {
+            a = 1;
+            StartCoroutine(Die());
+        }
     }
+    IEnumerator Die()
+    {
+        coll.isTrigger = true;
+        yield return new WaitForSeconds(death_time);
+        Destroy(gameObject);
+    }
+
 }

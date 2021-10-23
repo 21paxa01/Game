@@ -17,10 +17,6 @@ public class martin : MonoBehaviour
     Coroutine damage;
 
 
-    //public GameObject money;
-    //public Transform money_spawn;
-
-
     public float speed;
     void Start()
     {
@@ -71,12 +67,10 @@ public class martin : MonoBehaviour
             hp += 1;
             Destroy(other.gameObject);
             death = true;
-            //Instantiate(money, money_spawn.position, transform.rotation);
             if (hp == HP)
             {
                 physik.constraints = RigidbodyConstraints2D.FreezePositionX;
                 physik.velocity = new Vector2(0, 0);
-                //Instantiate(money, money_spawn.position, transform.rotation);
                 zombie_damage = 0;
 
             }
@@ -86,14 +80,11 @@ public class martin : MonoBehaviour
             hp += 1;
             
             death = true;
-            //Instantiate(money, money_spawn.position, transform.rotation);
             Destroy(other.gameObject);
             if (hp == HP)
             {
                 
                 physik.velocity = new Vector2(0, 0);
-                //zombie_damage = 0;
-                //Instantiate(money, money_spawn.position, transform.rotation);
 
             }
         }
@@ -102,18 +93,14 @@ public class martin : MonoBehaviour
             hp += 1;
 
             death = true;
-            //Instantiate(money, money_spawn.position, transform.rotation);
             Destroy(other.gameObject);
             if (hp == HP)
             {
 
                 physik.velocity = new Vector2(0, 0);
-                //zombie_damage = 0;
-                //Instantiate(money, money_spawn.position, transform.rotation);
-
             }
         }
-        if (other.name == "wall(Clone)")
+        if (other.name == "wall(Clone)" || other.name == "boom(Clone)")
             wall = true;
     }
     public float test = 100f;

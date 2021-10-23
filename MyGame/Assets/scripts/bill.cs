@@ -14,6 +14,11 @@ public class bill : MonoBehaviour
     public float hp;
     public static float HP;
 
+    public GameObject weapons;
+    public GameObject rapt_menu;
+    public GameObject shot_joustick;
+    public GameObject change_button;
+
     public AudioSource stairs_sound;
     public GameObject stairs;
     public bool upStairs = false;
@@ -30,21 +35,31 @@ public class bill : MonoBehaviour
         GroundCheckRadius = GroundCheck.GetComponent<CircleCollider2D>().radius;
         fill = 1f;
         HP = hp;
-        
+        faceRight = true;
+        change_button.SetActive(false);
+        weapons.SetActive(false);
+        shot_joustick.SetActive(false);
+        rapt_menu.SetActive(false);
     }
     public bool test;
     void Update()
     {
         bar.fillAmount = fill;
         fill =HP / hp;
-        if(fill<=0)
+        if (fill <= 0)
+        {
             anim.SetBool("death", true);
-        Walk();
-        Reflect();
-        test = faceRight;
-        Jump();
-        CheckingGround();
-        Stairs();
+            weapons.SetActive(false);
+        }
+        else
+        {
+            Walk();
+            Reflect();
+            test = faceRight;
+            Jump();
+            CheckingGround();
+            Stairs();
+        }
        
     }
     
@@ -147,7 +162,7 @@ public class bill : MonoBehaviour
             if (transform.position.x >= 5.959f && transform.position.x <= 6.16f)
             {
                 stairs.SetActive(true);
-                if(off==true)
+                if (off == true)
                     stairs.SetActive(false);
                 if (upStairs == true)
                 {
@@ -162,10 +177,17 @@ public class bill : MonoBehaviour
                 stairs.SetActive(false);
             }
         }
-        else if(transform.position.y < -3.1f&&move==false)
-            rb.velocity = new Vector2(speed*1.5f, speed*2.5f);
-        else 
+        else if (transform.position.y > -3.1f && transform.position.y < -3f)
         {
+            rb.velocity = new Vector2(speed * 1.5f, speed * 3.5f);
+            
+        }
+        else
+        {
+            change_button.SetActive(true);
+            weapons.SetActive(true);
+            shot_joustick.SetActive(true);
+            rapt_menu.SetActive(true);
             luk_off.off_luk = true;
             move = true;
             jump = true;

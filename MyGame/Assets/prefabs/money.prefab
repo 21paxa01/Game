@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 836808803030397839}
   test: 0
+  bill: {fileID: 309375643623767115}
   anim: {fileID: 0}
   coll: {fileID: 8364607799297400904}
 --- !u!95 &7194025364869933136

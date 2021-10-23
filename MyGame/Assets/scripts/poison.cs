@@ -28,6 +28,8 @@ public class poison : MonoBehaviour
                 debaff = true;
             }
         }
+        if(bill.HP<=0)
+            head.SetActive(false);
         test = pois;
     }
     IEnumerator Poison()

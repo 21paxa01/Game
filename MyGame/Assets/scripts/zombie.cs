@@ -113,7 +113,7 @@ public class zombie : MonoBehaviour
 
             }
         }
-        if (other.name == "wall(Clone)")
+        if (other.name == "wall(Clone)"||other.name=="boom(Clone)")
         {
             WALL = true;
             zomb_wall_pos = transform.position.x - player.transform.position.x;

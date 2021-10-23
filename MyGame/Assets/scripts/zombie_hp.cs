@@ -26,7 +26,7 @@ public class zombie_hp : MonoBehaviour
         bar.fillAmount = fill;
     }
     public float HP;
-    private float hp = 0;
+    public float hp = 0;
     IEnumerator Die()
     {
         death = true;

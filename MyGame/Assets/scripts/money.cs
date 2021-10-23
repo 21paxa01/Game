@@ -6,6 +6,7 @@ public class money : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int test = 0;
+    public Transform bill;
     public Animator anim;
     public Collider2D coll;
     void Start()
@@ -20,6 +21,8 @@ public class money : MonoBehaviour
         {
             Drop();
         }
+       // if (bill.position.x == transform.position.x)
+        //    rb.velocity = new Vector2(0f, rb.velocity.y) ;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

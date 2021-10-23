@@ -1,16 +1,15 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class reload : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
     private int i;
-    // Update is called once per frame
     void Update()
     {
         if (shoting.ReloaD == true)
@@ -29,3 +28,4 @@ public class reload : MonoBehaviour
         }
     }
 }
+*/
