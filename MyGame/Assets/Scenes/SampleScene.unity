@@ -1709,9 +1709,10 @@ MonoBehaviour:
   atack_time: 1
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 481843539}
+  zombie_hp: {fileID: 303399552}
   speed: 0.6
-  dist_to_player: 0.7
   HP: 3
+  dist_to_player: 0.7
   test: 100
 --- !u!50 &303399555
 Rigidbody2D:
@@ -5103,8 +5104,8 @@ GameObject:
   - component: {fileID: 796152630}
   - component: {fileID: 796152628}
   - component: {fileID: 796152633}
-  - component: {fileID: 796152629}
   - component: {fileID: 796152634}
+  - component: {fileID: 796152629}
   m_Layer: 0
   m_Name: bibo_zombie
   m_TagString: zombie
@@ -5156,14 +5157,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 796152626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc9d2eb2627a64541b564f168294c774, type: 3}
+  m_Script: {fileID: 11500000, guid: 82d0cabbde70f3d49acfe96dc0d8b639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1357679620}
   back: {fileID: 1756145760}
   fill: 0
   anim: {fileID: 0}
-  death_time: 10
+  death_time: 7
   death: 0
   HP: 2
   hp: 0
@@ -5275,9 +5276,10 @@ MonoBehaviour:
   atack_time: 0.6
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 596318784}
+  zombie_hp: {fileID: 796152626}
   speed: 0.7
-  dist_to_player: 0.3
   HP: 2
+  dist_to_player: 0.3
   test: 100
 --- !u!114 &796152634
 MonoBehaviour:
@@ -6109,9 +6111,10 @@ MonoBehaviour:
   atack_time: 1
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 404240052}
+  zombie_hp: {fileID: 956178762}
   speed: 0.47
-  dist_to_player: 0.3
   HP: 1
+  dist_to_player: 0.3
   test: 100
 --- !u!50 &956178764
 Rigidbody2D:
@@ -6552,7 +6555,7 @@ MonoBehaviour:
   spawn_point_1: {fileID: 1821008308}
   spawn_point_2: {fileID: 303200957}
   bar: {fileID: 1779957276}
-  spawn_time: 2.5
+  spawn_time: 6
   i: 0
   a: 0
   wave_time: 120
@@ -7012,22 +7015,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104943820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0396c87133d424499a8984f2ea2155e, type: 3}
+  m_Script: {fileID: 11500000, guid: 82d0cabbde70f3d49acfe96dc0d8b639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 461307827}
   back: {fileID: 934220492}
   fill: 0
-  player: {fileID: 1846733902}
   anim: {fileID: 0}
-  death_time: 0.7
+  death_time: 0.65
   death: 0
-  dist_to_player: 0.4
-  boom_radius: 1
-  money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
-  money_spawn: {fileID: 62262125}
   HP: 1
-  dam_to_bill: 0
+  hp: 0
 --- !u!114 &1104943827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7041,11 +7039,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1846733902}
+  anim: {fileID: 0}
   fight: 0
   death: 0
+  zombie_damage: 10
+  atack_time: 0
+  boom_radius: 2
+  money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
+  money_spawn: {fileID: 62262125}
+  zombie_hp: {fileID: 1104943820}
   speed: 0.75
-  dist_to_player: 0.4
   HP: 0
+  dist_to_player: 0.4
   test: 100
 --- !u!1 &1109539183
 GameObject:
@@ -9775,9 +9780,10 @@ MonoBehaviour:
   atack_time: 0.5
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 1193805642}
+  zombie_hp: {fileID: 1522508944}
   speed: 0.5
-  dist_to_player: 0.4
   HP: 3
+  dist_to_player: 0.4
   test: 100
 --- !u!50 &1522508949
 Rigidbody2D:
@@ -10951,9 +10957,10 @@ MonoBehaviour:
   atack_time: 1
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 114500388}
+  zombie_hp: {fileID: 1729241928}
   speed: 0.3
-  dist_to_player: 0.4
   HP: 8
+  dist_to_player: 0.4
   test: 100
 --- !u!50 &1729241932
 Rigidbody2D:
@@ -11061,7 +11068,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 3
   death: 0
-  HP: 8
+  HP: 9
   hp: 0
 --- !u!1 &1733915708
 GameObject:
