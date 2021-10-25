@@ -103,6 +103,7 @@ MonoBehaviour:
   death_time: 0.2
   death: 0
   anim: {fileID: 0}
+  ammo_damage: 1
 --- !u!50 &2746150021542633273
 Rigidbody2D:
   serializedVersion: 4

@@ -149,3 +149,4 @@ MonoBehaviour:
   death_time: 0.2
   death: 0
   anim: {fileID: 0}
+  ammo_damage: 2

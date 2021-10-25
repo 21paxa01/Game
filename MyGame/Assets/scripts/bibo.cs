@@ -21,18 +21,25 @@ public class bibo  : MonoBehaviour
     public GameObject money;
     public Transform money_spawn;
 
+    public GameObject zombie_hp;
+    private zombie_hp script;
+
 
     public float speed;
+    public float HP;
+    private float hp = 0;
     void Start()
     {
         physik = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         zomb_damage = zombie_damage;
+        script = zombie_hp.gameObject.GetComponent<zombie_hp>();
+        HP = script.HP;
     }
     public float dist_to_player;
     void Update()
     {
-
+        hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player)
         {
@@ -78,50 +85,17 @@ public class bibo  : MonoBehaviour
             physik.velocity = new Vector2(0, 0);
             fight = true;
         }
+        if (hp == HP)
+        {
+            HP--;
+            Die();
+        }
     }
-    public int HP;
-    private int hp = 0;
     private bool WALL;
     private float zomb_wall_pos;
     private wall script_w;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "pistol_bullet(Clone)" && death == false)
-        {
-            hp += 1;
-            Destroy(other.gameObject);
-            if (hp >= HP)
-            {
-                death = true;
-                Instantiate(money, money_spawn.position, transform.rotation);
-                zombie_damage = 0;
-
-            }
-        }
-        else if (other.name == "ak47_bullet(Clone)" && death == false)
-        {
-            hp += 1;
-            Destroy(other.gameObject);
-            if (hp >= HP)
-            {
-                death = true;
-                zombie_damage = 0;
-                Instantiate(money, money_spawn.position, transform.rotation);
-
-            }
-        }
-        else if (other.name == "awp_bullet(Clone)" && death == false)
-        {
-            hp += 2;
-            Destroy(other.gameObject);
-            if (hp >= HP)
-            {
-                death = true;
-                zombie_damage = 0;
-                Instantiate(money, money_spawn.position, transform.rotation);
-
-            }
-        }
         if (other.name == "wall(Clone)" || other.name == "boom(Clone)")
         {
             WALL = true;
@@ -174,10 +148,13 @@ public class bibo  : MonoBehaviour
 
         }
     }
-    void Damage()
+    void Die()
     {
-        bill.HP -= zombie_damage;
-        zombie_damage = 0f;
+
+        death = true;
+        Instantiate(money, money_spawn.position, transform.rotation);
+        zombie_damage = 0;
+
     }
 
 

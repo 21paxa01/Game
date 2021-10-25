@@ -9,7 +9,7 @@ public class boom : MonoBehaviour
     public GameObject BOOM;
     public  float test;
     private wall script;
-    private bibo_hp script_w;
+    private zombie_hp script_w;
     void Start()
     {
         coll = GetComponent<Collider2D>();
@@ -26,18 +26,25 @@ public class boom : MonoBehaviour
            
         }
     }
-    void Boom(GameObject zomb)
+    IEnumerator Boom(GameObject zomb)
     {
-        script_w = zomb.gameObject.GetComponent<bibo_hp>();
-        script_w.hp++;
-        script_w.fill = 1 - script_w.hp / script_w.HP;
-        
+        yield return new WaitForSeconds(0.5f);
+        script_w = zomb.gameObject.GetComponent<zombie_hp>();
+        if (script.HP > script.hp)
+        {
+            script_w.hp++;
+            script_w.fill = 1 - script_w.hp / script_w.HP;
+        }        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "bibo_zombie(Clone)") {
-            Boom(other.gameObject);
-            test = 100;
+        if (script.hp <= 0)
+        {
+            if (other.CompareTag("zombie"))
+            {
+                StartCoroutine(Boom(other.gameObject));
+                test = 100;
+            }
         }
     }
 }

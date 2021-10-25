@@ -10,6 +10,8 @@ public class ammo : MonoBehaviour
     public bool death;
     public Animator anim;
     private Rigidbody2D rb;
+    private zombie_hp script;
+    public int ammo_damage;
     void Start()
     {
         Invoke("DestroyAmmo", destroyTime);
@@ -31,6 +33,19 @@ public class ammo : MonoBehaviour
         if (other.name == "road u"||other.name=="wall(Clone)")
         {
             Destroy(gameObject);
+        }
+        if (other.CompareTag("zombie"))
+        {
+            script = other.gameObject.GetComponent<zombie_hp>();
+            if (script.death == false)
+            {
+                Destroy(gameObject);
+                if (script.hp + ammo_damage > script.HP)
+                    script.hp = script.HP;
+                else
+                    script.hp += ammo_damage;
+                script.fill = 1 - script.hp / script.HP;
+            }
         }
     }
     

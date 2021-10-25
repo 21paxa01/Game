@@ -40,9 +40,9 @@ public class trap_menu : MonoBehaviour
     public void Wall()
     {
         if (bill.faceRight == true)
-            wall.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            wall.transform.localScale = new Vector3(1f, 1f, 1f);
         else
-            wall.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            wall.transform.localScale = new Vector3(-1f, 1f, 1f);
         Instantiate(wall, new Vector3(Bill.transform.position.x+dist, -3.0815f, 0f), wall.transform.rotation);
     }
     public void Boom()

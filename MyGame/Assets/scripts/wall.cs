@@ -6,6 +6,7 @@ public class wall : MonoBehaviour
 {
     public int count;
     public  float hp ;
+    public float HP;
     public SpriteRenderer sp;
     public Animator anim;
     public Collider2D coll;
@@ -16,6 +17,7 @@ public class wall : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        HP = hp;
     }
 
     
