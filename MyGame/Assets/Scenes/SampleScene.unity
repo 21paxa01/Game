@@ -3500,7 +3500,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 14
-  m_Sprite: {fileID: 21300000, guid: 3b29c58f82d4aae45bf331f35d4efc3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dba0e56a0516d4944b2f4fd3e5f77f1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7044,7 +7044,7 @@ MonoBehaviour:
   death: 0
   zombie_damage: 10
   atack_time: 0
-  boom_radius: 2
+  boom_radius: 1
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 62262125}
   zombie_hp: {fileID: 1104943820}

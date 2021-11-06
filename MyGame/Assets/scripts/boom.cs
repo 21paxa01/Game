@@ -9,6 +9,7 @@ public class boom : MonoBehaviour
     public GameObject BOOM;
     public  float test;
     private wall script;
+    public float boom_damage;
     private zombie_hp script_w;
     void Start()
     {
@@ -32,7 +33,10 @@ public class boom : MonoBehaviour
         script_w = zomb.gameObject.GetComponent<zombie_hp>();
         if (script.HP > script.hp)
         {
-            script_w.hp++;
+            if (script_w.hp + boom_damage > script_w.HP)
+                script_w.hp = script_w.HP;
+            else
+                script_w.hp+=boom_damage;
             script_w.fill = 1 - script_w.hp / script_w.HP;
         }        
     }
