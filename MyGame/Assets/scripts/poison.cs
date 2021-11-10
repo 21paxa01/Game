@@ -11,6 +11,7 @@ public class poison : MonoBehaviour
     public static bool pois;
     public bool test;
     private bool debaff;
+    public Text text;
     public GameObject head;
     void Start()
     {
@@ -19,6 +20,7 @@ public class poison : MonoBehaviour
 
     void Update()
     {
+        text.text = a.ToString();
         if (pois == true)
         {
             a = 10;

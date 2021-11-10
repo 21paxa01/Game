@@ -6,7 +6,6 @@ public class money : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int test = 0;
-    public Transform bill;
     public Animator anim;
     public Collider2D coll;
     void Start()
@@ -21,8 +20,7 @@ public class money : MonoBehaviour
         {
             Drop();
         }
-       // if (bill.position.x == transform.position.x)
-        //    rb.velocity = new Vector2(0f, rb.velocity.y) ;
+       // Magnet();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,8 +29,7 @@ public class money : MonoBehaviour
         {
             coll.isTrigger = true;
             test++;
-           // rb.gravityScale = 0.1f;
-            if (test > 1)
+            if (test > 0)
             {
                 Destroy(gameObject);
                 MoneyCount.mon++;
@@ -52,5 +49,37 @@ public class money : MonoBehaviour
             testik++;
         }
     }
+    public float hor_speed;
+    public float ver_speed;
+    public bool t1;
+    public bool t2;
+    public bool t3;
+    public bool t4;
+    public float test1;
+    public float test2;
+   /* void Magnet()
+    {
+        if (transform.position.x < bill.hor_position)
+        {
+            rb.velocity = new Vector2(hor_speed, rb.velocity.y);
+            t1 = true;
+        }
+        if (transform.position.x > bill.hor_position)
+        {
+            t2 = true;
+            rb.velocity = new Vector2(-hor_speed, rb.velocity.y);
+        }
+
+        if (transform.position.y > bill.ver_position+0.2f)
+        {
+            t3 = true;
+            rb.velocity = new Vector2(rb.velocity.x, -ver_speed);
+        }
+        if (transform.position.y < bill.ver_position+0.2f)
+        {
+            t4 = true;
+            rb.velocity = new Vector2(rb.velocity.x, ver_speed);
+        }       
+    }*/
     
 }

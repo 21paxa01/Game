@@ -40,7 +40,7 @@ public class bibo  : MonoBehaviour
     void Update()
     {
         hp = script.hp;
-        distToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        distToPlayer = Vector2.Distance(transform.position+new Vector3(dist,0f,0f), player.transform.position);
         if (distToPlayer <= dist_to_player)
         {
             physik.velocity = new Vector2(0, 0);
@@ -148,9 +148,14 @@ public class bibo  : MonoBehaviour
 
         }
     }
+    private float dist=0f;
     void Die()
     {
 
+        if (player.transform.position.x > transform.position.x)
+            dist = -0.38f;
+        else
+            dist = 0.38f;
         death = true;
         Instantiate(money, money_spawn.position, transform.rotation);
         zombie_damage = 0;

@@ -27,6 +27,9 @@ public class bill : MonoBehaviour
     public Image bar;
     public Image back;
     public float fill;
+
+    public static float ver_position;
+    public static float hor_position;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,6 +47,8 @@ public class bill : MonoBehaviour
     public bool test;
     void Update()
     {
+        ver_position = transform.position.y;
+        hor_position = transform.position.x;
         bar.fillAmount = fill;
         fill =HP / hp;
         if (fill <= 0)
