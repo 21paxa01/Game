@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class kettle : MonoBehaviour
 {
-    public Transform Bill;
+    public GameObject Bill;
     private float distToPlayer;
     public Animator anim;
     public float test;
     void Start()
     {
-       anim = GetComponent<Animator>();
+        Bill = GameObject.Find("Bill");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

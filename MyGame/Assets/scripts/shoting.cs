@@ -65,9 +65,12 @@ public class shoting : MonoBehaviour
     public int Cons_change;
     public void Change()
     {
-        change ++;
-        if (change == 4)
-            change = 1;
+        if (ReloaD == false)
+        {
+            change++;
+            if (change == 4)
+                change = 1;
+        }
     }
     public void Shot()
     {
@@ -85,7 +88,7 @@ public class shoting : MonoBehaviour
     public int Reload;
     private int reload = 0;
     public static float ReloadTime=3f;
-    public  bool ReloaD;
+    public static bool ReloaD;
     IEnumerator FireDelay()
     {
         while (shot==true)

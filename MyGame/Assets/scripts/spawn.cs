@@ -11,11 +11,14 @@ public class spawn : MonoBehaviour
     public GameObject karl_zombie;
     public GameObject lara_zombie;
     public GameObject martin_zombie;
+    public GameObject mike_zombie;
     private GameObject zombie;
     public Transform spawn_point_1;
     private Transform spawn_point;
     public Transform spawn_point_2;
 
+    public int wave = 1;
+    public Text text;
     private float fill;
     public Image bar;
 
@@ -24,20 +27,32 @@ public class spawn : MonoBehaviour
     Coroutine spawn_zombie;
     public float spawn_time;
     public int i;
+    public GameObject WAVE;
     
     void Start()
     {
+        WAVE = GameObject.Find("Wave");
+        bar = GameObject.Find("zomb_wave_in").GetComponent<Image>();
+        text = GameObject.Find("Count").GetComponent<Text>();
+        WAVE.SetActive(false);
         fill = 0f;
+        //text = GetComponent<Text>();
     }
 
 
     void Update()
     {
         bar.fillAmount = fill;
+        text.text = wave.ToString();
         SpawnPoint();
         Zombies();
-       
+        if (start == true)
+        {
+            start = false;
+            StartCoroutine(Spawn());
+        }
     }
+    public static bool start;
     public void spawn_zombies()
     {
         StartCoroutine(Wave());
@@ -70,7 +85,7 @@ public class spawn : MonoBehaviour
     }
     void Zombies()
     {
-        int zombie_value = Random.Range(0, 125);
+        int zombie_value = Random.Range(0, 150);
         if (zombie_value<10)
         {
             zombie = bo_zombie;
@@ -92,6 +107,10 @@ public class spawn : MonoBehaviour
         {
             zombie = martin_zombie;
         }
+        /*else if (zombie_value >= 88 && zombie_value < 113)
+        {
+            zombie = mike_zombie;
+        }*/
         else
         {
             zombie = default_zombie;
@@ -104,6 +123,20 @@ public class spawn : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
             fill += (0.01f / wave_time);
+            if (fill >= 1)
+            {
+                fill = 0f;
+                a = 1;
+            }
         }
+
+        WavE();
+    }
+    void WavE()
+    {
+        a = 0;
+        wave++;
+        spawn_time -= 0.4f;
+        StartCoroutine(Wave());
     }
 }

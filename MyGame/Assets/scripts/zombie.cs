@@ -14,7 +14,7 @@ public class zombie : MonoBehaviour
     private float zomb_damage;
     public float atack_time;
     private float at_time = 0f;
-    private float distToPlayer;
+    public float distToPlayer;
     Coroutine damage;
 
 
@@ -29,6 +29,7 @@ public class zombie : MonoBehaviour
     void Start()
     {
         physik = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Bill");
         anim = GetComponent<Animator>();
         zomb_damage = zombie_damage;
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();

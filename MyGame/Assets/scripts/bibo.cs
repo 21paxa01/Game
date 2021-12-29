@@ -31,6 +31,7 @@ public class bibo  : MonoBehaviour
     void Start()
     {
         physik = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Bill");
         anim = GetComponent<Animator>();
         zomb_damage = zombie_damage;
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();

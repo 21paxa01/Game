@@ -5,16 +5,17 @@ using UnityEngine;
 public class luk : MonoBehaviour
 {
     public SpriteRenderer sp;
-    public Transform bill;
+    public GameObject bill;
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
+        bill = GameObject.Find("Bill");
     }
 
     
     void Update()
     {
-     if (bill.position.y > -3f)
+     if (bill.transform.position.y > -3f)
             sp.sortingOrder = 4;
     }
 }

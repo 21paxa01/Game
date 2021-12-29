@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4387532520690251646}
   - component: {fileID: 7194025364869933136}
   - component: {fileID: 8364607799297400904}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,14 +123,6 @@ MonoBehaviour:
   test: 0
   anim: {fileID: 0}
   coll: {fileID: 8364607799297400904}
-  hor_speed: 5
-  ver_speed: 5
-  t1: 0
-  t2: 0
-  t3: 0
-  t4: 0
-  test1: 0
-  test2: 0
 --- !u!95 &7194025364869933136
 Animator:
   serializedVersion: 3

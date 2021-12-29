@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 3ad6fbf103f15a44e8468c713fab113c
+guid: 55cea7f72f9757745bb0aebec4888a6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -384046796511940294
-    second: kettle_new_p_0
+      213: 6008505883653580326
+    second: kettle_new_p 1_0
   - first:
-      213: -4826525669306106325
-    second: kettle_new_p_1
+      213: 20481417765567987
+    second: kettle_new_p 1_1
   - first:
-      213: 7639260092402444304
-    second: kettle_new_p_2
+      213: -7653938967505955887
+    second: kettle_new_p 1_2
   - first:
-      213: 90854073917695502
-    second: kettle_new_p_3
+      213: -1951076239550105948
+    second: kettle_new_p 1_3
   - first:
-      213: -4514433900292320436
-    second: kettle_new_p_4
+      213: 5386540581564843493
+    second: kettle_new_p 1_4
   - first:
-      213: -6755622219875294692
-    second: kettle_new_p_5
+      213: -2361630226507343286
+    second: kettle_new_p 1_5
   - first:
-      213: -7652573125025877455
-    second: kettle_new_p_6
+      213: -5734442018379802225
+    second: kettle_new_p 1_6
   - first:
-      213: 8240829142648081337
-    second: kettle_new_p_7
+      213: -559205722736454128
+    second: kettle_new_p 1_7
   - first:
-      213: 7852690753392374799
-    second: kettle_new_p_8
+      213: -4308442360217733200
+    second: kettle_new_p 1_8
   - first:
-      213: -7719516375891576830
-    second: kettle_new_p_9
+      213: 2230315206867600933
+    second: kettle_new_p 1_9
   - first:
-      213: -1435046814833316826
-    second: kettle_new_p_10
+      213: 1716859617326178634
+    second: kettle_new_p 1_10
   - first:
-      213: -1291492516513931624
-    second: kettle_new_p_11
+      213: -5284197064272734402
+    second: kettle_new_p 1_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kettle_new_p_0
+      name: kettle_new_p 1_0
       rect:
         serializedVersion: 2
         x: 11
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3177cc29779baaf0800000000000000
-      internalID: -384046796511940294
+      spriteID: 626240a4440826350800000000000000
+      internalID: 6008505883653580326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_1
+      name: kettle_new_p 1_1
       rect:
         serializedVersion: 2
         x: 48
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2e74bdc97cb40db0800000000000000
-      internalID: -4826525669306106325
+      spriteID: 3fdb96eadb3c84000800000000000000
+      internalID: 20481417765567987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_2
+      name: kettle_new_p 1_2
       rect:
         serializedVersion: 2
         x: 84
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 018277a549a140a60800000000000000
-      internalID: 7639260092402444304
+      spriteID: 1d39945bf0fb7c590800000000000000
+      internalID: -7653938967505955887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_3
+      name: kettle_new_p 1_3
       rect:
         serializedVersion: 2
         x: 120
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e06e2428c47c24100800000000000000
-      internalID: 90854073917695502
+      spriteID: 4a639e35f726ce4e0800000000000000
+      internalID: -1951076239550105948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_4
+      name: kettle_new_p 1_4
       rect:
         serializedVersion: 2
         x: 164
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c43581349428951c0800000000000000
-      internalID: -4514433900292320436
+      spriteID: 5e5066cae16d0ca40800000000000000
+      internalID: 5386540581564843493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_5
+      name: kettle_new_p 1_5
       rect:
         serializedVersion: 2
         x: 213
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c12e89342653f32a0800000000000000
-      internalID: -6755622219875294692
+      spriteID: a4a543a42ddc93fd0800000000000000
+      internalID: -2361630226507343286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_6
+      name: kettle_new_p 1_6
       rect:
         serializedVersion: 2
         x: 257
@@ -279,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 132b121b9499cc590800000000000000
-      internalID: -7652573125025877455
+      spriteID: f89d56ddd5b2b60b0800000000000000
+      internalID: -5734442018379802225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_7
+      name: kettle_new_p 1_7
       rect:
         serializedVersion: 2
         x: 306
         y: 8
         width: 34
-        height: 36
+        height: 38
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbc936817e4d5270800000000000000
-      internalID: 8240829142648081337
+      spriteID: 0169de3ab5d4d38f0800000000000000
+      internalID: -559205722736454128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_8
+      name: kettle_new_p 1_8
       rect:
         serializedVersion: 2
         x: 355
         y: 8
         width: 34
-        height: 39
+        height: 40
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0472f682ac5afc60800000000000000
-      internalID: 7852690753392374799
+      spriteID: 0b7f9ff10865534c0800000000000000
+      internalID: -4308442360217733200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_9
+      name: kettle_new_p 1_9
       rect:
         serializedVersion: 2
         x: 405
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 208fb2181c4ced490800000000000000
-      internalID: -7719516375891576830
+      spriteID: 526ce7a2ddba3fe10800000000000000
+      internalID: 2230315206867600933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_10
+      name: kettle_new_p 1_10
       rect:
         serializedVersion: 2
         x: 461
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62cedcd6680b51ce0800000000000000
-      internalID: -1435046814833316826
+      spriteID: a41a0f3c9b283d710800000000000000
+      internalID: 1716859617326178634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kettle_new_p_11
+      name: kettle_new_p 1_11
       rect:
         serializedVersion: 2
         x: 509
@@ -384,8 +384,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89e9c1b1662b31ee0800000000000000
-      internalID: -1291492516513931624
+      spriteID: e379cd454c2caa6b0800000000000000
+      internalID: -5284197064272734402
       vertices: []
       indices: 
       edges: []

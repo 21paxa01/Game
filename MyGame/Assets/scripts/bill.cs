@@ -13,14 +13,18 @@ public class bill : MonoBehaviour
     private bool jump = false;
     public float hp;
     public static float HP;
+    public GameObject Wave;
 
     public GameObject weapons;
+    public GameObject torg;
     public GameObject rapt_menu;
     public GameObject shot_joustick;
     public GameObject change_button;
 
     public AudioSource stairs_sound;
     public GameObject stairs;
+    public GameObject shop;
+    public GameObject home;
     public bool upStairs = false;
 
     public Collider2D coll;
@@ -60,9 +64,26 @@ public class bill : MonoBehaviour
         {
             Walk();
             Reflect();
-            test = faceRight;
             Jump();
-            CheckingGround();
+            if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y== -4.981264f)
+                shop.SetActive(true);
+            else
+                shop.SetActive(false);
+            if (transform.position.x > 4.1f && transform.position.x < 4.45f && transform.position.y <-6f && torgovets.shop == false)
+                 torg.SetActive(true);
+            else
+                torg.SetActive(false);
+            if (transform.position.x > 6.2f && transform.position.x < 6.9f && transform.position.y < -6f)
+            {
+                door.open = true;
+                home.SetActive(true);
+            }
+            else
+            {
+                door.open = false;
+                home.SetActive(false);
+            }
+                CheckingGround();
             Stairs();
         }
        
@@ -112,7 +133,14 @@ public class bill : MonoBehaviour
     public static bool faceRight = true;
     void Reflect()
     {
-        moveVector_1.x = joystick_shot.Horizontal;
+        if (transform.position.y > -4f)
+        {
+            moveVector_1.x = joystick_shot.Horizontal;
+        }
+        else
+        {
+            moveVector_1.x = joystick_move.Horizontal;
+        }
         if (moveVector_1.x>0 && !faceRight )
         {
             transform.Rotate(0f, 180f, 0f);
@@ -162,7 +190,7 @@ public class bill : MonoBehaviour
     }
     void Stairs()
     {
-        if (transform.position.y < -3f)
+        if (transform.position.y < -3f && transform.position.y > -6f)
         {
             if (transform.position.x >= 5.959f && transform.position.x <= 6.16f)
             {
@@ -187,7 +215,7 @@ public class bill : MonoBehaviour
             rb.velocity = new Vector2(speed * 1.5f, speed * 3.5f);
             
         }
-        else
+        else if(transform.position.y > -3f)
         {
             change_button.SetActive(true);
             weapons.SetActive(true);
@@ -199,6 +227,7 @@ public class bill : MonoBehaviour
             stairs.SetActive(false);
             coll.isTrigger = false;
             upStairs = false;
+            Wave.SetActive(true);
         }
         
         
@@ -214,6 +243,7 @@ public class bill : MonoBehaviour
     private bool off;
     public void Button_off()
     {
+        spawn.start = true;
         off = true;
     }
     public AudioSource shag;
@@ -235,5 +265,20 @@ public class bill : MonoBehaviour
             yield return new WaitForSeconds(0.8f);
         }
     }
+    private void OnColligionEnter2D(Collider2D other)
+    {
+        
+        if (other.name == "wall(Clone)" )
+        {
+            rb.velocity = new Vector2(moveVector.x * -2*speed, rb.velocity.y);
+            test = true;
+        }
+        
 
+    }
+    public void Open_Shop()
+    {
+        torgovets.shop = true;
+        transform.position =new Vector3 (4.22f, transform.position.y, transform.position.z);
+    }
 }

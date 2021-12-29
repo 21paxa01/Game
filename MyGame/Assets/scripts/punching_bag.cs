@@ -6,13 +6,14 @@ public class punching_bag : MonoBehaviour
 {
     public Animator anim;
     public float distToPlayer;
-    public Transform player;
+    public GameObject player;
     public bool move;
     public int test;
     private int a = 0;
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.Find("Bill");
     }
 
 

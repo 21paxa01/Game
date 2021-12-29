@@ -15,7 +15,11 @@ public class poison : MonoBehaviour
     public GameObject head;
     void Start()
     {
-        poison_icon.SetActive(false);
+        head = GameObject.Find("head_poison");
+        poison_icon= GameObject.Find("poison_icon");
+        text = GameObject.Find("poison_time").GetComponent<Text>();
+        //poison_icon.SetActive(false);
+        //head.SetActive(false);
     }
 
     void Update()

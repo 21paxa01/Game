@@ -30,7 +30,7 @@ public class ammo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "road u"||other.name=="wall(Clone)")
+        if (other.name == "room"||other.name=="wall(Clone)"|| other.name == "Shield")
         {
             Destroy(gameObject);
         }

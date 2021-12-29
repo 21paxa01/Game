@@ -19,11 +19,12 @@ public class death : MonoBehaviour
     public void Restart()
     {
         pause_sound.Play();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void Death()
     {
         death_menu.SetActive(true);
+        GameMusic.stop = true;
 
     }
 }

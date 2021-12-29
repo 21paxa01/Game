@@ -8,34 +8,65 @@ public class ZoomCamera : MonoBehaviour
     public float zoomMin;
     public float zoomMax;
     public CinemachineVirtualCamera cum;
+    public GameObject camObj;
+    public CinemachineFreeLook freeLook;
+    public CinemachineComposer comp;
     public Transform bill;
+    bool jostick_move;
+    private int a=0;
+    bool joustick_shot;
+    public Transform shop_cum;
+    public static float zoom;
     void Start()
     {
-       cum= GetComponent<CinemachineVirtualCamera>();
-       cum.m_Lens.OrthographicSize = 1f;
+        cum= GetComponent<CinemachineVirtualCamera>();
+        zoom = 0.7f;
     }
 
     void Update()
     {
-        if (Input.touchCount == 2)
+        cum.m_Lens.OrthographicSize = zoom;
+        if (bill.position.y > -3.1f)
         {
-            Touch touchZero = Input.GetTouch(0);
-            Touch touchOne = Input.GetTouch(1);
+            if(a==0)
+                zoom = 2f;
+            a = 1;
+            if (Input.touchCount == 2)
+            {
+                Touch touchZero = Input.GetTouch(0);
+                Touch touchOne = Input.GetTouch(1);
 
-            Vector2 touchZeroLasPos = touchZero.position - touchZero.deltaPosition;
-            Vector2 touchOneLasPos = touchOne.position - touchOne.deltaPosition;
+                Vector2 touchZeroLasPos = touchZero.position - touchZero.deltaPosition;
+                Vector2 touchOneLasPos = touchOne.position - touchOne.deltaPosition;
 
-            float distTouch = (touchZeroLasPos - touchOneLasPos).magnitude;
-            float currentDistTouch = (touchZero.position - touchOne.position).magnitude;
+                float distTouch = (touchZeroLasPos - touchOneLasPos).magnitude;
+                float currentDistTouch = (touchZero.position - touchOne.position).magnitude;
 
-            float difference = currentDistTouch - distTouch;
-            //zoom(difference * 0.01f);
+                float difference = currentDistTouch - distTouch;
+                if (jostick_move == false && joustick_shot == false)
+                    Zoom(difference * 0.01f);
+            }
         }
-        if (bill.position.y>-2.9f)
-            cum.m_Lens.OrthographicSize = 2f;
+        
     }
-    void zoom(float increment)
+    void Zoom(float increment)
     {
-        cum.m_Lens.OrthographicSize = Mathf.Clamp(cum.m_Lens.OrthographicSize - increment, zoomMin, zoomMax);
+        zoom = Mathf.Clamp(cum.m_Lens.OrthographicSize - increment, zoomMin, zoomMax);
+    }
+    public void Move_down()
+    {
+        jostick_move = true;
+    }
+    public void Move_up()
+    {
+        jostick_move = false;
+    }
+    public void Shot_down()
+    {
+        joustick_shot = true;
+    }
+    public void Shot_up()
+    {
+        joustick_shot = false;
     }
 }
