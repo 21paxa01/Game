@@ -27,6 +27,6 @@ public class LoadScene : MonoBehaviour
     public void Scene()
     {
         a = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 }

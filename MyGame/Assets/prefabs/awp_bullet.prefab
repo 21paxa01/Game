@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 627909179883126748}
   - component: {fileID: 6555773507877474987}
   - component: {fileID: -605516393398521559}
+  - component: {fileID: 310895012986771041}
   m_Layer: 0
   m_Name: awp_bullet
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -3260080342988079579, guid: 9ddeeec33fdcc4043a691021ba44dea7, type: 3}
+  m_Sprite: {fileID: 1825006555590261244, guid: 3b47838f73b6bb9438bfefbf2f44d254, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +102,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0006708782, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.06, y: 0.02}
+    pivot: {x: 0.472131, y: 0.5475206}
+    oldSize: {x: 0.38, y: 0.24}
     newSize: {x: 0.06, y: 0.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -150,3 +151,22 @@ MonoBehaviour:
   death: 0
   anim: {fileID: 0}
   ammo_damage: 2
+--- !u!95 &310895012986771041
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520252457155332577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e2ef4119a27d9a42ba3ba6400f8e2db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

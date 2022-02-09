@@ -33,6 +33,7 @@ public class Load_Shop : MonoBehaviour
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);
+        ShopCamera.y = 0.2f;
         bill.position = new Vector3(6.72f, -11.56f, bill.position.z);
         yield return new WaitForSeconds(1f);
         perechod.SetActive(false);   
@@ -45,6 +46,7 @@ public class Load_Shop : MonoBehaviour
         //poison_icon.SetActive(true);
         wave.SetActive(true);
         SceneManager.LoadScene(1);
+        ShopCamera.y = 0f;
         bill.position = new Vector3(4.2f, -4.98126411f, 0f);
         yield return new WaitForSeconds(1f);
         perechod.SetActive(false);

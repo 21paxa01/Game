@@ -65,7 +65,7 @@ public class bill : MonoBehaviour
             Walk();
             Reflect();
             Jump();
-            if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y== -4.981264f)
+            if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y>-5f&& transform.position.y <-4f)
                 shop.SetActive(true);
             else
                 shop.SetActive(false);
@@ -91,7 +91,7 @@ public class bill : MonoBehaviour
     
     public Vector2 moveVector;
     public Vector2 moveVector_1;
-    public float speed = 3f;
+    public float speed;
     private bool right = false;
     private bool left = false;
     void Walk()
@@ -180,11 +180,11 @@ public class bill : MonoBehaviour
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
         if (!onGround)
         {
-            speed = 1.5f;
+            speed = 1.75f;
         }
         else
         {
-            speed = 1f;
+            speed = 1.5f;
         }
         anim.SetBool("onGround", onGround);
     }
@@ -217,6 +217,7 @@ public class bill : MonoBehaviour
         }
         else if(transform.position.y > -3f)
         {
+            ZoomCamera.zoom = 2f;
             change_button.SetActive(true);
             weapons.SetActive(true);
             shot_joustick.SetActive(true);
@@ -280,5 +281,28 @@ public class bill : MonoBehaviour
     {
         torgovets.shop = true;
         transform.position =new Vector3 (4.22f, transform.position.y, transform.position.z);
+    }
+    public void REspawn()
+    {
+        StartCoroutine(respawn());
+    }
+    public GameObject perechod;
+    IEnumerator respawn()
+    {
+        perechod.SetActive(true);
+        yield  return new WaitForSeconds(1f);
+        off = false;
+        wave_img.victory = false;
+        Wave.SetActive(false);
+        jump = false;
+        change_button.SetActive(false);
+        weapons.SetActive(false);
+        shot_joustick.SetActive(false);
+        rapt_menu.SetActive(false);
+        ZoomCamera.zoom = 0.7f;
+        anim.SetBool("death", false);
+        transform.position = new Vector3(5.08f, -4.98126411f, 0f);
+        yield return new WaitForSeconds(1f);
+        perechod.SetActive(false);
     }
 }

@@ -28,9 +28,7 @@ public class ZoomCamera : MonoBehaviour
         cum.m_Lens.OrthographicSize = zoom;
         if (bill.position.y > -3.1f)
         {
-            if(a==0)
-                zoom = 2f;
-            a = 1;
+            
             if (Input.touchCount == 2)
             {
                 Touch touchZero = Input.GetTouch(0);

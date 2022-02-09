@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a9dc732a98e816144b5cedc86a4b98a0
+guid: 0d26b0f4ae434c54faea55b10c26b742
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1842813182831488362
-    second: final_store(1)_0
+      213: 7666146930540430062
+    second: capsule_3_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final_store(1)_0
+      name: capsule_3_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 35
-        width: 437
-        height: 138
+        x: 0
+        y: 0
+        width: 48
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6921ce18c230d66e0800000000000000
-      internalID: -1842813182831488362
+      spriteID: ee240de2400a36a60800000000000000
+      internalID: 7666146930540430062
       vertices: []
       indices: 
       edges: []

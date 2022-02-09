@@ -13,6 +13,7 @@ public class shoting : MonoBehaviour
     public GameObject zombie;
 
     public GameObject ammo;
+    public GameObject sparks;
     public Transform shotDir;
     public Joystick joystick;
 
@@ -99,6 +100,7 @@ public class shoting : MonoBehaviour
                 offset = Random.Range(-recoil, recoil);
                 float rotateZ = Mathf.Atan2(joystick.Vertical, joystick.Horizontal) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offset);
+                Instantiate(sparks, shotDir.position, transform.rotation);
                 Instantiate(ammo, shotDir.position, transform.rotation);
                 shot_sound.Play();
                 yield return new WaitForSeconds(startTime);

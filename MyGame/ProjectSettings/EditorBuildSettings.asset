@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 9d11caa7d6e903b4f9e2956039a23873
+  - enabled: 1
+    path: Assets/Scenes/NoDestroy.unity
+    guid: 490a062f0fdd9484e8885541ff85c188
   m_configObjects: {}

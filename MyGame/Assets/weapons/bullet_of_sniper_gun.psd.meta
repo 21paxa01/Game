@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9f3e37edee7ed4749a3bae33ab7c9272
+guid: 3b47838f73b6bb9438bfefbf2f44d254
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7390684477576429313
-    second: final_store_0
+      213: 602200807072575884
+    second: bullet_of_sniper_gun_0
+  - first:
+      213: -8228774168043193877
+    second: bullet_of_sniper_gun_1
+  - first:
+      213: 3000410793813949066
+    second: bullet_of_sniper_gun_2
+  - first:
+      213: 1825006555590261244
+    second: bullet_of_sniper_gun_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,22 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final_store_0
+      name: bullet_of_sniper_gun_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 23
-        width: 517
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 8
+        y: 10
+        width: 11
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff0401b00a30f6990800000000000000
-      internalID: -7390684477576429313
+      spriteID: c81b30581727b5800800000000000000
+      internalID: 602200807072575884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_of_sniper_gun_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 10
+        width: 11
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9ffd8fd758dcd80800000000000000
+      internalID: -8228774168043193877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_of_sniper_gun_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 9
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a378958b993a920800000000000000
+      internalID: 3000410793813949066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_of_sniper_gun_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 38
+        height: 24
+      alignment: 9
+      pivot: {x: 0.472131, y: 0.5475206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf977b20bc9b35910800000000000000
+      internalID: 1825006555590261244
       vertices: []
       indices: 
       edges: []

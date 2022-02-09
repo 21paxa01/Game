@@ -10,6 +10,7 @@ public class mike : MonoBehaviour
     public Animator anim;
     public bool fight;
     public bool death;
+    public bool stop=false;
     public float zombie_damage;
     private float zomb_damage;
     public float atack_time;
@@ -40,39 +41,42 @@ public class mike : MonoBehaviour
 
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if (distToPlayer <= dist_to_player)
+        if (stop == false)
         {
-            physik.velocity = new Vector2(0, 0);
-            fight = true;
-            dam = 0;
-            if (test == 100f)
+            if (distToPlayer <= dist_to_player)
             {
-                damage = StartCoroutine(BillDamage());
+                physik.velocity = new Vector2(0, 0);
+                fight = true;
+                dam = 0;
+                if (test == 100f)
+                {
+                    damage = StartCoroutine(BillDamage());
+                }
+
+
             }
+            if (distToPlayer > dist_to_player && WALL == false)
+            {
+                fight = false;
+            }
+            anim.SetBool("fight", fight);
 
 
-        }
-        if (distToPlayer > dist_to_player && WALL == false)
-        {
-            fight = false;
-        }
-        anim.SetBool("fight", fight);
-
-
-        if (player.transform.position.x < transform.position.x && distToPlayer > dist_to_player && death == false)
-        {
-            physik.velocity = new Vector2(-speed, 0);
-            transform.localScale = new Vector2(-1, 1);
-        }
-        if (player.transform.position.x > transform.position.x && distToPlayer > dist_to_player && death == false)
-        {
-            physik.velocity = new Vector2(+speed, 0);
-            transform.localScale = new Vector2(1, 1);
-        }
-        if (death == true || WALL == true)
-        {
-            physik.velocity = new Vector2(0, 0);
-            fight = true;
+            if (player.transform.position.x < transform.position.x && distToPlayer > dist_to_player && death == false)
+            {
+                physik.velocity = new Vector2(-speed, 0);
+                transform.localScale = new Vector2(-1, 1);
+            }
+            if (player.transform.position.x > transform.position.x && distToPlayer > dist_to_player && death == false)
+            {
+                physik.velocity = new Vector2(+speed, 0);
+                transform.localScale = new Vector2(1, 1);
+            }
+            if (death == true || WALL == true)
+            {
+                physik.velocity = new Vector2(0, 0);
+                fight = true;
+            }
         }
         if (hp == HP)
         {
@@ -120,16 +124,19 @@ public class mike : MonoBehaviour
             if (distToPlayer <= dist_to_player)
             {
                 yield return new WaitForSeconds(0.4f);
-                if(player.transform.position.x > transform.position.x)
-                    transform.Translate(Vector2.right * speed*7 * Time.deltaTime);
+                if (player.transform.position.x > transform.position.x)
+                    physik.velocity = new Vector2(speed*7, 0f);
                 else
-                    transform.Translate(Vector2.right * -speed*7 * Time.deltaTime);
-                yield return new WaitForSeconds(12.5f);
+                    physik.velocity = new Vector2(-speed*7, 0f);
+                yield return new WaitForSeconds(0.1f);
+                stop = true;
+                fight = false;
                 physik.velocity = new Vector2(0, 0f);
-                yield return new WaitForSeconds(115f);
+                yield return new WaitForSeconds(4f);
+                stop = false;
 
             }
-            else
+            else if(stop==false)
             {
                 dam = 1;
                 test = 100f;

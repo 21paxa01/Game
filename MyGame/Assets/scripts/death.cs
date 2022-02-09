@@ -7,6 +7,7 @@ public class death : MonoBehaviour
 {
     public GameObject death_menu;
     public AudioSource pause_sound;
+    public GameObject restart;
 
     // Update is called once per frame
     void Update()
@@ -16,10 +17,17 @@ public class death : MonoBehaviour
             Death();
         }
     }
+
     public void Restart()
     {
         pause_sound.Play();
+        restart.SetActive(true);
+        bill.HP = 100f;
+        death_menu.SetActive(false);
         SceneManager.LoadScene(1);
+        spawn.wave++;
+        spawn.a = 0;
+        spawn.wave_time += 6;
     }
     public void Death()
     {
