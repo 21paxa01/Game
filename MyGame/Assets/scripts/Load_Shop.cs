@@ -10,6 +10,12 @@ public class Load_Shop : MonoBehaviour
     public GameObject poison_head;
     public GameObject poison_icon;
     public GameObject wave;
+    public GameObject RE;
+    private GameObject choise_menu;
+    public GameObject choise_home;
+    public GameObject choise_shop;
+    public GameObject choise_lab;
+    public string scene_name;
     void Start()
     {
 
@@ -17,19 +23,22 @@ public class Load_Shop : MonoBehaviour
 
     void Update()
     {
-        
+        scene_name = SceneManager.GetActiveScene().name;
+        if (scene_name == "SampleScene")
+            choise_menu = choise_home;
+        else if (scene_name == "Shop")
+            choise_menu = choise_shop;
+        else if (scene_name == "lab")
+            choise_menu = choise_lab;
     }
     public void LoadShop()
     {
         StartCoroutine(PerechodToShop());
         NoDestroy.destroy = true;
     }
-    public void LoadHome()
-    {
-        StartCoroutine(PerechodToHome());
-    }
     IEnumerator PerechodToShop()
     {
+        choise_menu.SetActive(false);
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);
@@ -37,18 +46,5 @@ public class Load_Shop : MonoBehaviour
         bill.position = new Vector3(6.72f, -11.56f, bill.position.z);
         yield return new WaitForSeconds(1f);
         perechod.SetActive(false);   
-    }
-    IEnumerator PerechodToHome()
-    {
-        perechod.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        //poison_head.SetActive(true);
-        //poison_icon.SetActive(true);
-        wave.SetActive(true);
-        SceneManager.LoadScene(1);
-        ShopCamera.y = 0f;
-        bill.position = new Vector3(4.2f, -4.98126411f, 0f);
-        yield return new WaitForSeconds(1f);
-        perechod.SetActive(false);
     }
 }

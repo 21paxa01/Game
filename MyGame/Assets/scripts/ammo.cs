@@ -12,6 +12,7 @@ public class ammo : MonoBehaviour
     private Rigidbody2D rb;
     private zombie_hp script;
     public int ammo_damage;
+    public bool road;
     void Start()
     {
         Invoke("DestroyAmmo", destroyTime);
@@ -30,9 +31,13 @@ public class ammo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "room"||other.name=="wall(Clone)"|| other.name == "Shield")
+        if (other.name == "room" || other.name == "wall(Clone)" || other.name == "Shield")
         {
-            Destroy(gameObject);
+            if (road == true)
+            {
+                Destroy(gameObject);
+
+            }
         }
         if (other.CompareTag("zombie"))
         {
@@ -41,7 +46,9 @@ public class ammo : MonoBehaviour
             {
                 Destroy(gameObject);
                 if (script.hp + ammo_damage > script.HP)
+                {
                     script.hp = script.HP;
+                }
                 else
                     script.hp += ammo_damage;
                 script.fill = 1 - script.hp / script.HP;

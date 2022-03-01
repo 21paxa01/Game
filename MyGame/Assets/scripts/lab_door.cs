@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class door : MonoBehaviour
+public class lab_door : MonoBehaviour
 {
     public Animator anim_door;
-    public Transform bill;
-    public static bool open;
+    public static bool open_door;
     void Start()
     {
         anim_door = GetComponent<Animator>();
@@ -15,15 +14,17 @@ public class door : MonoBehaviour
 
     void Update()
     {
-        if (open == true) {
+        if (open_door == true)
+        {
             anim_door.SetBool("off", false);
             anim_door.SetBool("on", true);
         }
-        else {
+        else
+        {
             anim_door.SetBool("on", false);
             anim_door.SetBool("off", true);
         }
     }
 
-    
+
 }

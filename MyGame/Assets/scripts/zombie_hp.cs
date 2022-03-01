@@ -34,6 +34,7 @@ public class zombie_hp : MonoBehaviour
     IEnumerator Die()
     {
         death = true;
+        spawn.zombie_kol--;
         anim.SetBool("death", death);
         Destroy(back);
         yield return new WaitForSeconds(death_time);

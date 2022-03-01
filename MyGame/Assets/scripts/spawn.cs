@@ -17,8 +17,9 @@ public class spawn : MonoBehaviour
     private Transform spawn_point;
     public Transform spawn_point_2;
     public GameObject restart;
+    public RectTransform trans;
 
-    public static int wave=1;
+    public static int wave = 1;
     public Text text;
     private float fill;
     public Image bar;
@@ -26,40 +27,45 @@ public class spawn : MonoBehaviour
     private bill script;
     public GameObject death;
     private death scr;
-
+    private int[] zombie_chance;
+    public static int zombie_kol;
+    private GameObject[] zombie_arr;
+    private int l=2;
 
     Coroutine spawn_zombie;
     public float spawn_time;
     public int i;
     public GameObject WAVE;
     public GameObject bill_icon;
+    public int test;
     
     void Start()
     {
+        ChangeChance();
+        zombie_kol = 0;
         WAVE = GameObject.Find("Wave");
         bill = GameObject.Find("Bill");
-        restart= GameObject.Find("RE");
-        restart.SetActive(false);
-        //bill_icon = GameObject.Find("bill");
-        //bill_icon.transform.position = new Vector3(4.97f, -2.1709f, 90f);
+        trans= GameObject.Find("bill").GetComponent<RectTransform>();
         death = GameObject.Find("Canvas");
         scr= death.gameObject.GetComponent<death>();
         bar = GameObject.Find("zomb_wave_top").GetComponent<Image>();
         text = GameObject.Find("Count").GetComponent<Text>();
-        WAVE.SetActive(false);
         fill = 0f;
         script = bill.gameObject.GetComponent<bill>();
+        restart = GameObject.Find("RE");
+        restart.SetActive(false);
+        WAVE.SetActive(false);
         //text = GetComponent<Text>();
     }
 
 
     void Update()
     {
+        test = zombie_kol;
         bar.fillAmount = fill;
         text.text = wave.ToString();
         SpawnPoint();
         Zombies();
-        //bill_icon.transform.position = new Vector3(5.986f + 3.42f*fill, -0.273f, 90f) ;
         if (start == true)
         {
             start = false;
@@ -81,6 +87,7 @@ public class spawn : MonoBehaviour
         while (a<1)
         {
             Instantiate(zombie,spawn_point.position,transform.rotation);
+            zombie_kol++;
             yield return new WaitForSeconds(spawn_time);
         }
 
@@ -101,34 +108,13 @@ public class spawn : MonoBehaviour
     void Zombies()
     {
         int zombie_value = Random.Range(0, 100);
-        /*if (zombie_value<10)
+        for(int j = 0; j < l; j++)
         {
-            zombie = bo_zombie;
-            
-        }
-        else if(zombie_value>=10&&zombie_value<35)
-        {
-            zombie =bibo_zombie;
-        }*/
-        if (zombie_value >= 0 && zombie_value < 32)
-        {
-            zombie = karl_zombie;
-        }/*
-        else if (zombie_value >= 50 && zombie_value <53)
-        {
-            zombie = lara_zombie;
-        }
-        else if (zombie_value >= 53 && zombie_value < 88)
-        {
-            zombie = martin_zombie;
-        }
-        else if (zombie_value >= 88 && zombie_value < 113000)
-        {
-            zombie = mike_zombie;
-        }*/
-        else
-        {
-            zombie = default_zombie;
+            if (zombie_value < zombie_chance[j])
+            {
+                zombie = zombie_arr[j];
+                break;
+            }
         }
     }
     public static int wave_time=120;
@@ -141,25 +127,44 @@ public class spawn : MonoBehaviour
             fill += (0.01f / wave_time);
             if (fill >= 1)
             {
-                fill = 0f;
+                fill = 1f;
                 a = 1;
             }
         }
         if (a == 1)
         {
             wave_img.victory = true;
-            restart.SetActive(true);
             StopCoroutine(Spawn());
         }
     }
-    void WavE()
+    void ChangeChance()
     {
-        a = 0;
-        wave++;
-        wave_time += 6;
-        //spawn_time -= 0.2f;
-        //StartCoroutine(Wave());
-        
+        if (wave == 1)
+        {
+            zombie_arr = new GameObject[2];
+            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
+            zombie_chance = new int[2];
+            zombie_chance[0] = 68;zombie_chance[1] = 100;
+        }
+        else if (wave == 2)
+        {
+            zombie_chance[0] = 62; zombie_chance[1] = 100;
+        }
+        else if (wave == 3)
+        {
+            zombie_chance[0] = 56; zombie_chance[1] = 100;
+        }
+        else if (wave == 4)
+        {
+            l = 3;
+            zombie_arr = new GameObject[3];
+            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2]=bibo_zombie;
+            zombie_chance = new int[3];
+            zombie_chance[0] = 50;zombie_chance[1]=90; zombie_chance[2] = 100;
+        }
+        else
+        {
+            zombie_chance[0] = 45; zombie_chance[1] = 80; zombie_chance[2] = 100;
+        }
     }
-    //karl=32%,41%,50%;
 }

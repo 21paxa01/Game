@@ -25,7 +25,7 @@ public class shoting : MonoBehaviour
     public bool faceRight = true;
     void Start()
     {
-        
+        stop = false;
     }
     void Update()
     {
@@ -62,34 +62,23 @@ public class shoting : MonoBehaviour
         
         
     }
-    public int change;
     public int Cons_change;
-    public void Change()
-    {
-        if (ReloaD == false)
-        {
-            change++;
-            if (change == 4)
-                change = 1;
-        }
-    }
+    public bool stop;
     public void Shot()
     {
         shot = true;
 
-        if (change == Cons_change&&ReloaD==false)
+        if (change_weapon.change == Cons_change&&ReloaD==false&&stop==false)
         {
-            i = 0;
             StartCoroutine(FireDelay());
         }
 
         
     }
-    public int i = 0;
     public int Reload;
     private int reload = 0;
     public static float ReloadTime=3f;
-    public static bool ReloaD;
+    public bool ReloaD;
     IEnumerator FireDelay()
     {
         while (shot==true)
@@ -103,7 +92,12 @@ public class shoting : MonoBehaviour
                 Instantiate(sparks, shotDir.position, transform.rotation);
                 Instantiate(ammo, shotDir.position, transform.rotation);
                 shot_sound.Play();
-                yield return new WaitForSeconds(startTime);
+                stop = true;
+                if (reload < Reload)
+                {
+                    yield return new WaitForSeconds(startTime);
+                }
+                stop = false;
             }
             else
             {

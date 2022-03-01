@@ -22,6 +22,7 @@ public class death : MonoBehaviour
     {
         pause_sound.Play();
         restart.SetActive(true);
+        wave_img.victory = false;
         bill.HP = 100f;
         death_menu.SetActive(false);
         SceneManager.LoadScene(1);

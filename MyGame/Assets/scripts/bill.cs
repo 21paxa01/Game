@@ -23,7 +23,7 @@ public class bill : MonoBehaviour
 
     public AudioSource stairs_sound;
     public GameObject stairs;
-    public GameObject shop;
+    public GameObject choise;
     public GameObject home;
     public bool upStairs = false;
 
@@ -66,24 +66,38 @@ public class bill : MonoBehaviour
             Reflect();
             Jump();
             if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y>-5f&& transform.position.y <-4f)
-                shop.SetActive(true);
+                choise.SetActive(true);
             else
-                shop.SetActive(false);
-            if (transform.position.x > 4.1f && transform.position.x < 4.45f && transform.position.y <-6f && torgovets.shop == false)
+                choise.SetActive(false);
+            if (transform.position.x > 4.1f && transform.position.x < 4.45f && transform.position.y <-6f && transform.position.y > -12f && torgovets.shop == false)
                  torg.SetActive(true);
             else
                 torg.SetActive(false);
-            if (transform.position.x > 6.2f && transform.position.x < 6.9f && transform.position.y < -6f)
+            if (transform.position.x > 6.2f && transform.position.x < 6.9f && transform.position.y < -6f&& transform.position.y>-12f)
             {
-                door.open = true;
+                shop_door.open = true;
                 home.SetActive(true);
+            }
+            else if (transform.position.x > 4.8f && transform.position.x < 5.4f && transform.position.y < -15f && transform.position.y > -16f)
+            {
+                home.SetActive(true);
+                //lab_door.open_door = true;
             }
             else
             {
-                door.open = false;
+                shop_door.open = false;
+                //lab_door.open_door = false;
                 home.SetActive(false);
             }
-                CheckingGround();
+            if (transform.position.x > 5.9f && transform.position.x < 6.45f && transform.position.y < -15f && transform.position.y > -16f)
+            {
+                mechanik.down = true;
+            }
+            else
+            {
+                mechanik.down = false;
+            }
+            CheckingGround();
             Stairs();
         }
        

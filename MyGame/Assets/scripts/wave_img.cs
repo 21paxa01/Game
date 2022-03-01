@@ -8,6 +8,7 @@ public class wave_img : MonoBehaviour
     public GameObject vic_img;
     public GameObject wave;
     public GameObject WavE;
+    public GameObject RE;
     public static bool victory;
     void Start()
     {
@@ -16,15 +17,15 @@ public class wave_img : MonoBehaviour
 
     void Update()
     {
-        if (victory == true)
+        if (victory == true&&spawn.zombie_kol==0)
         {
             WavE.SetActive(true);
             vic_img.SetActive(true);
+            RE.SetActive(true);
         }
         else
         {
             vic_img.SetActive(false);
-            //WavE.SetActive(false);
         }
     }
     public void Wave()
