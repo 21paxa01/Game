@@ -43,7 +43,7 @@ public class Load_Lab: MonoBehaviour
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(4);
-        ShopCamera.y = 0.2f;
+        ShopCamera.y = 0f;
         bill.position = new Vector3(5.095f, -15.3f, bill.position.z);
         yield return new WaitForSeconds(1f);
         perechod.SetActive(false);

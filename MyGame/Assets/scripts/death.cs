@@ -21,14 +21,13 @@ public class death : MonoBehaviour
     public void Restart()
     {
         pause_sound.Play();
+        bill.OnRoad = false;
         restart.SetActive(true);
         wave_img.victory = false;
         bill.HP = 100f;
         death_menu.SetActive(false);
         SceneManager.LoadScene(1);
-        spawn.wave++;
         spawn.a = 0;
-        spawn.wave_time += 6;
     }
     public void Death()
     {

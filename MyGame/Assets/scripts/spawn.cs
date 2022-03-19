@@ -41,6 +41,8 @@ public class spawn : MonoBehaviour
     
     void Start()
     {
+        zombie_arr = new GameObject[2];
+        zombie_chance = new int[2];
         ChangeChance();
         zombie_kol = 0;
         WAVE = GameObject.Find("Wave");
@@ -64,8 +66,8 @@ public class spawn : MonoBehaviour
         test = zombie_kol;
         bar.fillAmount = fill;
         text.text = wave.ToString();
-        SpawnPoint();
-        Zombies();
+        //SpawnPoint();
+        //Zombies();
         if (start == true)
         {
             start = false;
@@ -86,6 +88,8 @@ public class spawn : MonoBehaviour
         a = 0;
         while (a<1)
         {
+            Zombies();
+            SpawnPoint();
             Instantiate(zombie,spawn_point.position,transform.rotation);
             zombie_kol++;
             yield return new WaitForSeconds(spawn_time);
@@ -117,7 +121,7 @@ public class spawn : MonoBehaviour
             }
         }
     }
-    public static int wave_time=120;
+    public static int wave_time=12;
     IEnumerator Wave()
     {
         a = 0;
@@ -141,17 +145,17 @@ public class spawn : MonoBehaviour
     {
         if (wave == 1)
         {
-            zombie_arr = new GameObject[2];
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
-            zombie_chance = new int[2];
             zombie_chance[0] = 68;zombie_chance[1] = 100;
         }
         else if (wave == 2)
         {
+            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
             zombie_chance[0] = 62; zombie_chance[1] = 100;
         }
         else if (wave == 3)
         {
+            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
             zombie_chance[0] = 56; zombie_chance[1] = 100;
         }
         else if (wave == 4)
@@ -164,6 +168,7 @@ public class spawn : MonoBehaviour
         }
         else
         {
+            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2] = bibo_zombie;
             zombie_chance[0] = 45; zombie_chance[1] = 80; zombie_chance[2] = 100;
         }
     }

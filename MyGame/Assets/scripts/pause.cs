@@ -24,10 +24,12 @@ public class pause : MonoBehaviour
     }
     public void Pause()
     {
-        pause_sound.Play();
-       
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
+        if (torgovets.shop == false)
+        {
+            pause_sound.Play();
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
     }
 }

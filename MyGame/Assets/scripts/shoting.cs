@@ -21,11 +21,15 @@ public class shoting : MonoBehaviour
     public float startTime;
     Coroutine fireFrequency;
     public bool shot;
+    public Text total_ammo;
+    public Text remained_ammo;
 
     public bool faceRight = true;
     void Start()
     {
         stop = false;
+        //total_ammo = GameObject.Find("total").GetComponent<Text>();
+        //remained_ammo= GameObject.Find("remained").GetComponent<Text>();
     }
     void Update()
     {
@@ -33,7 +37,8 @@ public class shoting : MonoBehaviour
         float rotateZ = Mathf.Atan2(joystick.Vertical, joystick.Horizontal) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offset);
 
-
+        remained_ammo.text = (Reload-reload).ToString();
+        total_ammo.text = Reload.ToString();
         Vector3 LocalScale = Vector3.one;
         if (rotateZ > 90 || rotateZ < -90)
         {

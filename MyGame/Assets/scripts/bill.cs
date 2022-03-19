@@ -14,6 +14,8 @@ public class bill : MonoBehaviour
     public float hp;
     public static float HP;
     public GameObject Wave;
+    public GameObject ammo;
+    public GameObject Inventory;
 
     public GameObject weapons;
     public GameObject torg;
@@ -31,11 +33,13 @@ public class bill : MonoBehaviour
     public Image bar;
     public Image back;
     public float fill;
+    public static bool OnRoad;
 
     public static float ver_position;
     public static float hor_position;
     void Start()
     {
+        OnRoad = false;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
@@ -65,6 +69,10 @@ public class bill : MonoBehaviour
             Walk();
             Reflect();
             Jump();
+            if (transform.position.x > 5.3f && transform.position.x < 5.8f && transform.position.y > -5f && transform.position.y < -4f)
+                Inventory.SetActive(true);
+            else
+                Inventory.SetActive(false);
             if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y>-5f&& transform.position.y <-4f)
                 choise.SetActive(true);
             else
@@ -204,51 +212,51 @@ public class bill : MonoBehaviour
     }
     void Stairs()
     {
-        if (transform.position.y < -3f && transform.position.y > -6f)
+        if (OnRoad == false)
         {
-            if (transform.position.x >= 5.959f && transform.position.x <= 6.16f)
+            if (transform.position.y < -3f && transform.position.y > -6f)
             {
-                stairs.SetActive(true);
-                if (off == true)
-                    stairs.SetActive(false);
-                if (upStairs == true)
+                if (transform.position.x >= 5.959f && transform.position.x <= 6.16f)
                 {
-                    transform.position = new Vector2(6.078f, transform.position.y);
-                    move = false;
-                    coll.isTrigger = true;
-                    rb.velocity = new Vector2(0f, speed);
+                    stairs.SetActive(true);
+                    if (off == true)
+                        stairs.SetActive(false);
+                    if (upStairs == true)
+                    {
+                        transform.position = new Vector2(6.078f, transform.position.y);
+                        move = false;
+                        coll.isTrigger = true;
+                        rb.velocity = new Vector2(0f, speed);
+                    }
+                }
+                if (transform.position.x < 5.959f || transform.position.x > 6.16f)
+                {
+                    stairs.SetActive(false);
                 }
             }
-            if (transform.position.x < 5.959f || transform.position.x > 6.16f)
+            else if (transform.position.y > -3.1f && transform.position.y < -3f)
             {
+                rb.velocity = new Vector2(speed * 1.5f, speed * 3.5f);
+
+            }
+            else if (transform.position.y > -3f)
+            {
+                ZoomCamera.zoom = 2f;
+                OnRoad = true;
+                ammo.SetActive(true);
+                change_button.SetActive(true);
+                weapons.SetActive(true);
+                shot_joustick.SetActive(true);
+                rapt_menu.SetActive(true);
+                luk_off.off_luk = true;
+                move = true;
+                jump = true;
                 stairs.SetActive(false);
+                coll.isTrigger = false;
+                upStairs = false;
+                Wave.SetActive(true);
             }
         }
-        else if (transform.position.y > -3.1f && transform.position.y < -3f)
-        {
-            rb.velocity = new Vector2(speed * 1.5f, speed * 3.5f);
-            
-        }
-        else if(transform.position.y > -3f)
-        {
-            ZoomCamera.zoom = 2f;
-            change_button.SetActive(true);
-            weapons.SetActive(true);
-            shot_joustick.SetActive(true);
-            rapt_menu.SetActive(true);
-            luk_off.off_luk = true;
-            move = true;
-            jump = true;
-            stairs.SetActive(false);
-            coll.isTrigger = false;
-            upStairs = false;
-            Wave.SetActive(true);
-        }
-        
-        
-
-
-
     }
     public void UpStairs()
     {
@@ -308,6 +316,7 @@ public class bill : MonoBehaviour
         off = false;
         wave_img.victory = false;
         Wave.SetActive(false);
+        ammo.SetActive(false);
         jump = false;
         change_button.SetActive(false);
         weapons.SetActive(false);
