@@ -38,10 +38,10 @@ public class Load_Home : MonoBehaviour
     IEnumerator PerechodToHome()
     {
         choise_menu.SetActive(false);
+        if (scene_name == "lab")
+            lab_door.open_door = false;
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
-        //poison_head.SetActive(true);
-        //poison_icon.SetActive(true);
         wave.SetActive(true);
         RE.SetActive(true);
         SceneManager.LoadScene(1);

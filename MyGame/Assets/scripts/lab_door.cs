@@ -5,11 +5,11 @@ using UnityEngine;
 public class lab_door : MonoBehaviour
 {
     public Animator anim_door;
-    public static bool open_door;
+    public static  bool open_door;
     void Start()
     {
         anim_door = GetComponent<Animator>();
-        anim_door.SetBool("off", true);
+        anim_door.SetBool("on", true);
     }
 
     void Update()

@@ -16,6 +16,7 @@ public class torgovets : MonoBehaviour
     public GameObject shotgun;
     public GameObject ak47;
     public SpriteRenderer sp;
+    public SpriteRenderer weap_sp;
     public static bool shop;
     private float[] x_arr = { 0.87f, 1.3f, 1.7f };
     private float[] y_arr ={ 0.35f,0.275f,0.425f };
@@ -42,9 +43,14 @@ public class torgovets : MonoBehaviour
         capsul_arr[0] = capsul_1;capsul_arr[1] = capsul_2;capsul_arr[2] = capsul_3;
         weapons_arr = new GameObject[2];
         weapons_arr[0] = shotgun; weapons_arr[1] = ak47;
+        j = 0;
+        weapons_arr[j].SetActive(true);
+        weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
+        weap_sp.sortingOrder = 3;
     }
     void Update()
     {
+        weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
         if (shop == true)
         {
             ShopMenu.SetActive(true);
@@ -68,8 +74,7 @@ public class torgovets : MonoBehaviour
     }
     public void Weapons()
     {
-
-        j = 0;
+        weap_sp.sortingOrder = 22;
         weapons_arr[j].SetActive(true);
         sp = capsul_arr[0].GetComponent<SpriteRenderer>();
         WeaponsMenu.SetActive(true);
@@ -92,10 +97,12 @@ public class torgovets : MonoBehaviour
     }
     public void BackToChoise()
     {
+        weap_sp.sortingOrder = 3;
         sp.sortingOrder = 1;
         SkinsMenu.SetActive(false);
         WeaponsMenu.SetActive(false);
         weapons_arr[j].SetActive(false);
+        weapons_arr[0].SetActive(true);
         ShopCamera.x = 0f;
         ZoomCamera.zoom = 0.7f;
         ShopCamera.y = 0.2f;

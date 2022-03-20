@@ -39,6 +39,8 @@ public class Load_Shop : MonoBehaviour
     IEnumerator PerechodToShop()
     {
         choise_menu.SetActive(false);
+        if (scene_name == "lab")
+            lab_door.open_door = false;
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);

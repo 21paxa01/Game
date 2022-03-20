@@ -11,9 +11,9 @@ public class weapons_board : MonoBehaviour
     }
     public void Change()
     {
-        if(sp.sortingOrder == 1)
+        if(sp.sortingOrder == 2)
             sp.sortingOrder = 21;
         else
-            sp.sortingOrder = 1;
+            sp.sortingOrder = 2;
     }
 }

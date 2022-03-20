@@ -4007,7 +4007,7 @@ MonoBehaviour:
   fon: {fileID: 1769987675}
   shotgun: {fileID: 1506082334}
   ak47: {fileID: 2039948155}
-  sp: {fileID: 0}
+  sp: {fileID: 492329201}
   w_prise: {fileID: 0}
   buy_prise: {fileID: 0}
   w_range: {fileID: 0}

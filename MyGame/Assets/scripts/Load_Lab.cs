@@ -39,7 +39,7 @@ public class Load_Lab: MonoBehaviour
     IEnumerator PerechodToLab()
     {
         choise_menu.SetActive(false);
-        lab_door.open_door = false;
+        lab_door.open_door = true;
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(4);

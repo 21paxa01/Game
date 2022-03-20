@@ -89,15 +89,13 @@ public class bill : MonoBehaviour
             else if (transform.position.x > 4.8f && transform.position.x < 5.4f && transform.position.y < -15f && transform.position.y > -16f)
             {
                 home.SetActive(true);
-                //lab_door.open_door = true;
             }
             else
             {
                 shop_door.open = false;
-                //lab_door.open_door = false;
                 home.SetActive(false);
             }
-            if (transform.position.x > 5.9f && transform.position.x < 6.45f && transform.position.y < -15f && transform.position.y > -16f)
+            if (transform.position.x > 5.7f && transform.position.x < 6.5f && transform.position.y < -15f && transform.position.y > -16f)
             {
                 mechanik.down = true;
             }
