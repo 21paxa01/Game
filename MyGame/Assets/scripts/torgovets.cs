@@ -36,7 +36,7 @@ public class torgovets : MonoBehaviour
     public Text w_ammunition;
     public Text w_name;
     private int i;
-    private int j;
+    public int j;
     void Start()
     {
         capsul_arr = new GameObject[3];
@@ -50,7 +50,7 @@ public class torgovets : MonoBehaviour
     }
     void Update()
     {
-        weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
+        //weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
         if (shop == true)
         {
             ShopMenu.SetActive(true);
@@ -74,6 +74,8 @@ public class torgovets : MonoBehaviour
     }
     public void Weapons()
     {
+        j = 0;
+        weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
         weap_sp.sortingOrder = 22;
         weapons_arr[j].SetActive(true);
         sp = capsul_arr[0].GetComponent<SpriteRenderer>();
@@ -97,12 +99,13 @@ public class torgovets : MonoBehaviour
     }
     public void BackToChoise()
     {
-        weap_sp.sortingOrder = 3;
         sp.sortingOrder = 1;
         SkinsMenu.SetActive(false);
         WeaponsMenu.SetActive(false);
         weapons_arr[j].SetActive(false);
         weapons_arr[0].SetActive(true);
+        weap_sp = weapons_arr[0].GetComponent<SpriteRenderer>();
+        weap_sp.sortingOrder = 3;
         ShopCamera.x = 0f;
         ZoomCamera.zoom = 0.7f;
         ShopCamera.y = 0.2f;
@@ -167,6 +170,7 @@ public class torgovets : MonoBehaviour
         if (change_weapon.k < 2&&MoneyCount.mon>=250)
         {
             MoneyCount.mon -= 250;
+            mechanik_shop.buy_arr[j+1] = true;
             change_weapon.k++;
         }
         WeaponsChoiseMenu.SetActive(false);

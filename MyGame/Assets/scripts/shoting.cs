@@ -37,8 +37,8 @@ public class shoting : MonoBehaviour
         float rotateZ = Mathf.Atan2(joystick.Vertical, joystick.Horizontal) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offset);
 
-        remained_ammo.text = (Reload-reload).ToString();
-        total_ammo.text = Reload.ToString();
+        remained_ammo.text = (Ammunition-reload).ToString();
+        total_ammo.text = Ammunition.ToString();
         Vector3 LocalScale = Vector3.one;
         if (rotateZ > 90 || rotateZ < -90)
         {
@@ -80,15 +80,17 @@ public class shoting : MonoBehaviour
 
         
     }
-    public int Reload;
+    public float Ammunition;
+    public float DefaultAmmunition;
     private int reload = 0;
-    public static float ReloadTime=3f;
+    public float DefaultReloadTime = 3f;
+    public float ReloadTime= 3f;
     public bool ReloaD;
     IEnumerator FireDelay()
     {
         while (shot==true)
         {
-            if (reload < Reload)
+            if (reload < Ammunition)
             {
                 reload += 1;
                 offset = Random.Range(-recoil, recoil);
@@ -98,7 +100,7 @@ public class shoting : MonoBehaviour
                 Instantiate(ammo, shotDir.position, transform.rotation);
                 shot_sound.Play();
                 stop = true;
-                if (reload < Reload)
+                if (reload < Ammunition)
                 {
                     yield return new WaitForSeconds(startTime);
                 }

@@ -16,6 +16,7 @@ public class bill : MonoBehaviour
     public GameObject Wave;
     public GameObject ammo;
     public GameObject Inventory;
+    public GameObject Mechanik;
 
     public GameObject weapons;
     public GameObject torg;
@@ -37,8 +38,18 @@ public class bill : MonoBehaviour
 
     public static float ver_position;
     public static float hor_position;
+
+    private AudioSource[] shagi;
+    public AudioSource shag_1;
+    public AudioSource shag_2;
+    public AudioSource shag_3;
+    public AudioSource shag_4;
+    public AudioSource shag_5;
+    private int rand;
     void Start()
     {
+        shagi = new AudioSource[5];
+        shagi[0] = shag_1;shagi[1] = shag_2;shagi[2] = shag_3;shagi[3] = shag_4;shagi[4] = shag_5;
         OnRoad = false;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -98,10 +109,12 @@ public class bill : MonoBehaviour
             if (transform.position.x > 5.7f && transform.position.x < 6.5f && transform.position.y < -15f && transform.position.y > -16f)
             {
                 mechanik.down = true;
+                Mechanik.SetActive(true);
             }
             else
             {
                 mechanik.down = false;
+                Mechanik.SetActive(false);
             }
             CheckingGround();
             Stairs();
@@ -267,7 +280,6 @@ public class bill : MonoBehaviour
         spawn.start = true;
         off = true;
     }
-    public AudioSource shag;
     public void Start_shag()
     {
         if (transform.position.y < -3.1f)
@@ -282,8 +294,9 @@ public class bill : MonoBehaviour
     {
         while (1 > 0)
         {
-            shag.Play();
-            yield return new WaitForSeconds(0.8f);
+            rand = Random.Range(0, 5);
+            shagi[rand].Play();
+            yield return new WaitForSeconds(0.5f);
         }
     }
     private void OnColligionEnter2D(Collider2D other)
@@ -301,6 +314,11 @@ public class bill : MonoBehaviour
     {
         torgovets.shop = true;
         transform.position =new Vector3 (4.22f, transform.position.y, transform.position.z);
+    }
+    public void Open_Lab()
+    {
+        mechanik_shop.lab = true;
+        transform.position = new Vector3(5.8f, transform.position.y, transform.position.z);
     }
     public void REspawn()
     {

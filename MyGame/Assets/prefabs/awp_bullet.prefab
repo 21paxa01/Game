@@ -151,6 +151,7 @@ MonoBehaviour:
   death: 0
   anim: {fileID: 0}
   ammo_damage: 2
+  default_damage: 2
   road: 1
 --- !u!95 &310895012986771041
 Animator:

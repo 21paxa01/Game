@@ -11,7 +11,8 @@ public class ammo : MonoBehaviour
     public Animator anim;
     private Rigidbody2D rb;
     private zombie_hp script;
-    public int ammo_damage;
+    public float ammo_damage;
+    public float default_damage;
     public bool road;
     void Start()
     {
