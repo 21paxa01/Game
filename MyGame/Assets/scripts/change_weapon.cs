@@ -12,11 +12,13 @@ public class change_weapon : MonoBehaviour
     public GameObject change_button;
     public static int change = 0;
     public AudioSource change_sound;
-    private GameObject[] weapons;
+    public GameObject[] weapons;
     public GameObject shoting;
     private shoting script;
-    private bool[] chek= { true,false,false,false};
-    public static int k = 1;
+    public bool[] chek= { false,false,false,false};
+    private bool find;
+    public static int k = 2;
+    private int l=4;
     void Start()
     {
         weapons = new GameObject[4];
@@ -43,10 +45,29 @@ public class change_weapon : MonoBehaviour
         script = shoting.gameObject.GetComponent<shoting>();
         if (script.ReloaD == false&&k>1)
         {
+            find = false;
             weapons[change].SetActive(false);
-            change++;
-            if (change == k)
-                change = 0;
+            for(int i = change+1; i < l; i++)
+            {
+                if (chek[i] == true)
+                {
+                    change = i;
+                    find = true;
+                    break;
+                }
+            }
+            if (find == false)
+            {
+                for(int i = 0; i < change; i++)
+                {
+                    if (chek[i] == true)
+                    {
+                        change = i;
+                        find = true;
+                        break;
+                    }
+                }
+            }
             weapons[change].SetActive(true);
             script.stop = false;
             change_sound.Play();

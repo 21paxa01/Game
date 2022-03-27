@@ -50,7 +50,6 @@ public class torgovets : MonoBehaviour
     }
     void Update()
     {
-        //weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
         if (shop == true)
         {
             ShopMenu.SetActive(true);

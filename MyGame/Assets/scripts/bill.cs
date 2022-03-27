@@ -17,6 +17,7 @@ public class bill : MonoBehaviour
     public GameObject ammo;
     public GameObject Inventory;
     public GameObject Mechanik;
+    public bool weapon_chek;
 
     public GameObject weapons;
     public GameObject torg;
@@ -48,6 +49,7 @@ public class bill : MonoBehaviour
     private int rand;
     void Start()
     {
+        weapon_chek = false;
         shagi = new AudioSource[5];
         shagi[0] = shag_1;shagi[1] = shag_2;shagi[2] = shag_3;shagi[3] = shag_4;shagi[4] = shag_5;
         OnRoad = false;
@@ -227,7 +229,7 @@ public class bill : MonoBehaviour
         {
             if (transform.position.y < -3f && transform.position.y > -6f)
             {
-                if (transform.position.x >= 5.959f && transform.position.x <= 6.16f)
+                if (transform.position.x >= 5.959f && transform.position.x <= 6.16f && weapon_chek == true)
                 {
                     stairs.SetActive(true);
                     if (off == true)

@@ -20,7 +20,7 @@ public class spawn : MonoBehaviour
     public RectTransform trans;
 
     public static int wave = 1;
-    public Text text;
+    //public Text text;
     private float fill;
     public Image bar;
     public GameObject bill;
@@ -51,7 +51,7 @@ public class spawn : MonoBehaviour
         death = GameObject.Find("Canvas");
         scr= death.gameObject.GetComponent<death>();
         bar = GameObject.Find("zomb_wave_top").GetComponent<Image>();
-        text = GameObject.Find("Count").GetComponent<Text>();
+        //text = GameObject.Find("Count").GetComponent<Text>();
         fill = 0f;
         script = bill.gameObject.GetComponent<bill>();
         restart = GameObject.Find("RE");
@@ -65,7 +65,7 @@ public class spawn : MonoBehaviour
     {
         test = zombie_kol;
         bar.fillAmount = fill;
-        text.text = wave.ToString();
+        //text.text = wave.ToString();
         //SpawnPoint();
         //Zombies();
         if (start == true)
@@ -121,7 +121,7 @@ public class spawn : MonoBehaviour
             }
         }
     }
-    public static int wave_time=12;
+    public static int wave_time=120;
     IEnumerator Wave()
     {
         a = 0;
