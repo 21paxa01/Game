@@ -24,6 +24,7 @@ public class bill : MonoBehaviour
     public GameObject rapt_menu;
     public GameObject shot_joustick;
     public GameObject change_button;
+    public GameObject computer;
 
     public AudioSource stairs_sound;
     public GameObject stairs;
@@ -86,10 +87,22 @@ public class bill : MonoBehaviour
                 Inventory.SetActive(true);
             else
                 Inventory.SetActive(false);
-            if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y>-5f&& transform.position.y <-4f)
+            if (transform.position.x > 4f && transform.position.x < 4.35f && transform.position.y > -5f && transform.position.y < -4f)
+            {
                 choise.SetActive(true);
+            }
             else
+            {
                 choise.SetActive(false);
+            }
+            if (transform.position.x > 4.5f && transform.position.x < 4.9f && transform.position.y > -5f && transform.position.y < -4f)
+            {
+                computer.SetActive(true);
+            }
+            else
+            {
+                computer.SetActive(false);
+            }
             if (transform.position.x > 4.1f && transform.position.x < 4.45f && transform.position.y <-6f && transform.position.y > -12f && torgovets.shop == false)
                  torg.SetActive(true);
             else

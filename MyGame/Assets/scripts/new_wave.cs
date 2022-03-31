@@ -18,6 +18,5 @@ public class new_wave : MonoBehaviour
     public void NeW_Wave()
     {
         spawn.wave++;
-        spawn.wave_time += 6;
     }
 }

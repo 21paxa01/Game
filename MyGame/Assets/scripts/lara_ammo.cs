@@ -56,9 +56,9 @@ public class lara_ammo : MonoBehaviour
         }
         if (other.name == "wall(Clone)" || other.name == "boom(Clone)")
         {
-            Destroy(gameObject);
             script_w = other.gameObject.GetComponent<wall>();
             script_w.hp -= damage;
+            Destroy(gameObject);
         }
         if (other.name == "room")
         {

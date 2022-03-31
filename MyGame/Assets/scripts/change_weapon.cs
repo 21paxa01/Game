@@ -17,7 +17,7 @@ public class change_weapon : MonoBehaviour
     private shoting script;
     public bool[] chek= { false,false,false,false};
     private bool find;
-    public static int k = 2;
+    public static int k = 1;
     private int l=4;
     void Start()
     {
@@ -71,6 +71,19 @@ public class change_weapon : MonoBehaviour
             weapons[change].SetActive(true);
             script.stop = false;
             change_sound.Play();
+        }
+    }
+    public void update()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if (chek[i] == true)
+            {
+                script = weapons[i].GetComponent<shoting>();
+                script.ReloaD = false;
+                script.reload = 0;
+                script.stop = false;
+            }
         }
     }
 }

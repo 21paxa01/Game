@@ -41,6 +41,8 @@ public class Load_Shop : MonoBehaviour
         choise_menu.SetActive(false);
         if (scene_name == "lab")
             lab_door.open_door = false;
+        else
+            home_door.open = true;
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);

@@ -39,6 +39,8 @@ public class Load_Lab: MonoBehaviour
     IEnumerator PerechodToLab()
     {
         choise_menu.SetActive(false);
+        if (scene_name == "SampleScene")
+            home_door.open = true;
         lab_door.open_door = true;
         perechod.SetActive(true);
         yield return new WaitForSeconds(1f);

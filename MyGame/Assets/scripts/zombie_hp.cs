@@ -12,11 +12,13 @@ public class zombie_hp : MonoBehaviour
     public Animator anim;
     public float death_time;
     public bool death;
+    public SpriteRenderer sp;
 
     void Start()
     {
         fill = 1f;
         anim = GetComponent<Animator>();
+        sp = GetComponent<SpriteRenderer>();
     }
 
     
@@ -34,6 +36,7 @@ public class zombie_hp : MonoBehaviour
     IEnumerator Die()
     {
         death = true;
+        sp.sortingOrder = 8;
         spawn.zombie_kol--;
         anim.SetBool("death", death);
         Destroy(back);

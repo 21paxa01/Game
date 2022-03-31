@@ -50,4 +50,8 @@ public class Load_Home : MonoBehaviour
         yield return new WaitForSeconds(1f);
         perechod.SetActive(false);
     }
+    public void Menu_OFF()
+    {
+        choise_menu.SetActive(false);
+    }
 }

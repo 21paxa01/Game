@@ -17,11 +17,14 @@ public class mechanik_shop : MonoBehaviour
     public GameObject ak47;
     public GameObject pistol;
 
+    public GameObject buy_menu;
     private weapons_upgrade script;
     public int i;
+    public int category;
+    public Text text;
 
     private GameObject[] weapons_arr;
-    public static bool[] buy_arr = { true, false, false};
+    public static int[] buy_arr = {1, 0, 0};
 
     public GameObject damage_marking1;
     public GameObject damage_marking2;
@@ -42,6 +45,8 @@ public class mechanik_shop : MonoBehaviour
     private GameObject[] damage_marking_arr;
     private GameObject[] reload_marking_arr;
     private GameObject[] ammunition_marking_arr;
+    private int[] prise_arr = { 10, 100, 400 };
+    private int prise;
     void Start()
     {
         damage_marking_arr = new GameObject[5];
@@ -77,7 +82,7 @@ public class mechanik_shop : MonoBehaviour
             lab_menu.SetActive(false);
             ShopCamera.x = 0f;
             ZoomCamera.zoom = 0.7f;
-            ShopCamera.y = 0.2f;
+            ShopCamera.y = 0f;
             sp.sortingOrder = 1;
             fon.SetActive(false);
             weapons.SetActive(false);
@@ -93,7 +98,7 @@ public class mechanik_shop : MonoBehaviour
             i++;
             if (i == 3)
                 i = 0;
-        } while (buy_arr[i] == false);
+        } while (buy_arr[i] == 0);
         weapons_arr[i].SetActive(true);
     }
     public void Left() 
@@ -106,14 +111,15 @@ public class mechanik_shop : MonoBehaviour
             i--;
             if (i == -1)
                 i = 2;
-        } while (buy_arr[i] == false);
+        } while (buy_arr[i] == 0);
         weapons_arr[i].SetActive(true);
     }
     public void DamageUpdrade()
     {
-        if (script.damage_count[i]<5) 
+        if (script.damage_count[i]<5&&MoneyCount.mon>=prise) 
         {
-            script.damage_count[i] += 1;
+            MoneyCount.mon -= prise;
+            script.damage_count[i] +=1;
             for (int j = 0; j < 5; j++)
             {
                 if (j < script.damage_count[i])
@@ -121,14 +127,16 @@ public class mechanik_shop : MonoBehaviour
                 else
                     damage_marking_arr[j].SetActive(false);
             }
-            script.damage_arr[i] += 1f;
+            script.damage_arr[i] += 0.25f;
             script.ChangeStats(); 
         }
+        buy_menu.SetActive(false);
     }
     public void ReloadUpdrade()
     {
-        if (script.reload_count[i] < 5)
+        if (script.reload_count[i] < 5 && MoneyCount.mon >= prise)
         {
+            MoneyCount.mon -= prise;
             script.reload_count[i] += 1;
             for(int j = 0; j < 5; j++)
             {
@@ -140,11 +148,13 @@ public class mechanik_shop : MonoBehaviour
             script.reload_arr[i] -= 0.1f;
             script.ChangeStats();
         }
+        buy_menu.SetActive(false);
     }
     public void AmmunitionUpdrade()
     {
-        if (script.ammunition_count[i] < 5)
+        if (script.ammunition_count[i] < 5 && MoneyCount.mon >= prise)
         {
+            MoneyCount.mon -= prise;
             script.ammunition_count[i] += 1;
             for (int j = 0; j < 5; j++)
             {
@@ -153,12 +163,37 @@ public class mechanik_shop : MonoBehaviour
                 else
                     ammunition_marking_arr[j].SetActive(false);
             }
-            script.ammunition_arr[i] += 1f;
+            script.ammunition_arr[i] += 0.2f;
             script.ChangeStats();
         }
+        buy_menu.SetActive(false);
     }
     public void Off_Updrade()
     {
         lab = false;
+    }
+    public void BuyMenuOn()
+    {
+        if(category==0)
+            prise = prise_arr[i] + script.damage_count[i] * prise_arr[i];
+        else if (category == 1)
+            prise = prise_arr[i] + script.reload_count[i] * prise_arr[i];
+        else if (category == 2)
+            prise = prise_arr[i] + script.ammunition_count[i] * prise_arr[i];
+        buy_menu.SetActive(true);
+        text.text = prise.ToString() + "?";
+    }
+    public void BuyMenuOFF()
+    {
+        buy_menu.SetActive(false);
+    }
+    public void Upgrades()
+    {
+        if (category == 0)
+            DamageUpdrade();
+        else if (category == 1)
+            ReloadUpdrade();
+        else if (category == 2)
+            AmmunitionUpdrade();
     }
 }

@@ -27,18 +27,13 @@ public class lara_attack : MonoBehaviour
             StartCoroutine(Shot());
         }
         ost = script.distToPlayer;
-        script_1.test = ost;
         if (zombie.transform.localScale.x == -1f)
         {
             shotDir.rotation = Quaternion.Euler(0f, 0f, 135f);
-            script_1.rotat = 135f;
-            script_1.ost =-1 ;
         }
         else
         {
             shotDir.rotation = Quaternion.Euler(0f, 0f, 45f);
-            script_1.rotat = 45f;
-            script_1.ost = 1;
         }
     }
     IEnumerator Shot()
@@ -51,6 +46,17 @@ public class lara_attack : MonoBehaviour
                 break;
             }
             test = true;
+            script_1.test = ost;
+            if (zombie.transform.localScale.x == -1f)
+            {
+                script_1.rotat = 135f;
+                script_1.ost = -1;
+            }
+            else
+            {
+                script_1.rotat = 45f;
+                script_1.ost = 1;
+            }
             Instantiate(ammo, shotDir.position, shotDir.rotation);
             yield return new WaitForSeconds(1.66666667f);
             if (script.fight == false)

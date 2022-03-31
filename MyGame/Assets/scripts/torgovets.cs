@@ -22,7 +22,7 @@ public class torgovets : MonoBehaviour
     private float[] y_arr ={ 0.35f,0.275f,0.425f };
     private GameObject[] capsul_arr;
     private GameObject[] weapons_arr;
-    private float[] w_prise_arr = { 250f,1000f };
+    private int[] w_prise_arr = { 250,1000 };
     private string[] w_range_arr = { "short","middle" };
     private float[] w_damage_arr = { 30f,10f };
     private string[] w_reload_arr = { "1.5", "0.1" };
@@ -166,10 +166,10 @@ public class torgovets : MonoBehaviour
     }
     public void Buy_weapon()
     {
-        if (change_weapon.k < 2&&MoneyCount.mon>=250)
+        if (mechanik_shop.buy_arr[j + 1]==0&&MoneyCount.mon>=w_prise_arr[j])
         {
-            MoneyCount.mon -= 250;
-            mechanik_shop.buy_arr[j+1] = true;
+            MoneyCount.mon -= w_prise_arr[j];
+            mechanik_shop.buy_arr[j+1] = 1;
             change_weapon.k++;
         }
         WeaponsChoiseMenu.SetActive(false);

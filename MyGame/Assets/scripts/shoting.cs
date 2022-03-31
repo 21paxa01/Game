@@ -19,6 +19,7 @@ public class shoting : MonoBehaviour
 
     private float timeShot;
     public float startTime;
+    public float DefaultstartTime;
     Coroutine fireFrequency;
     public bool shot;
     public Text total_ammo;
@@ -27,7 +28,6 @@ public class shoting : MonoBehaviour
     public bool faceRight = true;
     void Start()
     {
-        stop = false;
         //total_ammo = GameObject.Find("total").GetComponent<Text>();
         //remained_ammo= GameObject.Find("remained").GetComponent<Text>();
     }
@@ -82,7 +82,7 @@ public class shoting : MonoBehaviour
     }
     public float Ammunition;
     public float DefaultAmmunition;
-    private int reload = 0;
+    public float reload = 0f;
     public float DefaultReloadTime = 3f;
     public float ReloadTime= 3f;
     public bool ReloaD;

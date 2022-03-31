@@ -15,6 +15,7 @@ public class my_weapon : MonoBehaviour
     public GameObject bill;
     private change_weapon weap_script;
     private bill bill_scr;
+    private shoting shot_scr;
     void Start()
     {
         script = inventory.GetComponent<Inventory>();
@@ -35,20 +36,18 @@ public class my_weapon : MonoBehaviour
             i = 1;
         if (script.clear == false&& script.now_weapon[i] != script.weapons_arr[script.i])
         {
-            if(x>=0)
+            if (x >= 0)
+            {
                 weap_script.chek[x] = false;
-            if (j == 0&&x>=0)
                 weap_script.weapons[x].SetActive(false);
+            }
             script.now_weapon[j] = script.weapons_arr[script.i];
             img.sprite = script.img.sprite;
             weapon.SetActive(true);
             x = script.i;
-            weap_script.chek[x] = true;
-            if (j == 0)
-            {
-                weap_script.weapons[x].SetActive(true);
-                change_weapon.change = x;
-            }
+            weap_script.chek[x] = true;        
+            weap_script.weapons[x].SetActive(true);
+            change_weapon.change = x;
             bill_scr.weapon_chek = true;
         }
     }

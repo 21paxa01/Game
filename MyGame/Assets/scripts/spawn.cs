@@ -19,7 +19,7 @@ public class spawn : MonoBehaviour
     public GameObject restart;
     public RectTransform trans;
 
-    public static int wave = 1;
+    public static int wave =1;
     //public Text text;
     private float fill;
     public Image bar;
@@ -121,7 +121,7 @@ public class spawn : MonoBehaviour
             }
         }
     }
-    public static int wave_time=120;
+    public int wave_time;
     IEnumerator Wave()
     {
         a = 0;
@@ -147,29 +147,52 @@ public class spawn : MonoBehaviour
         {
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
             zombie_chance[0] = 68;zombie_chance[1] = 100;
+            spawn_time = 3f;
+            wave_time = 120;
         }
         else if (wave == 2)
         {
+            wave_time = 126;
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
             zombie_chance[0] = 62; zombie_chance[1] = 100;
+            spawn_time = 2.35f;
         }
         else if (wave == 3)
         {
-            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
-            zombie_chance[0] = 56; zombie_chance[1] = 100;
+            l = 3;
+            spawn_time = 2.35f;
+            wave_time = 132;
+            zombie_arr = new GameObject[3];
+            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2] = bibo_zombie;
+            zombie_chance = new int[3];
+            zombie_chance[0] = 40; zombie_chance[1] = 70;zombie_chance[2] =100;
         }
         else if (wave == 4)
         {
             l = 3;
+            spawn_time = 2.3f;
+            wave_time = 132;
             zombie_arr = new GameObject[3];
-            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2]=bibo_zombie;
+            zombie_arr[0] = lara_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2]=bibo_zombie;
             zombie_chance = new int[3];
-            zombie_chance[0] = 50;zombie_chance[1]=90; zombie_chance[2] = 100;
-        }
+            zombie_chance[0] =25;zombie_chance[1]=75; zombie_chance[2] = 100;
+            /*l = 1;
+            spawn_time = 100f;
+            wave_time = 132;
+            zombie_arr = new GameObject[1];
+            zombie_arr[0] = lara_zombie;
+            zombie_chance = new int[1];
+            zombie_chance[0] = 100;
+        */}
         else
         {
-            zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2] = bibo_zombie;
-            zombie_chance[0] = 45; zombie_chance[1] = 80; zombie_chance[2] = 100;
+            l = 1;
+            spawn_time = 0.8f;
+            wave_time = 80;
+            zombie_arr = new GameObject[1];
+            zombie_arr[0] = martin_zombie;
+            zombie_chance = new int[3];
+            zombie_chance[0] = 100;
         }
     }
 }

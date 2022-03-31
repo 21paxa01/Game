@@ -43,7 +43,7 @@ public class weapons_upgrade: MonoBehaviour
             shoting_script = weapons_arr[i].GetComponent<shoting>();
             ammo_script.ammo_damage = ammo_script.default_damage + ammo_script.default_damage * damage_arr[i];
             shoting_script.Ammunition = shoting_script.DefaultAmmunition + shoting_script.DefaultAmmunition *ammunition_arr[i];
-            shoting_script.ReloadTime = shoting_script.DefaultReloadTime * reload_arr[i];
+            shoting_script.startTime = shoting_script.DefaultstartTime * reload_arr[i];
         }
     }
 }
