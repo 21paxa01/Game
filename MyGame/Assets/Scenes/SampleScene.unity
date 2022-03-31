@@ -1240,6 +1240,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 3
   death: 0
+  sp: {fileID: 0}
   HP: 3
   hp: 0
 --- !u!114 &303399560
@@ -2107,8 +2108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467930831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0041, y: 0.04, z: 0}
+  m_LocalScale: {x: 1.0088172, y: 1.0311387, z: 1}
   m_Children: []
   m_Father: {fileID: 134962927}
   m_RootOrder: 6
@@ -3767,6 +3768,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 7
   death: 0
+  sp: {fileID: 0}
   HP: 4
   hp: 0
 --- !u!70 &796152630
@@ -4548,6 +4550,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 3
   death: 0
+  sp: {fileID: 0}
   HP: 3
   hp: 0
 --- !u!1 &961508314
@@ -5036,6 +5039,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 0.65
   death: 0
+  sp: {fileID: 0}
   HP: 2
   hp: 0
 --- !u!114 &1104943827
@@ -6678,6 +6682,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 3
   death: 0
+  sp: {fileID: 0}
   HP: 3
   hp: 0
 --- !u!1 &1532168726
@@ -7347,6 +7352,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 3
   death: 0
+  sp: {fileID: 0}
   HP: 9
   hp: 0
 --- !u!1 &1733915708
@@ -8730,6 +8736,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   death_time: 3
   death: 0
+  sp: {fileID: 0}
   HP: 3
   hp: 0
 --- !u!95 &2045261735
