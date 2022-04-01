@@ -67,6 +67,7 @@ public class bill : MonoBehaviour
         rapt_menu.SetActive(false);
     }
     public bool test;
+    private bool stop;
     void Update()
     {
         ver_position = transform.position.y;
@@ -78,7 +79,7 @@ public class bill : MonoBehaviour
             anim.SetBool("death", true);
             weapons.SetActive(false);
         }
-        else
+        else if(fill>0&&stop==false)
         {
             Walk();
             Reflect();
@@ -358,5 +359,17 @@ public class bill : MonoBehaviour
         transform.position = new Vector3(5.08f, -4.98126411f, 0f);
         yield return new WaitForSeconds(1f);
         perechod.SetActive(false);
+    }
+    public int kef=1;
+    IEnumerator Discard()
+    {
+        stop = true;
+        rb.velocity = new Vector2(kef*speed * 3, 0f);
+        yield return new WaitForSeconds(0.2f);
+        stop = false;
+    }
+    public void discard()
+    {
+        StartCoroutine(Discard());
     }
 }

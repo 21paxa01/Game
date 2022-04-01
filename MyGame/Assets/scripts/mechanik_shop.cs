@@ -45,7 +45,7 @@ public class mechanik_shop : MonoBehaviour
     private GameObject[] damage_marking_arr;
     private GameObject[] reload_marking_arr;
     private GameObject[] ammunition_marking_arr;
-    private int[] prise_arr = { 10, 100, 400 };
+    private int[] prise_arr = { 40, 100, 400 };
     private int prise;
     void Start()
     {
@@ -82,7 +82,7 @@ public class mechanik_shop : MonoBehaviour
             lab_menu.SetActive(false);
             ShopCamera.x = 0f;
             ZoomCamera.zoom = 0.7f;
-            ShopCamera.y = 0f;
+            ShopCamera.y = 0.1f;
             sp.sortingOrder = 1;
             fon.SetActive(false);
             weapons.SetActive(false);

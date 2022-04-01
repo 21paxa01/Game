@@ -85,7 +85,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: stop
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5622081958897590884}
   m_Solo: 0
@@ -190,13 +193,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: death
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: stop
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -220,6 +229,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: fight
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: stop
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6319625532354057233}
@@ -246,7 +258,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -7289557907562910406}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 190, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6319625532354057233}
     m_Position: {x: 390, y: 110, z: 0}
@@ -255,7 +267,7 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5622081958897590884}
-    m_Position: {x: 410, y: 320, z: 0}
+    m_Position: {x: 410, y: 370, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -302,7 +314,13 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: fight
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: stop
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7289557907562910406}
   m_Solo: 0
@@ -353,7 +371,6 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: -6825618972568172487}
   - {fileID: -4536672119972069252}
   - {fileID: -5817310245775814412}
   m_StateMachineBehaviours: []

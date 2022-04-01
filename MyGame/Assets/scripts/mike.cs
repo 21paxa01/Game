@@ -15,9 +15,8 @@ public class mike : MonoBehaviour
     private float zomb_damage;
     public float atack_time;
     public float distToPlayer;
-    Coroutine damage;
 
-
+    private int kef;
     public GameObject money;
     public Transform money_spawn;
     public GameObject zombie_hp;
@@ -34,6 +33,7 @@ public class mike : MonoBehaviour
         zomb_damage = zombie_damage;
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();
         HP = script.HP;
+        bill = player.GetComponent<bill>();
     }
     public float dist_to_player;
     void Update()
@@ -45,21 +45,26 @@ public class mike : MonoBehaviour
         {
             if (distToPlayer <= dist_to_player)
             {
+                stop = true;
                 physik.velocity = new Vector2(0, 0);
                 fight = true;
-                dam = 0;
-                if (test == 100f)
+                anim.SetBool("fight", fight);
+                if (player.transform.position.x > transform.position.x)
                 {
-                    damage = StartCoroutine(BillDamage());
+                    kef = 1;
+                    transform.localScale = new Vector2(1, 1);
                 }
-
-
+                else
+                {
+                    kef = -1;
+                    transform.localScale = new Vector2(-1, 1);
+                }
+                StartCoroutine(BillDamage());
             }
             if (distToPlayer > dist_to_player && WALL == false)
             {
                 fight = false;
             }
-            anim.SetBool("fight", fight);
 
 
             if (player.transform.position.x < transform.position.x && distToPlayer > dist_to_player && death == false)
@@ -87,6 +92,7 @@ public class mike : MonoBehaviour
     private bool WALL;
     private float zomb_wall_pos;
     private wall script_w;
+    private bill bill;
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -97,19 +103,23 @@ public class mike : MonoBehaviour
             StartCoroutine(WallDamage(other.gameObject));
 
         }
+        if (other.name == "Bill")
+        {
+            if (player.transform.position.x > transform.position.x)
+                bill.kef = 1;
+            else
+                bill.kef = -1;
+            bill.discard();
+            bill.HP -= zombie_damage;
+        }
     }
-    private int dam = 0;
-    public float test = 100f;
     IEnumerator WallDamage(GameObject w)
     {
         script_w = w.gameObject.GetComponent<wall>();
         while (WALL == true)
         {
             yield return new WaitForSeconds(0.4f);
-            if (player.transform.position.x > transform.position.x)
-                physik.velocity = new Vector2(speed * 7, 0f);
-            else
-                physik.velocity = new Vector2(-speed * 7, 0f);
+            physik.velocity = new Vector2(kef*speed * 7, 0f);
             yield return new WaitForSeconds(0.125f);
             physik.velocity = new Vector2(0, 0f);
             yield return new WaitForSeconds(0.75f);
@@ -119,30 +129,15 @@ public class mike : MonoBehaviour
     }
     IEnumerator BillDamage()
     {
-        while (dam == 0)
-        {
-            if (distToPlayer <= dist_to_player)
-            {
-                yield return new WaitForSeconds(0.4f);
-                if (player.transform.position.x > transform.position.x)
-                    physik.velocity = new Vector2(speed*7, 0f);
-                else
-                    physik.velocity = new Vector2(-speed*7, 0f);
-                yield return new WaitForSeconds(0.1f);
-                stop = true;
-                fight = false;
-                physik.velocity = new Vector2(0, 0f);
-                yield return new WaitForSeconds(4f);
-                stop = false;
-
-            }
-            else if(stop==false)
-            {
-                dam = 1;
-                test = 100f;
-            }
-
-        }
+        yield return new WaitForSeconds(0.4f);
+        physik.velocity = new Vector2(kef * speed * 8, 0f);
+        yield return new WaitForSeconds(0.225f);
+        physik.velocity = new Vector2(0, 0f);
+        anim.SetBool("fight", false) ;
+        anim.SetBool("stop", true);
+        yield return new WaitForSeconds(4);
+        stop = false;
+        anim.SetBool("stop", false);
     }
     void Die()
     {
@@ -152,8 +147,4 @@ public class mike : MonoBehaviour
         zombie_damage = 0;
 
     }
-
-
-
-
 }

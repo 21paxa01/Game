@@ -184,13 +184,23 @@ public class spawn : MonoBehaviour
             zombie_chance = new int[1];
             zombie_chance[0] = 100;
         */}
-        else
+        else if(wave==5)
         {
             l = 1;
             spawn_time = 0.8f;
             wave_time = 80;
             zombie_arr = new GameObject[1];
             zombie_arr[0] = martin_zombie;
+            zombie_chance = new int[3];
+            zombie_chance[0] = 100;
+        }
+        else if (wave == 6)
+        {
+            l = 1;
+            spawn_time = 3f;
+            wave_time = 120;
+            zombie_arr = new GameObject[1];
+            zombie_arr[0] = mike_zombie;
             zombie_chance = new int[3];
             zombie_chance[0] = 100;
         }
