@@ -6,7 +6,7 @@ public class sparks : MonoBehaviour
 {
     void Start()
     {
-        Invoke("Destroy", 0.2f);
+        Invoke("Destroy", 0.1f);
     }
 
     void Update()

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   destroyTime: 5
-  death_time: 0.2
+  death_time: 0
   death: 0
   anim: {fileID: 0}
   ammo_damage: 1

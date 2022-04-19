@@ -7,7 +7,7 @@ public class pause : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public AudioSource pause_sound;
-    
+    public GameObject Wave_choice;
 
 
     // Update is called once per frame
@@ -24,12 +24,16 @@ public class pause : MonoBehaviour
     }
     public void Pause()
     {
-        if (torgovets.shop == false)
+        if (torgovets.shop == false&&mechanik_shop.lab==false)
         {
             pause_sound.Play();
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;
         }
+    }
+    public void Choice()
+    {
+        Wave_choice.SetActive(true);
     }
 }

@@ -25,9 +25,9 @@ public class zombie_hp : MonoBehaviour
     void Update()
     {
         bar.fillAmount = fill;
-        if (hp == HP)
+        if (hp >= HP&&death==false)
         {
-            HP--;
+            death = true;
             StartCoroutine(Die());
         }
     }
@@ -35,7 +35,6 @@ public class zombie_hp : MonoBehaviour
     public float hp = 0;
     IEnumerator Die()
     {
-        death = true;
         sp.sortingOrder = 8;
         spawn.zombie_kol--;
         anim.SetBool("death", death);

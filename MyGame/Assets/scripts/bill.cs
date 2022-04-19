@@ -79,7 +79,7 @@ public class bill : MonoBehaviour
             anim.SetBool("death", true);
             weapons.SetActive(false);
         }
-        else if(fill>0&&stop==false)
+        else if (fill > 0 && stop == false&& torgovets.shop == false && mechanik_shop.lab == false)
         {
             Walk();
             Reflect();
@@ -104,11 +104,11 @@ public class bill : MonoBehaviour
             {
                 computer.SetActive(false);
             }
-            if (transform.position.x > 4.1f && transform.position.x < 4.45f && transform.position.y <-6f && transform.position.y > -12f && torgovets.shop == false)
-                 torg.SetActive(true);
+            if (transform.position.x > 4.1f && transform.position.x < 4.45f && transform.position.y < -6f && transform.position.y > -12f && torgovets.shop == false)
+                torg.SetActive(true);
             else
                 torg.SetActive(false);
-            if (transform.position.x > 6.2f && transform.position.x < 6.9f && transform.position.y < -6f&& transform.position.y>-12f)
+            if (transform.position.x > 6.2f && transform.position.x < 6.9f && transform.position.y < -6f && transform.position.y > -12f)
             {
                 shop_door.open = true;
                 home.SetActive(true);
@@ -294,6 +294,7 @@ public class bill : MonoBehaviour
     public void Button_off()
     {
         spawn.start = true;
+        bird_spawn.start = true;
         off = true;
     }
     public void Start_shag()
@@ -364,7 +365,7 @@ public class bill : MonoBehaviour
     IEnumerator Discard()
     {
         stop = true;
-        rb.velocity = new Vector2(kef*speed * 3, 0f);
+        rb.velocity = new Vector2(kef*speed * 2, 0f);
         yield return new WaitForSeconds(0.2f);
         stop = false;
     }

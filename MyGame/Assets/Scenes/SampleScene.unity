@@ -235,6 +235,70 @@ Transform:
   m_Father: {fileID: 1104943821}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &72868487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72868488}
+  - component: {fileID: 72868489}
+  m_Layer: 0
+  m_Name: 'bird_spawn_2 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72868488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72868487}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.44, y: 1.5, z: 20.56054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1064776805}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &72868489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72868487}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e269328414a668e499d6d9f39562c54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  default_zombie: {fileID: 0}
+  bibo_zombie: {fileID: 0}
+  bo_zombie: {fileID: 0}
+  karl_zombie: {fileID: 0}
+  lara_zombie: {fileID: 0}
+  martin_zombie: {fileID: 0}
+  mike_zombie: {fileID: 0}
+  spawn_point_1: {fileID: 0}
+  spawn_point_2: {fileID: 0}
+  restart: {fileID: 0}
+  trans: {fileID: 0}
+  fill: 0
+  bar: {fileID: 0}
+  bill: {fileID: 0}
+  death: {fileID: 0}
+  spawn_time: 2
+  i: 1
+  WAVE: {fileID: 0}
+  bill_icon: {fileID: 0}
+  test: 0
+  wave_time: 0
 --- !u!1 &102049603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1087,7 @@ GameObject:
   - component: {fileID: 303200957}
   - component: {fileID: 303200958}
   m_Layer: 0
-  m_Name: spawn
+  m_Name: spawn_2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1066,6 +1130,7 @@ MonoBehaviour:
   spawn_point_2: {fileID: 0}
   restart: {fileID: 0}
   trans: {fileID: 0}
+  fill: 0
   bar: {fileID: 0}
   bill: {fileID: 0}
   death: {fileID: 0}
@@ -1091,6 +1156,7 @@ GameObject:
   - component: {fileID: 303399553}
   - component: {fileID: 303399559}
   - component: {fileID: 303399560}
+  - component: {fileID: 303399554}
   m_Layer: 0
   m_Name: 'lara '
   m_TagString: zombie
@@ -1117,6 +1183,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &303399554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303399552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!50 &303399555
 Rigidbody2D:
   serializedVersion: 4
@@ -1220,7 +1300,7 @@ Transform:
   - {fileID: 481843539}
   - {fileID: 695556709}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &303399559
 MonoBehaviour:
@@ -1279,9 +1359,12 @@ MonoBehaviour:
   zombie_damage: 0
   atack_time: 1
   distToPlayer: 0
+  debaff: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 481843539}
   zombie_hp: {fileID: 303399552}
+  sprite: {fileID: 0}
+  default_speed: 0.6
   speed: 0.6
   HP: 3
   dist_to_player: 1.5
@@ -1951,9 +2034,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454797948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.535, y: 0.155, z: 0}
+  m_LocalPosition: {x: -0.535, y: 0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 923751836}
   m_Father: {fileID: 134962927}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1996,8 +2080,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 1990882904062932084, guid: ac04501f1667c9c4f94a985f81567469, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -8265332824861768860, guid: ba6c0b1365939394c8f7f6ed604a6d49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3733,6 +3817,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741978528}
   m_CullTransparentMesh: 1
+--- !u!1 &783837545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783837546}
+  - component: {fileID: 783837547}
+  m_Layer: 0
+  m_Name: 'bird_spawn _1 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783837546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783837545}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.586, y: 1.5, z: 20.56054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1064776805}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783837547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783837545}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e269328414a668e499d6d9f39562c54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  default_zombie: {fileID: 0}
+  bibo_zombie: {fileID: 0}
+  bo_zombie: {fileID: 0}
+  karl_zombie: {fileID: 0}
+  lara_zombie: {fileID: 0}
+  martin_zombie: {fileID: 0}
+  mike_zombie: {fileID: 0}
+  spawn_point_1: {fileID: 0}
+  spawn_point_2: {fileID: 0}
+  restart: {fileID: 0}
+  trans: {fileID: 0}
+  fill: 0
+  bar: {fileID: 0}
+  bill: {fileID: 0}
+  death: {fileID: 0}
+  spawn_time: 2
+  i: 1
+  WAVE: {fileID: 0}
+  bill_icon: {fileID: 0}
+  test: 0
+  wave_time: 0
 --- !u!1 &796152626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,6 +3897,7 @@ GameObject:
   - component: {fileID: 796152633}
   - component: {fileID: 796152634}
   - component: {fileID: 796152629}
+  - component: {fileID: 796152635}
   m_Layer: 0
   m_Name: bibo_zombie
   m_TagString: zombie
@@ -3770,7 +3919,7 @@ Transform:
   - {fileID: 1245929642}
   - {fileID: 596318784}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &796152628
 Animator:
@@ -3918,9 +4067,12 @@ MonoBehaviour:
   death: 0
   zombie_damage: 20
   atack_time: 0.6
+  debaff: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 596318784}
   zombie_hp: {fileID: 796152626}
+  sprite: {fileID: 0}
+  default_speed: 0.65
   speed: 0.65
   HP: 4
   dist_to_player: 0.3
@@ -3943,6 +4095,20 @@ MonoBehaviour:
   test: 0
   text: {fileID: 0}
   head: {fileID: 0}
+--- !u!114 &796152635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796152626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!1 &813464803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,6 +4456,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &923751835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923751836}
+  - component: {fileID: 923751838}
+  - component: {fileID: 923751837}
+  m_Layer: 0
+  m_Name: anonim_fon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &923751836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923751835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.015, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454797949}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &923751837
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923751835}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a01ef0805a1ea341aacbabcb54679d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &923751838
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923751835}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -5579747795370245672, guid: ba6c0b1365939394c8f7f6ed604a6d49, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.22, y: 0.18}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &934220490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,6 +4660,7 @@ Transform:
   m_LocalPosition: {x: -11.33, y: -32.34, z: -30.444614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1092920299}
   - {fileID: 796152627}
   - {fileID: 956178767}
   - {fileID: 1729241929}
@@ -4417,6 +4686,7 @@ GameObject:
   - component: {fileID: 956178763}
   - component: {fileID: 956178768}
   - component: {fileID: 956178769}
+  - component: {fileID: 956178770}
   m_Layer: 0
   m_Name: default_zombie
   m_TagString: zombie
@@ -4443,10 +4713,12 @@ MonoBehaviour:
   zombie_damage: 10
   atack_time: 1
   distToPlayer: 0
+  debaff: {fileID: 0}
+  sprite: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 404240052}
   zombie_hp: {fileID: 956178762}
-  speed: 0.7
+  default_speed: 0.6
   HP: 3
   dist_to_player: 0.25
   test: 100
@@ -4552,7 +4824,7 @@ Transform:
   - {fileID: 1999434601}
   - {fileID: 404240052}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &956178768
 Animator:
@@ -4594,6 +4866,20 @@ MonoBehaviour:
   sp: {fileID: 0}
   HP: 3
   hp: 0
+--- !u!114 &956178770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956178762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!1 &961508314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4787,6 +5073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064776805}
   - component: {fileID: 1064776804}
+  - component: {fileID: 1064776806}
   m_Layer: 0
   m_Name: spawn_point
   m_TagString: Untagged
@@ -4817,6 +5104,7 @@ MonoBehaviour:
   spawn_point_2: {fileID: 303200957}
   restart: {fileID: 0}
   trans: {fileID: 0}
+  fill: 0
   bar: {fileID: 0}
   bill: {fileID: 0}
   death: {fileID: 0}
@@ -4839,9 +5127,26 @@ Transform:
   m_Children:
   - {fileID: 1821008308}
   - {fileID: 303200957}
+  - {fileID: 783837546}
+  - {fileID: 72868488}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064776806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064776803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0afceb6593809d4ca604562112996a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 1092920298}
+  spawn_point_1: {fileID: 783837546}
+  spawn_point_2: {fileID: 72868488}
 --- !u!1 &1083743492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4917,6 +5222,215 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083743492}
   m_CullTransparentMesh: 1
+--- !u!1 &1092920298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092920299}
+  - component: {fileID: 1092920302}
+  - component: {fileID: 1092920301}
+  - component: {fileID: 1092920300}
+  - component: {fileID: 1092920305}
+  - component: {fileID: 1092920304}
+  - component: {fileID: 1092920303}
+  - component: {fileID: 1092920306}
+  m_Layer: 0
+  m_Name: bird
+  m_TagString: zombie
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092920299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.968, y: 0.153, z: 30.444614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1646320912}
+  - {fileID: 1902325202}
+  m_Father: {fileID: 945325270}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092920300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e4106aa7fc7647908d35e1e1924f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  anim: {fileID: 0}
+  fight: 0
+  death: 0
+  bird_damage: 6
+  atack_time: 1
+  distToPlayer: 0
+  debaff: {fileID: 0}
+  money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
+  money_spawn: {fileID: 1902325202}
+  sprite: {fileID: 0}
+  default_speed: 1.2
+  speed: 1.2
+  HP: 2
+  dist_to_player: 0.2
+  test: 100
+--- !u!95 &1092920301
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eed393b1e6571cb4eb20b6a92407e2e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &1092920302
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -3486155192609771637, guid: a16ed1cf3d782b143a896326e842cad6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.2, y: 0.26}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!58 &1092920303
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06187369, y: 0.052417368}
+  serializedVersion: 2
+  m_Radius: 0.113556296
+--- !u!50 &1092920304
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1092920305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d0cabbde70f3d49acfe96dc0d8b639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 1136111406}
+  back: {fileID: 1732496581}
+  fill: 0
+  anim: {fileID: 0}
+  death_time: 0
+  death: 0
+  sp: {fileID: 0}
+  HP: 2
+  hp: 0
+--- !u!114 &1092920306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092920298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!1 &1104943820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,6 +5446,7 @@ GameObject:
   - component: {fileID: 1104943822}
   - component: {fileID: 1104943827}
   - component: {fileID: 1104943826}
+  - component: {fileID: 1104943828}
   m_Layer: 0
   m_Name: martin
   m_TagString: zombie
@@ -4953,7 +5468,7 @@ Transform:
   - {fileID: 591427199}
   - {fileID: 62262125}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1104943822
 Animator:
@@ -5102,13 +5617,30 @@ MonoBehaviour:
   zombie_damage: 10
   atack_time: 0
   boom_radius: 1
+  debaff: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 62262125}
   zombie_hp: {fileID: 1104943820}
+  sprite: {fileID: 0}
+  default_speed: 0.75
   speed: 0.75
   HP: 0
   dist_to_player: 0.4
   test: 100
+--- !u!114 &1104943828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104943820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!1 &1109539183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5273,6 +5805,81 @@ Transform:
   m_Father: {fileID: 406555208}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1136111404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136111405}
+  - component: {fileID: 1136111407}
+  - component: {fileID: 1136111406}
+  m_Layer: 5
+  m_Name: bar_hp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1136111405
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136111404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1646320912}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.7, y: -23.8}
+  m_SizeDelta: {x: 25.76, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1136111406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136111404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -494231399169815475, guid: 9ddeeec33fdcc4043a691021ba44dea7, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1136111407
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136111404}
+  m_CullTransparentMesh: 1
 --- !u!1 &1193805641
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,9 +6042,121 @@ Transform:
   - {fileID: 134962927}
   - {fileID: 406555208}
   - {fileID: 1590210028}
+  - {fileID: 1281454935}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1281454934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281454935}
+  - component: {fileID: 1281454938}
+  - component: {fileID: 1281454937}
+  - component: {fileID: 1281454936}
+  m_Layer: 0
+  m_Name: for_bird
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281454935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281454934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.724, y: -31.727, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280245516}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1281454936
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281454934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.656693, y: -0.5395365}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.26623058, y: 2.079073}
+  m_EdgeRadius: 0
+--- !u!61 &1281454937
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281454934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.37613416, y: -0.5364523}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.24773169, y: 2.0729046}
+  m_EdgeRadius: 0
+--- !u!61 &1281454938
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281454934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.043162584, y: -0.33296967}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6166129, y: 0.1984024}
+  m_EdgeRadius: 0
 --- !u!1 &1331555212
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,6 +7268,7 @@ GameObject:
   - component: {fileID: 1522508949}
   - component: {fileID: 1522508948}
   - component: {fileID: 1522508951}
+  - component: {fileID: 1522508952}
   m_Layer: 0
   m_Name: karl
   m_TagString: zombie
@@ -6570,7 +7290,7 @@ Transform:
   - {fileID: 961508315}
   - {fileID: 1193805642}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1522508946
 Animator:
@@ -6661,10 +7381,12 @@ MonoBehaviour:
   zombie_damage: 8
   atack_time: 0.5
   distToPlayer: 0
+  debaff: {fileID: 0}
+  sprite: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 1193805642}
   zombie_hp: {fileID: 1522508944}
-  speed: 0.8
+  default_speed: 0.7
   HP: 3
   dist_to_player: 0.4
   test: 100
@@ -6726,6 +7448,20 @@ MonoBehaviour:
   sp: {fileID: 0}
   HP: 3
   hp: 0
+--- !u!114 &1522508952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522508944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!1 &1532168726
 GameObject:
   m_ObjectHideFlags: 0
@@ -7047,6 +7783,107 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1646320911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646320912}
+  - component: {fileID: 1646320915}
+  - component: {fileID: 1646320914}
+  - component: {fileID: 1646320913}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1646320912
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646320911}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.00928, y: 0.00928, z: 0.00928}
+  m_Children:
+  - {fileID: 1732496580}
+  - {fileID: 1136111405}
+  m_Father: {fileID: 1092920299}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 416.1994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1646320913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646320911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &1646320914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646320911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1646320915
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646320911}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 13
+  m_TargetDisplay: 0
 --- !u!1 &1683595780
 GameObject:
   m_ObjectHideFlags: 0
@@ -7219,6 +8056,7 @@ GameObject:
   - component: {fileID: 1729241931}
   - component: {fileID: 1729241930}
   - component: {fileID: 1729241935}
+  - component: {fileID: 1729241936}
   m_Layer: 0
   m_Name: bo_zombie
   m_TagString: zombie
@@ -7240,7 +8078,7 @@ Transform:
   - {fileID: 163035070}
   - {fileID: 114500388}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1729241930
 Animator:
@@ -7280,11 +8118,13 @@ MonoBehaviour:
   zombie_damage: 40
   atack_time: 1
   distToPlayer: 0
+  debaff: {fileID: 0}
+  sprite: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 114500388}
   zombie_hp: {fileID: 1729241928}
-  speed: 0.3
-  HP: 12
+  default_speed: 0.5
+  HP: 9
   dist_to_player: 0.4
   test: 100
 --- !u!50 &1729241932
@@ -7396,6 +8236,95 @@ MonoBehaviour:
   sp: {fileID: 0}
   HP: 9
   hp: 0
+--- !u!114 &1729241936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729241928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
+--- !u!1 &1732496579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732496580}
+  - component: {fileID: 1732496582}
+  - component: {fileID: 1732496581}
+  m_Layer: 5
+  m_Name: bar_back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1732496580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732496579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1646320912}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.700171, y: -23.79943}
+  m_SizeDelta: {x: 28.63, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1732496581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732496579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -119207906404587125, guid: 9ddeeec33fdcc4043a691021ba44dea7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1732496582
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732496579}
+  m_CullTransparentMesh: 1
 --- !u!1 &1733915708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7841,7 +8770,7 @@ GameObject:
   - component: {fileID: 1821008308}
   - component: {fileID: 1821008309}
   m_Layer: 0
-  m_Name: spawn (1)
+  m_Name: spawn _1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7884,6 +8813,7 @@ MonoBehaviour:
   spawn_point_2: {fileID: 0}
   restart: {fileID: 0}
   trans: {fileID: 0}
+  fill: 0
   bar: {fileID: 0}
   bill: {fileID: 0}
   death: {fileID: 0}
@@ -7974,6 +8904,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406555208}
   m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1902325201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902325202}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1902325202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902325201}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1092920299}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904437791
 GameObject:
@@ -8752,6 +9712,7 @@ GameObject:
   - component: {fileID: 2045261735}
   - component: {fileID: 2045261733}
   - component: {fileID: 2045261740}
+  - component: {fileID: 2045261734}
   m_Layer: 0
   m_Name: mike
   m_TagString: zombie
@@ -8780,6 +9741,20 @@ MonoBehaviour:
   sp: {fileID: 0}
   HP: 3
   hp: 0
+--- !u!114 &2045261734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045261732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c92707c5cbea4fa5151cd681eda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze_time: 0
+  freeze: 0
 --- !u!95 &2045261735
 Animator:
   serializedVersion: 3
@@ -8902,7 +9877,7 @@ Transform:
   - {fileID: 608884710}
   - {fileID: 1334231019}
   m_Father: {fileID: 945325270}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2045261740
 MonoBehaviour:
@@ -8924,9 +9899,13 @@ MonoBehaviour:
   zombie_damage: 15
   atack_time: 1.5
   distToPlayer: 0
+  shield: {fileID: 608884709}
+  debaff: {fileID: 0}
   money: {fileID: 5609805162789336488, guid: 06154f9d67849fe43b3ba3cccec7d6ba, type: 3}
   money_spawn: {fileID: 1334231019}
   zombie_hp: {fileID: 2045261732}
+  sprite: {fileID: 0}
+  default_speed: 0.5
   speed: 0.5
   HP: 3
   dist_to_player: 1

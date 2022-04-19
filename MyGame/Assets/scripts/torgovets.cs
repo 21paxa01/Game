@@ -15,6 +15,9 @@ public class torgovets : MonoBehaviour
     public GameObject fon;
     public GameObject shotgun;
     public GameObject ak47;
+    public GameObject rpg;
+    public GameObject p90;
+    public GameObject snowgun;
     public SpriteRenderer sp;
     public SpriteRenderer weap_sp;
     public static bool shop;
@@ -22,12 +25,12 @@ public class torgovets : MonoBehaviour
     private float[] y_arr ={ 0.35f,0.275f,0.425f };
     private GameObject[] capsul_arr;
     private GameObject[] weapons_arr;
-    private int[] w_prise_arr = { 250,1000 };
-    private string[] w_range_arr = { "short","middle" };
-    private float[] w_damage_arr = { 30f,10f };
-    private string[] w_reload_arr = { "1.5", "0.1" };
-    private float[] w_ammunition_arr = { 15f, 30f };
-    private string[] w_name_arr = { "shotgun", "ak-47" };
+    private float[] w_prise_arr = { 150,250,200,300,350 };
+    private string[] w_range_arr = { "short","middle", "middle", "middle", "middle" };
+    private float[] w_damage_arr = { 30f,10f,60f,10f,10f };
+    private string[] w_reload_arr = { "1.5", "0.1","3","3/1.5","0.2" };
+    private float[] w_ammunition_arr = { 15f, 30f,1f,45f,20f };
+    private string[] w_name_arr = { "shotgun", "ak-47","RPG","p-90","snowgun" };
     public Text w_prise;
     public Text buy_prise;
     public Text w_range;
@@ -37,16 +40,26 @@ public class torgovets : MonoBehaviour
     public Text w_name;
     private int i;
     public int j;
+    public  float[] buy_arr = { 1, 0, 0, 0, 0, 0 };
+    public float[] prise_arr = { 40, 0, 0, 0, 0, 0 };
+
+    public Save save_script;
+
+    public Inventory script;
     void Start()
     {
+        save_script = GameObject.Find("save").GetComponent<Save>();
+        buy_arr = save_script.w_buy_arr;
+        prise_arr = save_script.w_prise_arr;
         capsul_arr = new GameObject[3];
         capsul_arr[0] = capsul_1;capsul_arr[1] = capsul_2;capsul_arr[2] = capsul_3;
-        weapons_arr = new GameObject[2];
-        weapons_arr[0] = shotgun; weapons_arr[1] = ak47;
+        weapons_arr = new GameObject[5];
+        weapons_arr[0] = shotgun; weapons_arr[1] = ak47;weapons_arr[2] = rpg;weapons_arr[3] = p90;weapons_arr[4] = snowgun;
         j = 0;
         weapons_arr[j].SetActive(true);
         weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
         weap_sp.sortingOrder = 3;
+        save_script.Load();
     }
     void Update()
     {
@@ -140,7 +153,7 @@ public class torgovets : MonoBehaviour
     {
         weapons_arr[j].SetActive(false);
         j++;
-        if (j == 2)
+        if (j == 5)
             j = 0;
         weapons_arr[j].SetActive(true) ;
         w_prise.text = w_prise_arr[j].ToString();
@@ -155,7 +168,7 @@ public class torgovets : MonoBehaviour
         weapons_arr[j].SetActive(false);
         j--;
         if (j == -1)
-            j = 1;
+            j = 4;
         weapons_arr[j].SetActive(true);
         w_prise.text = w_prise_arr[j].ToString();
         w_name.text = w_name_arr[j].ToString();
@@ -166,11 +179,18 @@ public class torgovets : MonoBehaviour
     }
     public void Buy_weapon()
     {
-        if (mechanik_shop.buy_arr[j + 1]==0&&MoneyCount.mon>=w_prise_arr[j])
+        if (save_script.w_buy_arr[j + 1]==0&&MoneyCount.mon>=w_prise_arr[j])
         {
             MoneyCount.mon -= w_prise_arr[j];
-            mechanik_shop.buy_arr[j+1] = 1;
             change_weapon.k++;
+            script = GameObject.Find("Home_Canvas").GetComponent<Inventory>();
+            script.i = j+1;
+            save_script.inv_j++;
+            save_script.w_buy_arr[j + 1] = 1;
+            save_script.w_prise_arr[j + 1] = w_prise_arr[j] * 0.4f;
+            save_script.save();
+            save_script.Load();
+            script.NewWeapon();
         }
         WeaponsChoiseMenu.SetActive(false);
     }

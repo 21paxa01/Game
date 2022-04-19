@@ -14,16 +14,26 @@ public class ammo : MonoBehaviour
     public float ammo_damage;
     public float default_damage;
     public bool road;
+    public float test;
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         Invoke("DestroyAmmo", destroyTime);
         
     }
 
-    
+
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        test = transform.position.x;
+        if (death == false)
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        else
+        {
+            rb.velocity = new Vector2(0f, 0f);
+            rb.gravityScale = 0f;
+        }
     }
 
     void DestroyAmmo()
@@ -34,18 +44,15 @@ public class ammo : MonoBehaviour
     {
         if (other.name == "room" || other.name == "wall(Clone)" || other.name == "Shield")
         {
-            if (road == true)
-            {
-                Destroy(gameObject);
-
-            }
+            road = true;
+            StartCoroutine(Die());
         }
         if (other.CompareTag("zombie"))
         {
             script = other.gameObject.GetComponent<zombie_hp>();
             if (script.death == false)
             {
-                Destroy(gameObject);
+                StartCoroutine(Die());
                 if (script.hp + ammo_damage > script.HP)
                 {
                     script.hp = script.HP;
@@ -56,6 +63,13 @@ public class ammo : MonoBehaviour
             }
         }
     }
-    
+    IEnumerator Die()
+    {
+        death = true;
+        anim.SetBool("die", true);
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        yield return new WaitForSeconds(death_time);
+        Destroy(gameObject);
+    }
 
 }

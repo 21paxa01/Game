@@ -18,17 +18,21 @@ public class martin : MonoBehaviour
     Coroutine damage;
     public float boom_radius;
     private bool dam_to_bill;
-
+    public zombie_debaffs debaff;
     public GameObject money;
     public Transform money_spawn;
     public GameObject zombie_hp;
     private zombie_hp script;
 
+    public SpriteRenderer sprite;
+    public float default_speed;
     public float speed;
     public float HP;
     private float hp = 0;
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        debaff = GetComponent<zombie_debaffs>();
         physik = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Bill");
         anim = GetComponent<Animator>();
@@ -39,6 +43,16 @@ public class martin : MonoBehaviour
     public float dist_to_player;
     void Update()
     {
+        if (debaff.freeze == true)
+        {
+            speed = default_speed / 2;
+            sprite.color = new Color(0f, 0f, 0f, 1f);
+        }
+        else
+        {
+            speed = default_speed;
+            sprite.color = new Color(70f, 105f, 255f, 1f);
+        }
 
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
@@ -64,9 +78,9 @@ public class martin : MonoBehaviour
         {
             physik.velocity = new Vector2(0, 0);
         }
-        if (hp == HP)
+        if (hp >= HP&&death==false)
         {
-            HP--;
+            death = true;
             physik.velocity = new Vector2(0, 0);
             StartCoroutine(Die());
         }
@@ -105,7 +119,6 @@ public class martin : MonoBehaviour
     }
     IEnumerator Die()
     {
-        death = true;
         anim.SetBool("death", death);
         yield return new WaitForSeconds(script.death_time);
         Instantiate(money, money_spawn.position, transform.rotation);

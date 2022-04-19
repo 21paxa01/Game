@@ -30,7 +30,7 @@ public class wave_img : MonoBehaviour
 
     void Update()
     {
-        if (victory == true&&spawn.zombie_kol==0)
+        if (victory == true&&spawn.zombie_kol==0&&bird_spawn.bird_kol==0)
         {
             WavE.SetActive(true);
             vic_img.SetActive(true);

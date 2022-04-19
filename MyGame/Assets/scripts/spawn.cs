@@ -21,7 +21,7 @@ public class spawn : MonoBehaviour
 
     public static int wave =1;
     //public Text text;
-    private float fill;
+    public float fill;
     public Image bar;
     public GameObject bill;
     private bill script;
@@ -88,6 +88,7 @@ public class spawn : MonoBehaviour
         a = 0;
         while (a<1)
         {
+            yield return new WaitForSeconds(spawn_time);
             Zombies();
             SpawnPoint();
             Instantiate(zombie,spawn_point.position,transform.rotation);
@@ -141,21 +142,21 @@ public class spawn : MonoBehaviour
             StopCoroutine(Spawn());
         }
     }
-    void ChangeChance()
+    public void ChangeChance()
     {
         if (wave == 1)
         {
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
             zombie_chance[0] = 68;zombie_chance[1] = 100;
             spawn_time = 3f;
-            wave_time = 120;
+            wave_time = 90;
         }
         else if (wave == 2)
         {
             wave_time = 126;
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
             zombie_chance[0] = 62; zombie_chance[1] = 100;
-            spawn_time = 2.35f;
+            spawn_time = 3.13f;
         }
         else if (wave == 3)
         {
@@ -171,7 +172,7 @@ public class spawn : MonoBehaviour
         {
             l = 3;
             spawn_time = 2.3f;
-            wave_time = 132;
+            wave_time = 138;
             zombie_arr = new GameObject[3];
             zombie_arr[0] = lara_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2]=bibo_zombie;
             zombie_chance = new int[3];
@@ -196,13 +197,53 @@ public class spawn : MonoBehaviour
         }
         else if (wave == 6)
         {
-            l = 1;
-            spawn_time = 3f;
-            wave_time = 120;
-            zombie_arr = new GameObject[1];
-            zombie_arr[0] = mike_zombie;
+            l = 2;
+            spawn_time = 2.8f;
+            wave_time = 100;
+            zombie_arr = new GameObject[2];
+            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie;
+            zombie_chance = new int[2];
+            zombie_chance[0] = 40; zombie_chance[1] = 100;
+        }
+        else if (wave == 7)
+        {
+            l = 3;
+            spawn_time = 3.35f;
+            wave_time = 150;
+            zombie_arr = new GameObject[3];
+            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie;zombie_arr[2] = default_zombie;
             zombie_chance = new int[3];
-            zombie_chance[0] = 100;
+            zombie_chance[0] = 35;zombie_chance[1] = 70; zombie_chance[2] = 100;
+        }
+        else if (wave == 8)
+        {
+            l = 3;
+            spawn_time = 3.13f;
+            wave_time = 150;
+            zombie_arr = new GameObject[3];
+            zombie_arr[0] = mike_zombie; zombie_arr[1] = bibo_zombie; zombie_arr[2] = default_zombie;
+            zombie_chance = new int[3];
+            zombie_chance[0] = 20; zombie_chance[1] = 60; zombie_chance[2] = 100;
+        }
+        else if (wave == 9)
+        {
+            l = 3;
+            spawn_time = 2.3f;
+            wave_time = 162;
+            zombie_arr = new GameObject[3];
+            zombie_arr[0] = bo_zombie; zombie_arr[1] = bibo_zombie; zombie_arr[2] = default_zombie;
+            zombie_chance = new int[3];
+            zombie_chance[0] = 33; zombie_chance[1] = 66; zombie_chance[2] = 100;
+        }
+        else if (wave == 10)
+        {
+            l = 7;
+            spawn_time = 2.7f;
+            wave_time = 150;
+            zombie_arr = new GameObject[7];
+            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie; zombie_arr[2] = default_zombie;zombie_arr[3] = bo_zombie;zombie_arr[4] = bibo_zombie;zombie_arr[5] = martin_zombie;zombie_arr[6] = karl_zombie;
+            zombie_chance = new int[7];
+            zombie_chance[0] = 10; zombie_chance[1] = 27; zombie_chance[2] =49 ; zombie_chance[3] = 59; zombie_chance[4] = 74; zombie_chance[5] =84 ; zombie_chance[6] =100 ;
         }
     }
 }

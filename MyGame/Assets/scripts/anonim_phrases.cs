@@ -54,10 +54,11 @@ public class anonim_phrases : MonoBehaviour
     {
         if (inventory == false)
         {
+            text = GetComponent<Text>();
             stop = true;
             computer_menu.SetActive(true);
             inventory = true;
-            text.text = inventory_phrases[0];
+            text.text =inventory_phrases[0];
         }
     }
     public void Inventory_OFF()

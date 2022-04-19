@@ -15,18 +15,23 @@ public class mike : MonoBehaviour
     private float zomb_damage;
     public float atack_time;
     public float distToPlayer;
-
+    public GameObject shield;
+    public zombie_debaffs debaff;
     private int kef;
     public GameObject money;
     public Transform money_spawn;
     public GameObject zombie_hp;
     private zombie_hp script;
 
+    public SpriteRenderer sprite;
+    public float default_speed;
     public float speed;
     public float HP;
     private float hp = 0;
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        debaff = GetComponent<zombie_debaffs>();
         physik = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = GameObject.Find("Bill");
@@ -38,6 +43,16 @@ public class mike : MonoBehaviour
     public float dist_to_player;
     void Update()
     {
+        if (debaff.freeze == true)
+        {
+            speed = default_speed / 2;
+            sprite.color = new Color(0f, 0f, 0f, 1f);
+        }
+        else
+        {
+            speed = default_speed;
+            sprite.color = new Color(70f, 105f, 255f, 1f);
+        }
 
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
@@ -83,9 +98,10 @@ public class mike : MonoBehaviour
                 fight = true;
             }
         }
-        if (hp == HP)
+        if (hp >= HP&&death==false)
         {
-            HP--;
+            death = true;
+            stop = true;
             Die();
         }
     }
@@ -103,7 +119,7 @@ public class mike : MonoBehaviour
             StartCoroutine(WallDamage(other.gameObject));
 
         }
-        if (other.name == "Bill")
+        if (other.name == "Bill"&&death==false)
         {
             if (player.transform.position.x > transform.position.x)
                 bill.kef = 1;
@@ -136,13 +152,14 @@ public class mike : MonoBehaviour
         anim.SetBool("fight", false) ;
         anim.SetBool("stop", true);
         yield return new WaitForSeconds(4);
-        stop = false;
+        if(death==false)
+            stop = false;
         anim.SetBool("stop", false);
     }
     void Die()
     {
-
-        death = true;
+        physik.velocity = new Vector2(0, 0);
+        shield.SetActive(false);
         Instantiate(money, money_spawn.position, transform.rotation);
         zombie_damage = 0;
 

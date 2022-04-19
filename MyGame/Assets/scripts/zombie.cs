@@ -15,19 +15,23 @@ public class zombie : MonoBehaviour
     public float atack_time;
     private float at_time = 0f;
     public float distToPlayer;
+    public zombie_debaffs debaff;
     Coroutine damage;
 
-
+    public SpriteRenderer sprite;
     public GameObject money;
     public Transform money_spawn;
     public GameObject zombie_hp;
     private zombie_hp script;
 
-    public float speed;
+    public float default_speed;
+    private float speed;
     public float HP;
     private float hp = 0;
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        debaff = GetComponent<zombie_debaffs>();
         physik = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Bill");
         anim = GetComponent<Animator>();
@@ -38,7 +42,16 @@ public class zombie : MonoBehaviour
     public float dist_to_player;
     void Update()
     {
-
+        if (debaff.freeze == true)
+        {
+            speed = default_speed / 2;
+            sprite.color = new Color(0f, 0f, 0f, 1f);
+        }
+        else
+        {
+            speed = default_speed;
+            sprite.color = new Color(70f, 105f, 255f, 1f);
+        }
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player)
@@ -76,9 +89,9 @@ public class zombie : MonoBehaviour
             physik.velocity = new Vector2(0, 0);
             fight = true;
         }
-        if (hp == HP)
+        if (hp >= HP&&death==false)
         {
-            HP--;
+            death = true;
             Die();
         }
     }
@@ -143,10 +156,8 @@ public class zombie : MonoBehaviour
     }
     void Die()
     {
-       
-            death = true;
-            Instantiate(money, money_spawn.position, transform.rotation);
-            zombie_damage = 0;
+        Instantiate(money, money_spawn.position, transform.rotation);
+        zombie_damage = 0;
        
     }
     

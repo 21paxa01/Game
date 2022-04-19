@@ -7,6 +7,7 @@ public class computer : MonoBehaviour
 {
     public GameObject computer_menu;
     public GameObject anonim;
+    public GameObject fon;
     private SpriteRenderer sp;
     void Start()
     {
@@ -20,6 +21,9 @@ public class computer : MonoBehaviour
     {
         anonim = GameObject.Find("anonim_icon");
         sp = anonim.GetComponent<SpriteRenderer>();
+        sp.sortingOrder = -1;
+        fon = GameObject.Find("anonim_fon");
+        sp = fon.GetComponent<SpriteRenderer>();
         sp.sortingOrder = -1;
         computer_menu.SetActive(true);
     }
