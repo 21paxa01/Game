@@ -1,0 +1,666 @@
+fileFormatVersion: 2
+guid: 7fbbcd0799ecbe34895dfe4634d9fc3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3636624296348341490
+    second: boss_final_for_pasha_0
+  - first:
+      213: 8913820446051490773
+    second: boss_final_for_pasha_1
+  - first:
+      213: -6326700771107136662
+    second: boss_final_for_pasha_2
+  - first:
+      213: 4574829701262172485
+    second: boss_final_for_pasha_3
+  - first:
+      213: 61434409094756366
+    second: boss_final_for_pasha_4
+  - first:
+      213: -5237399458259227482
+    second: boss_final_for_pasha_5
+  - first:
+      213: -7160961001091736226
+    second: boss_final_for_pasha_6
+  - first:
+      213: -1790158669781028420
+    second: boss_final_for_pasha_7
+  - first:
+      213: -5250484422942505648
+    second: boss_final_for_pasha_11
+  - first:
+      213: -1326493081347080973
+    second: boss_final_for_pasha_13
+  - first:
+      213: 7437668586359816555
+    second: boss_final_for_pasha_14
+  - first:
+      213: -1356244271638211846
+    second: boss_final_for_pasha_15
+  - first:
+      213: -1336308652721483432
+    second: boss_final_for_pasha_16
+  - first:
+      213: -2567852877025422960
+    second: boss_final_for_pasha_17
+  - first:
+      213: -3946361099436266004
+    second: boss_final_for_pasha_18
+  - first:
+      213: 8416324230458436376
+    second: boss_final_for_pasha_8
+  - first:
+      213: -6337626887569530230
+    second: boss_final_for_pasha_12
+  - first:
+      213: -7623097934642863881
+    second: boss_final_for_pasha_19
+  - first:
+      213: -5482675619399368163
+    second: boss_final_for_pasha_20
+  - first:
+      213: -1339549556408342199
+    second: boss_final_for_pasha_21
+  - first:
+      213: -3208852122810698487
+    second: boss_final_for_pasha_22
+  - first:
+      213: 8300227288570771109
+    second: boss_final_for_pasha_23
+  - first:
+      213: 8836671167374260539
+    second: boss_final_for_pasha_25
+  - first:
+      213: -3701556739429754960
+    second: boss_final_for_pasha_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_final_for_pasha_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1155
+        width: 249
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b2a9a587d188dc0800000000000000
+      internalID: -3636624296348341490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1154
+        width: 230
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db538ed77044bb70800000000000000
+      internalID: 8913820446051490773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_2
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1154
+        width: 217
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b18f14b2b0338a0800000000000000
+      internalID: -6326700771107136662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_3
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1154
+        width: 230
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54163a3ff5f0d7f30800000000000000
+      internalID: 4574829701262172485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 977
+        width: 249
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aca2af01f40157b0800000000000000
+      internalID: -5237399458259227482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_6
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 977
+        width: 230
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d508fe8e72f9c90800000000000000
+      internalID: -7160961001091736226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_7
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 977
+        width: 217
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1bd1cac241827e0800000000000000
+      internalID: -1790158669781028420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 610
+        width: 249
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b610f0f3c28e73760800000000000000
+      internalID: 7437668586359816555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_15
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 610
+        width: 248
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af298584507ad2de0800000000000000
+      internalID: -1356244271638211846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_16
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 610
+        width: 248
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85151444c5a747de0800000000000000
+      internalID: -1336308652721483432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_17
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 610
+        width: 250
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0915f65d9672d5cd0800000000000000
+      internalID: -2567852877025422960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_18
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 610
+        width: 248
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced6ea02d75bb39c0800000000000000
+      internalID: -3946361099436266004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_8
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 977
+        width: 217
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81becf6cb4accc470800000000000000
+      internalID: 8416324230458436376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_12
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 796
+        width: 390
+        height: 142
+      alignment: 9
+      pivot: {x: 0.6953651, y: 0.14228928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8224778ce93c08a0800000000000000
+      internalID: -6337626887569530230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_19
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 610
+        width: 248
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0299d31d0553690800000000000000
+      internalID: -7623097934642863881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_20
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 392
+        width: 256
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d128107929f99e3b0800000000000000
+      internalID: -5482675619399368163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_21
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 392
+        width: 219
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949af3396c6f86de0800000000000000
+      internalID: -1339549556408342199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_22
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 395
+        width: 65
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9053c1bdefdd773d0800000000000000
+      internalID: -3208852122810698487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_23
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 369
+        width: 55
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6b3421eb4503370800000000000000
+      internalID: 8300227288570771109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_25
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 366
+        width: 111
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b397748ab9922aa70800000000000000
+      internalID: 8836671167374260539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_26
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 368
+        width: 50
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b71656d1cd61acc0800000000000000
+      internalID: -3701556739429754960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_final_for_pasha_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 218
+        width: 261
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08341305424ad000800000000000000
+      internalID: 61434409094756366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

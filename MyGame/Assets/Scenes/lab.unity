@@ -1161,7 +1161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 22
-  m_Sprite: {fileID: 1386630899403903050, guid: 7e596bcb4b1ee5f4ab99699b0943116e, type: 3}
+  m_Sprite: {fileID: -3569716635540632419, guid: ea67044285f8a6a439cf3b09d80dd064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3460,6 +3460,7 @@ MonoBehaviour:
   ammunition_marking3: {fileID: 200130045}
   ammunition_marking4: {fileID: 1426691765}
   ammunition_marking5: {fileID: 103027996}
+  save_script: {fileID: 0}
 --- !u!1 &1664895168
 GameObject:
   m_ObjectHideFlags: 0

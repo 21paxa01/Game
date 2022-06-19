@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 7658233531464924369
     second: capsule_1_0
+  - first:
+      213: -8603769026908993890
+    second: capsule_1_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +117,7 @@ TextureImporter:
         width: 38
         height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,6 +125,27 @@ TextureImporter:
       bones: []
       spriteID: 1dcb3f162d2874a60800000000000000
       internalID: 7658233531464924369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capsule_1_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 33
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96c49d97a5499880800000000000000
+      internalID: -8603769026908993890
       vertices: []
       indices: 
       edges: []

@@ -1,0 +1,444 @@
+fileFormatVersion: 2
+guid: e457a23a0a4fb5342864d279269f53d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2627831057191243924
+    second: a_cool_stick_0
+  - first:
+      213: 7163245812401043906
+    second: a_cool_stick_1
+  - first:
+      213: -8999094774526562388
+    second: a_cool_stick_2
+  - first:
+      213: 3609984437885146326
+    second: a_cool_stick_3
+  - first:
+      213: 4815278114761513905
+    second: a_cool_stick_5
+  - first:
+      213: 3542298957961988966
+    second: a_cool_stick_6
+  - first:
+      213: -4253772232049568454
+    second: a_cool_stick_7
+  - first:
+      213: 7998096962650052299
+    second: a_cool_stick_8
+  - first:
+      213: -7567575838947474619
+    second: a_cool_stick_9
+  - first:
+      213: -8813341546773671345
+    second: a_cool_stick_10
+  - first:
+      213: 6195645548661565182
+    second: a_cool_stick_11
+  - first:
+      213: 9171053402616605738
+    second: a_cool_stick_12
+  - first:
+      213: -3290122849745518736
+    second: a_cool_stick_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: a_cool_stick_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 151
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.27, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f606a8391188bd0800000000000000
+      internalID: -2627831057191243924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 136
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.24, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9f7f62d16f86360800000000000000
+      internalID: 7163245812401043906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 125
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.21, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf25485bfacc1380800000000000000
+      internalID: -8999094774526562388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 116
+        width: 54
+        height: 7
+      alignment: 9
+      pivot: {x: 0.18, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d415d048bd391230800000000000000
+      internalID: 3609984437885146326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_5
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 103
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.15, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb9215deed43d240800000000000000
+      internalID: 4815278114761513905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_6
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 93
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.12, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b8f856226c82130800000000000000
+      internalID: 3542298957961988966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 82
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.09, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35d34141b097f4c0800000000000000
+      internalID: -4253772232049568454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_8
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 72
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.06, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc613e1dfc2fefe60800000000000000
+      internalID: 7998096962650052299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_9
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 59
+        width: 54
+        height: 9
+      alignment: 9
+      pivot: {x: 0.03, y: 0.7416924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54305b48ed19af690800000000000000
+      internalID: -7567575838947474619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 49
+        width: 54
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f421d5cee88b0b580800000000000000
+      internalID: -8813341546773671345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_11
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 34
+        width: 54
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6e332fcca5bf550800000000000000
+      internalID: 6195645548661565182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 23
+        width: 54
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ca917ba70264f70800000000000000
+      internalID: 9171053402616605738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_cool_stick_13
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 14
+        width: 54
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fb58133b22752d0800000000000000
+      internalID: -3290122849745518736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -137,12 +137,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   destroyTime: 0.15
-  death_time: 0.2
+  death_time: 0
   death: 0
   anim: {fileID: 0}
   ammo_damage: 3
   default_damage: 3
   road: 0
+  test: 0
 --- !u!95 &828567437251648945
 Animator:
   serializedVersion: 3
