@@ -15,6 +15,9 @@ public class Save : MonoBehaviour
     public int[] save_g_cell_ind_arr = { 0, 0, 0, 0, 0, 0 };
     public int inv_k = -1;
 
+    public float[] s_buy_arr = { 0, 0, 0, 0, 0, 0 };
+    public int inv_s = 0;
+
     public int[] save_tasks_ind = { 0, 1, 2 };
     public int save_tasks_i=2;
     public int save_killed_zombies;
@@ -97,6 +100,29 @@ public class Save : MonoBehaviour
         //data.p_arr_1 = prise_arr[0]; data.p_arr_2 = prise_arr[1]; data.p_arr_3 = prise_arr[2]; data.p_arr_4 = prise_arr[3]; data.p_arr_5 = prise_arr[4]; data.p_arr_6 = prise_arr[5];
         formatter.Serialize(file, data);
         file.Close();
+    }
+    public void Load_skins()
+    {
+        if (File.Exists(Application.persistentDataPath + "/Skins.dat"))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream file = new FileStream(Application.persistentDataPath + "/Skins.dat", FileMode.Open);
+            Skins data = (Skins)formatter.Deserialize(file);
+            file.Close();
+            s_buy_arr=data.b_arr;
+            inv_s = data.s;
+        }
+    }
+    public void Save_skins()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream file = new FileStream(Application.persistentDataPath + "/Skins.dat", FileMode.Create);
+        Skins data = new Skins();
+        data.b_arr = s_buy_arr;
+        data.s = inv_s;
+        formatter.Serialize(file, data);
+        file.Close();
+
     }
     public void Load_upgrade()
     {
@@ -240,5 +266,11 @@ public class Save : MonoBehaviour
         public float[] b_arr;
         public int[] s_arr;
         public int k;
+    }
+    [Serializable]
+    public class Skins
+    {
+        public float[] b_arr;
+        public int s;
     }
 }

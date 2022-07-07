@@ -30,7 +30,7 @@ public class my_grenage : MonoBehaviour
     }
     public void Take_grenage()
     {
-        if (change_script.g_chek[script.g_cell_ind_arr[script.i]] == false&&script.stop==false)
+        if (change_script.g_chek[script.g_cell_ind_arr[script.i]] == false&&script.stop== false&&script.category_i == 3)
         {
             cell.SetActive(true);
             grenage_img.SetActive(true);

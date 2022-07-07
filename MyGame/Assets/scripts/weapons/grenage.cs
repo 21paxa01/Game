@@ -13,17 +13,29 @@ public class grenage : MonoBehaviour
     public float damage;
     private Collider2D coll;
     public float reload_time;
+    public GameObject line;
     private SpriteRenderer sprite;
-   void Start()
+    public float rotate_distance;
+    private float rotate_y;
+    private float rotate_z;
+    private float kef;
+    public bool zomb_trig;
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         sprite = GetComponent<SpriteRenderer>();
+        rotate_z = 45f;
+        if(transform.rotation.z>0.5f)
+            rotate_z = 135f;
+        //StartCoroutine(Rotate());
+        //StartCoroutine(Line());
     }
 
     void Update()
     {
+        //Instantiate(line, transform.position, Quaternion.Euler(0f, rotate_y, rotate_z));
         if (death == false)
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         else
@@ -31,7 +43,7 @@ public class grenage : MonoBehaviour
             rb.velocity = new Vector2(0f, 0f);
             rb.gravityScale = 0f;
         }
-
+        //rotate = transform.rotation.z;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -39,11 +51,12 @@ public class grenage : MonoBehaviour
         {
             if (death == false)
             {
+                transform.position = new Vector3(transform.position.x,-3.08f, transform.position.z);
                 StartCoroutine(Die());
                 StartCoroutine(Camera_boom());
             }
         }
-        if (other.CompareTag("zombie"))
+        if (other.CompareTag("zombie")&&zomb_trig==true)
         {
             if (death == false)
             {
@@ -65,6 +78,8 @@ public class grenage : MonoBehaviour
     }
     IEnumerator Die()
     {
+        zomb_trig = true;
+        StopCoroutine(Line());
         death = true;
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         anim.SetBool("boom", true);
@@ -85,5 +100,29 @@ public class grenage : MonoBehaviour
         }
         ShopCamera.x = 0;
         Destroy(gameObject);
+    }
+    IEnumerator Line()
+    {
+        while (1 > 0)
+        {
+            Instantiate(line, transform.position, Quaternion.Euler(0f, rotate_y, rotate_z));
+            yield return new WaitForSeconds(0.00001f);
+        }
+    }
+    IEnumerator Rotate()
+    {
+        kef = 1f;
+        rotate_y = 1f;
+        if (rotate_z == 45f) {
+            kef = -1f;
+            rotate_y = -1f;
+        }
+        yield return new WaitForSeconds(0.1f);
+        for(int i = 0; i < rotate_distance; i++)
+        {
+            transform.rotation = Quaternion.Euler(0f,rotate_y, rotate_z);
+            rotate_z += kef;
+            yield return new WaitForSeconds(0.002f);
+        }
     }
 }

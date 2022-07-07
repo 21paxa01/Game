@@ -41,7 +41,7 @@ public class my_weapon : MonoBehaviour
         i = j - 1;
         if (i == -1)
             i = 1;
-        if ( script.now_weapon[i] != script.i&&script.stop==false)
+        if ( script.now_weapon[i] != script.i&&script.stop==false&&script.category_i==0)
         {
             if (x >= 0)
             {

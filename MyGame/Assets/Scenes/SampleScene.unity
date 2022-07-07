@@ -1339,6 +1339,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 303399559}
 --- !u!50 &303399555
 Rigidbody2D:
   serializedVersion: 4
@@ -4348,6 +4352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 796152629}
 --- !u!1 &813464803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,6 +5133,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 956178769}
 --- !u!1 &961508314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,6 +5698,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 1092920305}
 --- !u!1 &1104943820
 GameObject:
   m_ObjectHideFlags: 0
@@ -5901,6 +5917,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 1104943826}
 --- !u!1 &1109539183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6519,6 +6539,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 1249380174}
 --- !u!1 &1280245515
 GameObject:
   m_ObjectHideFlags: 0
@@ -8161,6 +8185,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 1522508951}
 --- !u!1 &1532168726
 GameObject:
   m_ObjectHideFlags: 0
@@ -8954,6 +8982,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 1729241935}
 --- !u!1 &1732496579
 GameObject:
   m_ObjectHideFlags: 0
@@ -10470,6 +10502,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeze_time: 0
   freeze: 0
+  fire: 0
+  fire_time: 3
+  fire_damage: 0.2
+  script: {fileID: 2045261733}
 --- !u!95 &2045261735
 Animator:
   serializedVersion: 3

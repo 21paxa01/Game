@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
     public GameObject axe;
     public GameObject punk, skin_1, defoalt;
     public GameObject inv_punk, inv_skin_1, inv_bill;
-    public GameObject infantry_grenade,dynamite,ice_grenade;
+    public GameObject infantry_grenade,dynamite,ice_grenade,fire_grenage;
     public bool clear;
     public GameObject fon;
     public int i;
@@ -29,12 +29,13 @@ public class Inventory : MonoBehaviour
     private int k = 0, w, s, t, g;
     public Image img;
     public int[] now_weapon;
-    public GameObject[] cells_arr;
-    public GameObject[] g_cells_arr;
+    public GameObject[] cells_arr, g_cells_arr,s_cells_arr,blue_light_arr;
     public int[] cell_ind_arr = { 0, 0, 0, 0, 0, 0 };
     public int[] g_cell_ind_arr = { 0, 0, 0, 0, 0, 0 };
+    public int[] s_cell_ind_arr = { 0, 0, 0, 0, 0, 0 };
     public GameObject light_1; public GameObject light_2; public GameObject light_3; public GameObject light_4; public GameObject light_5; public GameObject light_6;
     private GameObject[] light;
+    public GameObject blue_light_1, blue_light_2, blue_light_3, blue_light_4, blue_light_5, blue_light_6, blue_light_7, blue_light_8;
     public Image weapon_sprite,grenade_sprite;
     public Image cell_sprite,g_cell_sprite;
     public inventory_weapon script;
@@ -42,8 +43,9 @@ public class Inventory : MonoBehaviour
     public Save save_script;
     public GameObject cell1, cell2, cell3, cell4, cell5, cell6;
     public GameObject g_cell1, g_cell2, g_cell3, g_cell4, g_cell5, g_cell6;
+    public GameObject s_cell1, s_cell2, s_cell3, s_cell4, s_cell5, s_cell6;
     private string[] category = { "weapon", "skins", "grenade" };
-    private int category_i;
+    public int category_i;
     public GameObject cat_text;
     private Text category_text;
     private change_weapon change_weapon;
@@ -78,12 +80,14 @@ public class Inventory : MonoBehaviour
         cells_arr[0] = cell1;cells_arr[1] = cell2; cells_arr[2] = cell3; cells_arr[3] = cell4; cells_arr[4] = cell5; cells_arr[5] = cell6;
         g_cells_arr = new GameObject[6];
         g_cells_arr[0] = g_cell1; g_cells_arr[1] = g_cell2; g_cells_arr[2] = g_cell3; g_cells_arr[3] = g_cell4; g_cells_arr[4] = g_cell5; g_cells_arr[5] = g_cell6;
-        grenades_arr = new GameObject[3];
-        grenades_arr[0] = infantry_grenade;grenades_arr[1] = dynamite;grenades_arr[2] = ice_grenade;
+        grenades_arr = new GameObject[4];
+        grenades_arr[0] = infantry_grenade;grenades_arr[1] = dynamite;grenades_arr[2] = ice_grenade;grenades_arr[3] = fire_grenage;
         skins_arr = new GameObject[3];
         skins_arr[0]=defoalt; skins_arr[1] = skin_1;skins_arr[2] = punk;
         now_skin = new GameObject[3];
         now_skin[0] = inv_bill;now_skin[1] = inv_skin_1;now_skin[2] = inv_punk;
+        s_cells_arr = new GameObject[6];
+        s_cells_arr[0] = s_cell1; s_cells_arr[1] = s_cell2; s_cells_arr[2] = s_cell3; s_cells_arr[3] = s_cell4; s_cells_arr[4] = s_cell5; s_cells_arr[5] = s_cell6;
         bill = GameObject.Find("Bill").GetComponent<bill>();
         weapon_trans = weapon_category.GetComponent<RectTransform>();
         skins_trans= skins_category.GetComponent<RectTransform>();
@@ -97,6 +101,8 @@ public class Inventory : MonoBehaviour
             cell = cells[k].GetComponent<RectTransform>();
             cells_pos[k,0] = cell.anchoredPosition.x;cells_pos[k,1] = cell.anchoredPosition.y;
         }
+        blue_light_arr = new GameObject[8];
+        blue_light_arr[0] = blue_light_1; blue_light_arr[1] = blue_light_2; blue_light_arr[2] = blue_light_3; blue_light_arr[3] = blue_light_4; blue_light_arr[4] = blue_light_5; blue_light_arr[5] = blue_light_6; blue_light_arr[6] = blue_light_7; blue_light_arr[7] = blue_light_8;
         Weapon();
     }
 
@@ -177,6 +183,12 @@ public class Inventory : MonoBehaviour
         grenade_sprite = grenades_arr[i].GetComponent<Image>();
         g_cell_sprite.sprite = grenade_sprite.sprite;
     }
+    public void NewSkin()
+    {
+        save_script.Load_skins();
+        s = save_script.inv_s;
+        ChekSkinsCells();
+    }
     public void ChekSells()
     {
         for (int x = 0; x <= j; x++)
@@ -203,6 +215,13 @@ public class Inventory : MonoBehaviour
             g_cell_sprite.sprite = grenade_sprite.sprite;
         }
     }
+    public void ChekSkinsCells()
+    {
+        for(int x = 0; x <= s; x++)
+        {
+            s_cells_arr[x].SetActive(true);
+        }
+    }
     public GameObject weapon_light;
     public GameObject skins_light;
     public GameObject traps_light;
@@ -224,8 +243,10 @@ public class Inventory : MonoBehaviour
     }
     public void Weapon() 
     {
+        category_i = 0;
         OFF_ALL();
         UpdateCells();
+        blue_light_arr[0].SetActive(true); blue_light_arr[1].SetActive(true);
         cell = weapon_cell_1.GetComponent<RectTransform>();
         cell.anchoredPosition = new Vector2(-420,cell.anchoredPosition.y);cell.localScale = new Vector3(1.3f,1.3f,1f);
         cell = weapon_cell_2.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
@@ -238,8 +259,10 @@ public class Inventory : MonoBehaviour
     }
     public void Skins() 
     {
+        category_i = 1;
         OFF_ALL();
         UpdateCells();
+        blue_light_arr[2].SetActive(true); blue_light_arr[3].SetActive(true);
         cell = skins_cell_1.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
         cell.anchoredPosition = new Vector2(cell.anchoredPosition.x,60);
         cell = skins_cell_2.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
@@ -252,8 +275,10 @@ public class Inventory : MonoBehaviour
     }
     public void Traps()
     {
+        category_i = 2;
         OFF_ALL();
         UpdateCells();
+        blue_light_arr[4].SetActive(true); blue_light_arr[5].SetActive(true);
         cell = traps_cell_1.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
         cell.anchoredPosition = new Vector2(cell.anchoredPosition.x, 29);
         cell = traps_cell_2.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
@@ -266,8 +291,10 @@ public class Inventory : MonoBehaviour
     }
     public void Granage()
     {
+        category_i = 3;
         OFF_ALL();
         UpdateCells();
+        blue_light_arr[6].SetActive(true); blue_light_arr[7].SetActive(true);
         i = 0;
         cell = granage_cell_1.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
         cell.anchoredPosition = new Vector2(-454,cell.anchoredPosition.y);
@@ -308,6 +335,10 @@ public class Inventory : MonoBehaviour
             weapons_arr[x].SetActive(false);
         for (int x = 0; x < grenades_arr.Length; x++)
             grenades_arr[x].SetActive(false);
+        for (int x = 0; x < 8; x++)
+            blue_light_arr[x].SetActive(false);
         stop = true;
+        for (int i = 0; i < 6; i++)
+            light[i].SetActive(false);
     }
 }

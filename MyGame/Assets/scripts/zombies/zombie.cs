@@ -54,6 +54,10 @@ public class zombie : MonoBehaviour
             speed = default_speed;
             sprite.color = new Color(1f, 1f, 1f, 1f);
         }
+        if(debaff.fire==true)
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        else
+            sprite.color = new Color(1f, 1f, 1f, 1f);
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player&&script.stop==false)

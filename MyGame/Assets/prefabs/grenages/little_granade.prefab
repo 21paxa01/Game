@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -159,3 +159,6 @@ MonoBehaviour:
   death_time: 0.2
   damage: 5
   reload_time: 7
+  line: {fileID: 990792093406844933, guid: 1391ca5f923cf1547bac28bb28aa365b, type: 3}
+  rotate_distance: 135
+  zomb_trig: 1

@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: -7860223119046323757
     second: test_for_p_5
+  - first:
+      213: -2943763924478465436
+    second: test_for_p_6
+  - first:
+      213: -3855670988972909786
+    second: test_for_p_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,12 +142,12 @@ TextureImporter:
       name: test_for_p_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 802
+        x: 46
+        y: 805
         width: 944
         height: 458
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,12 +163,12 @@ TextureImporter:
       name: test_for_p_1
       rect:
         serializedVersion: 2
-        x: 143
-        y: 726
+        x: 60
+        y: 707
         width: 46
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,12 +184,12 @@ TextureImporter:
       name: test_for_p_2
       rect:
         serializedVersion: 2
-        x: 414
-        y: 741
+        x: 395
+        y: 715
         width: 81
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +205,12 @@ TextureImporter:
       name: test_for_p_3
       rect:
         serializedVersion: 2
-        x: 551
-        y: 718
-        width: 61
-        height: 61
+        x: 490
+        y: 642
+        width: 49
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +226,12 @@ TextureImporter:
       name: test_for_p_4
       rect:
         serializedVersion: 2
-        x: 414
-        y: 699
+        x: 395
+        y: 703
         width: 81
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,12 +247,12 @@ TextureImporter:
       name: test_for_p_5
       rect:
         serializedVersion: 2
-        x: 551
-        y: 447
-        width: 355
-        height: 237
+        x: 550
+        y: 457
+        width: 356
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,6 +260,48 @@ TextureImporter:
       bones: []
       spriteID: 3d15eede7b0eae290800000000000000
       internalID: -7860223119046323757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_for_p_6
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 711
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ae9d2be46a527d0800000000000000
+      internalID: -2943763924478465436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_for_p_7
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 707
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b9d7be9a7ed7ac0800000000000000
+      internalID: -3855670988972909786
       vertices: []
       indices: 
       edges: []

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 14
-  m_Sprite: {fileID: 4343195135170666772, guid: 9ddeeec33fdcc4043a691021ba44dea7, type: 3}
+  m_Sprite: {fileID: -858086121470554120, guid: 5a9b654c751611747a8f8e375ffa68c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,8 +118,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013692036, y: 0.059046745}
-  m_Size: {x: 0.03261593, y: 0.12271309}
+  m_Offset: {x: -0.0035572052, y: 0.07528138}
+  m_Size: {x: 0.03870392, y: 0.15518236}
   m_Direction: 0
 --- !u!50 &8679751321600354736
 Rigidbody2D:
@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -159,3 +159,6 @@ MonoBehaviour:
   death_time: 0.33333334
   damage: 10
   reload_time: 15
+  line: {fileID: 990792093406844933, guid: 1391ca5f923cf1547bac28bb28aa365b, type: 3}
+  rotate_distance: 90
+  zomb_trig: 0

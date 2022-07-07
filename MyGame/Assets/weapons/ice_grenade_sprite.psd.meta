@@ -5,6 +5,33 @@ TextureImporter:
   - first:
       213: 8339169144163858731
     second: ice_grenade_sprite_0
+  - first:
+      213: -1440278550639599050
+    second: ice_grenade_sprite_1
+  - first:
+      213: 1760948164981974502
+    second: ice_grenade_sprite_2
+  - first:
+      213: 4515670291408985637
+    second: ice_grenade_sprite_3
+  - first:
+      213: 1683436504852169128
+    second: ice_grenade_sprite_4
+  - first:
+      213: -8718051993156420382
+    second: ice_grenade_sprite_5
+  - first:
+      213: 5678885187215036559
+    second: ice_grenade_sprite_6
+  - first:
+      213: -504313316210268361
+    second: ice_grenade_sprite_7
+  - first:
+      213: -574769905917515059
+    second: ice_grenade_sprite_8
+  - first:
+      213: -6874641215741615304
+    second: ice_grenade_sprite_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,11 +149,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 49
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +161,195 @@ TextureImporter:
       bones: []
       spriteID: b29f8cf572eaab370800000000000000
       internalID: 8339169144163858731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 51
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63223830a4a130ce0800000000000000
+      internalID: -1440278550639599050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 5
+        width: 7
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e560a1b605207810800000000000000
+      internalID: 1760948164981974502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 2
+        width: 9
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e973a7432eaae30800000000000000
+      internalID: 4515670291408985637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 3
+        width: 9
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a183a9f494cc5710800000000000000
+      internalID: 1683436504852169128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 2
+        width: 10
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec768607e1430780800000000000000
+      internalID: -8718051993156420382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 5
+        width: 9
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f801e206df37fce40800000000000000
+      internalID: 5678885187215036559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 3
+        width: 9
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737a9cbf5b15009f0800000000000000
+      internalID: -504313316210268361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 4
+        width: 9
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcaa33ad0d10608f0800000000000000
+      internalID: -574769905917515059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_grenade_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 4
+        width: 9
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8332679dc3e5890a0800000000000000
+      internalID: -6874641215741615304
       vertices: []
       indices: 
       edges: []

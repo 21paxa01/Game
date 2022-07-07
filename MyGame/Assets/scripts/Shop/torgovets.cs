@@ -8,14 +8,14 @@ public class torgovets : MonoBehaviour
     public GameObject SkinsMenu;
     public GameObject WeaponsMenu,Granades_menu;
     public GameObject ChoiseMenu;
-    public GameObject WeaponsChoiseMenu,GrenadesChoiseMenu;
+    public GameObject WeaponsChoiseMenu,GrenadesChoiseMenu,SkinsChoiceMenu;
     public GameObject capsul_1,capsul_2,capsul_3;
     public GameObject skin_1, skin_2, skin_3;
     private GameObject[] now_skins;
     public GameObject fon;
     public GameObject shotgun, ak47, rpg, p90, snowgun, stick, axe;
     public SpriteRenderer sp;
-    public GameObject little_granade,dynamite,ice_grenade;
+    public GameObject little_granade,dynamite,ice_grenade,fire_grenage;
     public SpriteRenderer weap_sp;
     public static bool shop;
     private float[] x_arr = { 0.87f, 1.3f, 1.7f };
@@ -30,13 +30,15 @@ public class torgovets : MonoBehaviour
     private string[] w_reload_arr = { "1.5", "0.1","3","3/1.5","0.2","0.4","0.5" };
     private float[] w_ammunition_arr = { 15f, 30f,1f,45f,20f,1f,1f };
     private string[] w_name_arr = { "raptor", "marauder","RPG","speedgun","snowgun","a cool stick","axe" };
-    private float[] g_prise_arr = { 150,400,300};
-    private string[] g_range_arr = { "short","middle","middle"};
-    private string[] g_info_arr = { "boom" ,"BOOOOM","boom and FREEZE"};
-    private float[] g_damage_arr = {50f,100f,10f};
-    private string[] g_reload_arr = {"7","15","12"};
-    private float[] g_ammunition_arr = {1f,1f,1f};
-    private string[] g_name_arr = { "infantry \n granade","dynamite","ice \n grenade"};
+    private float[] g_prise_arr = { 150,400,300,400};
+    private string[] g_range_arr = { "short","middle","middle","middle"};
+    private string[] g_info_arr = { "boom" ,"BOOOOM","boom and FREEZE","FIIIIRE"};
+    private float[] g_damage_arr = {50f,100f,10f,0f};
+    private string[] g_reload_arr = {"7","15","12","13"};
+    private float[] g_ammunition_arr = {1f,1f,1f,1f};
+    private string[] g_name_arr = { "infantry \n granade","dynamite","ice \n grenade","fire\n grenage"};
+    private float[] s_prise_arr = { 200f, 300f, 400f };
+    private string[] s_name_arr = {"toxic","punk","?" };
 
     public Text w_prise;
     public Text buy_prise;
@@ -48,6 +50,7 @@ public class torgovets : MonoBehaviour
     public Text w_info;
 
     public Text g_prise, g_range, g_damage, g_reload, g_ammunition, g_name, g_info;
+    public Text s_prise, s_name;
 
     private int i;
     public int j;
@@ -64,6 +67,9 @@ public class torgovets : MonoBehaviour
     {
         mon_scrript= GameObject.Find("MoneyCount").GetComponent<MoneyCount>();
         save_script = GameObject.Find("save").GetComponent<Save>();
+        save_script.Load_weapon();
+        save_script.Load_grenades();
+        save_script.Load_skins();
         buy_arr = save_script.w_buy_arr;
         prise_arr = save_script.w_prise_arr;
         g_buy_arr= save_script.g_buy_arr;
@@ -71,14 +77,12 @@ public class torgovets : MonoBehaviour
         capsul_arr[0] = capsul_1;capsul_arr[1] = capsul_2;capsul_arr[2] = capsul_3;
         weapons_arr = new GameObject[7];
         weapons_arr[0] = shotgun; weapons_arr[1] = ak47;weapons_arr[2] = rpg;weapons_arr[3] = p90;weapons_arr[4] = snowgun;weapons_arr[5] = stick;weapons_arr[6] = axe;
-        granades_arr = new GameObject[3];
-        granades_arr[0] = little_granade;granades_arr[1] = dynamite;granades_arr[2] = ice_grenade;
+        granades_arr = new GameObject[4];
+        granades_arr[0] = little_granade;granades_arr[1] = dynamite;granades_arr[2] = ice_grenade;granades_arr[3] = fire_grenage;
         j = 0;
         weapons_arr[j].SetActive(true);
         weap_sp = weapons_arr[j].GetComponent<SpriteRenderer>();
         weap_sp.sortingOrder = 3;
-        save_script.Load_weapon();
-        save_script.Load_grenades();
         now_skins = new GameObject[3];
         now_skins[0] = skin_1;now_skins[1] = skin_2;now_skins[2] = skin_3;
     }
@@ -98,10 +102,15 @@ public class torgovets : MonoBehaviour
     public void Skins()
     {
         sp = capsul_arr[0].GetComponent<SpriteRenderer>();
+        i = 0;
         sp.sortingOrder = 21;
         sp = now_skins[0].GetComponent<SpriteRenderer>();
         sp.sortingOrder = 22;
         SkinsMenu.SetActive(true);
+        s_name = GameObject.Find("s_name").GetComponent<Text>();
+        s_prise = GameObject.Find("s_prise").GetComponent<Text>();
+        s_name.text = s_name_arr[i];
+        s_prise.text = s_prise_arr[i].ToString();
         ShopCamera.x = 0.87f;
         ShopCamera.y=0.35f;
         ZoomCamera.zoom = 0.3f;
@@ -161,13 +170,19 @@ public class torgovets : MonoBehaviour
     }
     public void BackToChoise()
     {
-        sp.sortingOrder = 1;
         SkinsMenu.SetActive(false);
         WeaponsMenu.SetActive(false);
         Granades_menu.SetActive(false);
         weapons_arr[j].SetActive(false);
         if (j < 3)
             granades_arr[j].SetActive(false);
+        if (i < 3)
+        {
+            sp = capsul_arr[i].GetComponent<SpriteRenderer>();
+            sp.sortingOrder = 1;
+            sp = now_skins[i].GetComponent<SpriteRenderer>();
+            sp.sortingOrder = 2;
+        }
         weapons_arr[0].SetActive(true);
         weap_sp = weapons_arr[0].GetComponent<SpriteRenderer>();
         weap_sp.sortingOrder = 3;
@@ -189,6 +204,8 @@ public class torgovets : MonoBehaviour
         i--;
         if (i == -1)  
             i = 2;
+        s_name.text = s_name_arr[i];
+        s_prise.text = s_prise_arr[i].ToString();
         sp = capsul_arr[i].GetComponent<SpriteRenderer>(); 
         sp.sortingOrder = 21;
         sp = now_skins[i].GetComponent<SpriteRenderer>();
@@ -205,6 +222,8 @@ public class torgovets : MonoBehaviour
         i++;
         if (i == 3)
             i = 0;
+        s_name.text = s_name_arr[i];
+        s_prise.text = s_prise_arr[i].ToString();
         sp = capsul_arr[i].GetComponent<SpriteRenderer>(); 
         sp.sortingOrder = 21;
         sp = now_skins[i].GetComponent<SpriteRenderer>();
@@ -246,7 +265,7 @@ public class torgovets : MonoBehaviour
     {
         granades_arr[j].SetActive(false);
         j++;
-        if (j > 2)
+        if (j > 3)
             j = 0;
         granades_arr[j].SetActive(true);
         g_prise.text = g_prise_arr[j].ToString();
@@ -261,7 +280,7 @@ public class torgovets : MonoBehaviour
         granades_arr[j].SetActive(false);
         j--;
         if (j < 0)
-            j = 2;
+            j = 3;
         granades_arr[j].SetActive(true);
         g_prise.text = g_prise_arr[j].ToString();
         g_name.text = g_name_arr[j].ToString();
@@ -310,6 +329,16 @@ public class torgovets : MonoBehaviour
     {
         GrenadesChoiseMenu.SetActive(false);
     }
+    public void Skins_Buy_Or_Not()
+    {
+        SkinsChoiceMenu.SetActive(true);
+        buy_prise = GameObject.Find("s_buy_prise").GetComponent<Text>();
+        buy_prise.text = s_prise_arr[i].ToString() + "?";
+    }
+    public void BackToSkins()
+    {
+        SkinsChoiceMenu.SetActive(false);
+    }
     public void Buy_granades()
     {
         if (save_script.g_buy_arr[j] == 0 && MoneyCount.mon >= g_prise_arr[j])
@@ -326,5 +355,21 @@ public class torgovets : MonoBehaviour
             script.NewGrenade();
         }
         GrenadesChoiseMenu.SetActive(false);
+    }
+    public void Buy_skins()
+    {
+        if (save_script.s_buy_arr[i] == 0 && MoneyCount.mon >= s_prise_arr[i])
+        {
+            MoneyCount.mon -= s_prise_arr[i];
+            mon_scrript.Save();
+            script = GameObject.Find("Home_Canvas").GetComponent<Inventory>();
+            script.s_i = i;
+            save_script.s_buy_arr[i] = 1;
+            save_script.inv_s++;
+            save_script.Save_skins();
+            save_script.Load_skins();
+            script.NewSkin();
+        }
+        SkinsChoiceMenu.SetActive(false);
     }
 }

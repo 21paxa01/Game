@@ -16,7 +16,7 @@ public class change_weapon : MonoBehaviour
     private bill script_bill;
     public GameObject shohtgun;
     public GameObject pistol_img, ak_47_img, shotgun_img, speeedgun_img, snowgun_img, rpg_img, stick_img, axe_img;
-    public GameObject infantry_grenage,dynamite,ice_grenade;
+    public GameObject infantry_grenage,dynamite,ice_grenade,fire_grenage;
     public GameObject[] grenages_arr;
     public GameObject[] now_weapon;
     public static int change = 0;
@@ -25,7 +25,7 @@ public class change_weapon : MonoBehaviour
     public GameObject shoting;
     private shoting script;
     public bool[] chek= { false,false,false,false,false,false,false,false,false};
-    public bool[] g_chek = { false ,false,false};
+    public bool[] g_chek = { false ,false,false,false};
     public bool[] reload = { true, true, true, true, true, true, false,false, true };
     private bool find;
     public static int k;
@@ -43,8 +43,8 @@ public class change_weapon : MonoBehaviour
         now_weapon = new GameObject[8];
         now_weapon[0] = pistol_img;now_weapon[1] = shotgun_img;now_weapon[2] = ak_47_img;now_weapon[3] = rpg_img;now_weapon[4] = speeedgun_img;now_weapon[5] = snowgun_img;now_weapon[6] = stick_img;now_weapon[7] = axe_img;
         Chek();
-        grenages_arr = new GameObject[3];
-        grenages_arr[0] = infantry_grenage;grenages_arr[1] = dynamite;grenages_arr[2] = ice_grenade;
+        grenages_arr = new GameObject[4];
+        grenages_arr[0] = infantry_grenage;grenages_arr[1] = dynamite;grenages_arr[2] = ice_grenade;grenages_arr[3] = fire_grenage;
         stick_script = stick.GetComponent<stick>();
     }
 
