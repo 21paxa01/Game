@@ -16,6 +16,7 @@ public class Save : MonoBehaviour
     public int inv_k = -1;
 
     public float[] s_buy_arr = { 0, 0, 0, 0, 0, 0 };
+    public int[] save_s_cell_ind_arr = { 0, 0, 0, 0, 0, 0 };
     public int inv_s = 0;
 
     public int[] save_tasks_ind = { 0, 1, 2 };
@@ -110,6 +111,7 @@ public class Save : MonoBehaviour
             Skins data = (Skins)formatter.Deserialize(file);
             file.Close();
             s_buy_arr=data.b_arr;
+            save_s_cell_ind_arr = data.s_arr;
             inv_s = data.s;
         }
     }
@@ -120,6 +122,7 @@ public class Save : MonoBehaviour
         Skins data = new Skins();
         data.b_arr = s_buy_arr;
         data.s = inv_s;
+        data.s_arr = save_s_cell_ind_arr;
         formatter.Serialize(file, data);
         file.Close();
 
@@ -271,6 +274,7 @@ public class Save : MonoBehaviour
     public class Skins
     {
         public float[] b_arr;
+        public int[] s_arr;
         public int s;
     }
 }

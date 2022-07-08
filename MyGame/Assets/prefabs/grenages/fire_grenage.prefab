@@ -143,7 +143,9 @@ MonoBehaviour:
   reload_time: 13
   line: {fileID: 990792093406844933, guid: 1391ca5f923cf1547bac28bb28aa365b, type: 3}
   rotate_distance: 90
-  fire: {fileID: 8067915841818522092, guid: 9b92169fbeb310b49b50968045af49a0, type: 3}
+  fire: {fileID: 8067915841818522092, guid: ecad70d977e0353478b9ae290cc36aae, type: 3}
+  right_fire: {fileID: 8067915841818522092, guid: 9b92169fbeb310b49b50968045af49a0, type: 3}
+  left_fire: {fileID: 8067915841818522092, guid: 602f2127850459e4fa765550260c61d9, type: 3}
 --- !u!114 &146358937064289352
 MonoBehaviour:
   m_ObjectHideFlags: 0

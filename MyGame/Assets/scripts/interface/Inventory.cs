@@ -37,9 +37,11 @@ public class Inventory : MonoBehaviour
     private GameObject[] light;
     public GameObject blue_light_1, blue_light_2, blue_light_3, blue_light_4, blue_light_5, blue_light_6, blue_light_7, blue_light_8;
     public Image weapon_sprite,grenade_sprite;
-    public Image cell_sprite,g_cell_sprite;
+    public SpriteRenderer skin_sprite;
+    public Image cell_sprite,g_cell_sprite,s_cell_sprite;
     public inventory_weapon script;
     public inventory_grenade g_script;
+    public inventory_skin s_script;
     public Save save_script;
     public GameObject cell1, cell2, cell3, cell4, cell5, cell6;
     public GameObject g_cell1, g_cell2, g_cell3, g_cell4, g_cell5, g_cell6;
@@ -188,6 +190,7 @@ public class Inventory : MonoBehaviour
         save_script.Load_skins();
         s = save_script.inv_s;
         ChekSkinsCells();
+
     }
     public void ChekSells()
     {
@@ -219,7 +222,13 @@ public class Inventory : MonoBehaviour
     {
         for(int x = 0; x <= s; x++)
         {
+            s_cell_ind_arr = save_script.save_s_cell_ind_arr;
             s_cells_arr[x].SetActive(true);
+            s_script = s_cells_arr[x].GetComponent<inventory_skin>();
+            s_script.i = s_cell_ind_arr[x];
+            s_cell_sprite = s_cells_arr[x].GetComponent<Image>();
+            skin_sprite = skins_arr[s_script.i].GetComponent<SpriteRenderer>();
+            s_cell_sprite.sprite = skin_sprite.sprite;
         }
     }
     public GameObject weapon_light;

@@ -6197,7 +6197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &307931507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16733,6 +16733,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  save_s_cell_ind_arr: 000000000000000000000000000000000000000000000000
   inv_s: 0
   save_tasks_ind: 000000000100000002000000
   save_tasks_i: 2
@@ -26140,7 +26141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3882488315521381977, guid: cc63004266d63314e97269b61f80bf15, type: 3}
+  m_Sprite: {fileID: -6128127293312593916, guid: 9f504cf67dd007a47849c48ae3fd8419, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29777,10 +29778,13 @@ MonoBehaviour:
   blue_light_8: {fileID: 1638468447}
   weapon_sprite: {fileID: 0}
   grenade_sprite: {fileID: 0}
+  skin_sprite: {fileID: 0}
   cell_sprite: {fileID: 0}
   g_cell_sprite: {fileID: 0}
+  s_cell_sprite: {fileID: 0}
   script: {fileID: 0}
   g_script: {fileID: 0}
+  s_script: {fileID: 0}
   save_script: {fileID: 0}
   cell1: {fileID: 1195121704}
   cell2: {fileID: 2057574866}
@@ -30045,12 +30049,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -3882488315521381977, guid: cc63004266d63314e97269b61f80bf15, type: 3}
+  m_Sprite: {fileID: -6128127293312593916, guid: 9f504cf67dd007a47849c48ae3fd8419, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.26, y: 0.41}
+  m_Size: {x: 0.27, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

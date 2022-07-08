@@ -363,9 +363,10 @@ public class torgovets : MonoBehaviour
             MoneyCount.mon -= s_prise_arr[i];
             mon_scrript.Save();
             script = GameObject.Find("Home_Canvas").GetComponent<Inventory>();
-            script.s_i = i;
+            script.s_i = i+1;
             save_script.s_buy_arr[i] = 1;
             save_script.inv_s++;
+            save_script.save_s_cell_ind_arr[save_script.inv_s] = i+1;
             save_script.Save_skins();
             save_script.Load_skins();
             script.NewSkin();

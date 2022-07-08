@@ -19,7 +19,7 @@ public class fire_grenage : MonoBehaviour
     private float rotate_y;
     private float rotate_z;
     private float kef;
-    public GameObject fire;
+    public GameObject fire,right_fire,left_fire;
     private float fire_rad;
     private float col;
     void Start()
@@ -58,8 +58,16 @@ public class fire_grenage : MonoBehaviour
             fire_rad += 0.21f;
             col -= 0.06f;
             sprite.color = new Color(1f, 1f, 1f, col);
-            Instantiate(fire, new Vector3(transform.position.x + fire_rad, transform.position.y, transform.position.z), transform.rotation);
-            Instantiate(fire, new Vector3(transform.position.x - fire_rad, transform.position.y, transform.position.z), transform.rotation);
+            if (i < 5)
+            {
+                Instantiate(fire, new Vector3(transform.position.x + fire_rad, transform.position.y, transform.position.z), transform.rotation);
+                Instantiate(fire, new Vector3(transform.position.x - fire_rad, transform.position.y, transform.position.z), transform.rotation);
+            }
+            else
+            {
+                Instantiate(right_fire, new Vector3(transform.position.x + fire_rad, transform.position.y, transform.position.z), transform.rotation);
+                Instantiate(left_fire, new Vector3(transform.position.x - fire_rad, transform.position.y, transform.position.z), transform.rotation);
+            }
         }
     }
 }
