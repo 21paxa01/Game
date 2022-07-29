@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 21
   m_Sprite: {fileID: 6621841028683361662, guid: 9ddeeec33fdcc4043a691021ba44dea7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,3 +162,4 @@ MonoBehaviour:
   line: {fileID: 990792093406844933, guid: 1391ca5f923cf1547bac28bb28aa365b, type: 3}
   rotate_distance: 135
   zomb_trig: 1
+  camera_boom: 1

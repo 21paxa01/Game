@@ -10,28 +10,18 @@ public class wave_img : MonoBehaviour
     public GameObject WavE;
     public GameObject RE;
     public static bool victory;
-    public GameObject wave_0;
-    public GameObject wave_1;
-    public GameObject wave_2;
-    public GameObject wave_3;
-    public GameObject wave_4;
-    public GameObject wave_5;
-    public GameObject wave_6;
-    public GameObject wave_7;
-    public GameObject wave_8;
-    public GameObject wave_9;
-    public GameObject wave_10;
+    public GameObject wave_0, wave_1, wave_2, wave_3, wave_4, wave_5, wave_6, wave_7, wave_8, wave_9, wave_10, wave_11, wave_12, wave_13, wave_14, wave_15, wave_16, wave_17, wave_18, wave_19,wave_20,wave_21;
     private GameObject[] waves;
     void Start()
     {
-        waves = new GameObject[11];
-        waves[0]=wave_0; waves[1] = wave_1; waves[2] = wave_2; waves[3] = wave_3; waves[4] = wave_4; waves[5] = wave_5; waves[6] = wave_6; waves[7] = wave_7; waves[8] = wave_8; waves[9] = wave_9; waves[10] = wave_10;
+        waves = new GameObject[22];
+        waves[0]=wave_0; waves[1] = wave_1; waves[2] = wave_2; waves[3] = wave_3; waves[4] = wave_4; waves[5] = wave_5; waves[6] = wave_6; waves[7] = wave_7; waves[8] = wave_8; waves[9] = wave_9; waves[10] = wave_10;waves[11] = wave_11;waves[12] = wave_12;waves[13] = wave_13;waves[14] = wave_14;waves[15] = wave_15;waves[16] = wave_16; waves[17] = wave_17; waves[18] = wave_18; waves[19] = wave_19;waves[20] = wave_20;waves[21] = wave_21;
         anim = wave.GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (victory == true&&spawn.zombie_kol==0&&bird_spawn.bird_kol==0)
+        if (victory == true&&spawn.zombie_kol==0)
         {
             WavE.SetActive(true);
             vic_img.SetActive(true);

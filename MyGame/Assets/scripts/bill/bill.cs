@@ -30,6 +30,8 @@ public class bill : MonoBehaviour
     public GameObject rapt_menu;
     public GameObject shot_joustick;
     public GameObject computer;
+    public GameObject grenage_cell_1,grenage_cell_2;
+    private granade_cell cell_script;
 
     public AudioSource stairs_sound;
     public GameObject stairs;
@@ -46,6 +48,9 @@ public class bill : MonoBehaviour
     public static float ver_position;
     public static float hor_position;
 
+    public GameObject defoalt, travler, punk, zombie;
+    private GameObject[] skins_arr;
+    public int s_i;
     private AudioSource[] shagi;
     public AudioSource shag_1;
     public AudioSource shag_2;
@@ -53,12 +58,22 @@ public class bill : MonoBehaviour
     public AudioSource shag_4;
     public AudioSource shag_5;
     private int rand;
-    private SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     private change_weapon script;
     public GameObject for_home;
+    public GameObject rain;
+    private SpriteRenderer rain_sp;
+    private bool shag;
+    public GameObject louis;
+    private LOUIS lui;
+    private shield_for_bill shield;
+    private spawn spawn;
     void Start()
     {
+        shield = GetComponent<shield_for_bill>();
         panel.SetActive(false);
+        lui = louis.GetComponent<LOUIS>();
+        louis.SetActive(false);
         sprite = GetComponent<SpriteRenderer>();
         weapon_chek = false;
         shagi = new AudioSource[5];
@@ -78,18 +93,20 @@ public class bill : MonoBehaviour
         rapt_menu.SetActive(false);
         script = GetComponent<change_weapon>();
         money_icon.anchoredPosition = new Vector2(-375f, 160f);
+        skins_arr = new GameObject[4];
+        skins_arr[0] = defoalt;skins_arr[1] = travler;skins_arr[2] = punk;skins_arr[3] = zombie;
     }
-    public bool test;
+    public int test;
     public bool stop;
     public bool skin;
     void Update()
     {
-        if (inv_hp > HP&&invulnerability==false)
+        /*if (inv_hp > HP&&invulnerability==false)
         {
             invulnerability = true;
             inv_hp = HP;
             StartCoroutine(Invulnerability());
-        }
+        }*/
         ver_position = transform.position.y;
         hor_position = transform.position.x;
         bar.fillAmount = fill;
@@ -314,7 +331,16 @@ public class bill : MonoBehaviour
             }
             else if (transform.position.y > -3f)
             {
-                road_sprite.sortingOrder = 11;
+                if (spawn.rain == true)
+                {
+                    rain = GameObject.Find("rain");
+                    rain_sp = rain.GetComponent<SpriteRenderer>();
+                    rain_sp.sortingOrder = 30;
+                    rain = GameObject.Find("rain_2");
+                    rain_sp = rain.GetComponent<SpriteRenderer>();
+                    rain_sp.sortingOrder = 30;
+                }
+                road_sprite.sortingOrder = 21;
                 for_home.SetActive(false);
                 perechod.SetActive(false);
                 panel.SetActive(true);
@@ -335,6 +361,8 @@ public class bill : MonoBehaviour
                 coll.isTrigger = false;
                 upStairs = false;
                 Wave.SetActive(true);
+                louis.SetActive(true);
+                lui.ToBill();
             }
         }
     }
@@ -354,16 +382,18 @@ public class bill : MonoBehaviour
     public void Start_shag()
     {
         if (transform.position.y < -3.1f)
+        {
+            shag = true;
             StartCoroutine(Shag());
+        }
     }
     public void Stop_shag()
     {
-   
-        StopCoroutine(Shag());
+        shag = false;
     }
     IEnumerator Shag()
     {
-        while (1 > 0)
+        while (shag==true)
         {
             rand = Random.Range(0, 5);
             shagi[rand].Play();
@@ -376,7 +406,6 @@ public class bill : MonoBehaviour
         if (other.name == "wall(Clone)" )
         {
             rb.velocity = new Vector2(moveVector.x * -2*speed, rb.velocity.y);
-            test = true;
         }
         
 
@@ -384,7 +413,10 @@ public class bill : MonoBehaviour
     public void Open_Shop()
     {
         torgovets.shop = true;
-        transform.position =new Vector3 (4.22f, transform.position.y, transform.position.z);
+        stop = true;
+        rb.velocity = new Vector2(0, 0);
+        transform.position = new Vector3(4.22f, transform.position.y, transform.position.z);
+
     }
     public void Open_Lab()
     {
@@ -403,6 +435,18 @@ public class bill : MonoBehaviour
         invulnerability = false;
         perechod.SetActive(true);
         yield  return new WaitForSeconds(1f);
+        shield.HP = shield.hp;
+        rain = GameObject.Find("rain");
+        rain_sp = rain.GetComponent<SpriteRenderer>();
+        rain_sp.sortingOrder = -10;
+        rain = GameObject.Find("rain_2");
+        rain_sp = rain.GetComponent<SpriteRenderer>();
+        rain_sp.sortingOrder = -10;
+        cell_script = grenage_cell_1.GetComponent<granade_cell>();
+        cell_script.Update_cell();
+        cell_script = grenage_cell_2.GetComponent<granade_cell>();
+        cell_script.Update_cell();
+        louis.SetActive(false);
         panel.SetActive(false);
         money_icon.anchoredPosition = new Vector2(-375f, 160f);
         off = false;
@@ -436,23 +480,25 @@ public class bill : MonoBehaviour
     }
     public void discard()
     {
-        StartCoroutine(Discard());
+        StartCoroutine(Invulnerability());
     }
     IEnumerator Invulnerability()
     {
-        if (skin == false)
+        invulnerability = true;
+        stop = true;
+        rb.velocity = new Vector2(kef * speed, speed);
+        sprite = skins_arr[s_i].GetComponent<SpriteRenderer>();
+        for (int i = 0; i < 6; i++)
         {
-            for (int i = 0; i < 6; i++)
-            {
-                sprite.color = new Color(1f, 0f, 0f, 1f);
-                yield return new WaitForSeconds(0.05f);
-                sprite.color = new Color(1f, 0f, 0f, 0f);
-                yield return new WaitForSeconds(0.05f);
-            }
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+            yield return new WaitForSeconds(0.05f);
+            sprite.color = new Color(1f, 0f, 0f, 0f);
+            yield return new WaitForSeconds(0.05f);
+            if (i == 2)
+                stop = false;
+            test = i;
         }
+        sprite.color = new Color(1f, 1f, 1f, 1f);
         invulnerability = false;
-        
-        if(skin==false)
-            sprite.color = new Color(1f, 1f, 1f, 1f);
     }
 }

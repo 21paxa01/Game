@@ -12,11 +12,15 @@ public class spawn : MonoBehaviour
     public GameObject lara_zombie;
     public GameObject martin_zombie;
     public GameObject mike_zombie;
+    public GameObject gru_zombie;
+    public GameObject richard_zombie;
+    public GameObject giovanni_zombie;
     private GameObject zombie;
     public Transform spawn_point_1;
     private Transform spawn_point;
     public Transform spawn_point_2;
     public GameObject restart;
+    public GameMusic musik;
 
     public float test1;
     public GameObject boss;
@@ -43,16 +47,17 @@ public class spawn : MonoBehaviour
 
 
     public SpriteRenderer town;
-    public Sprite town_1;
-    public Sprite town_2;
-    public Sprite town_3;
+    public Sprite town_1, town_2, town_3, town_4, town_5, town_6;
     private Bestiary bestiary;
+    public static bool rain;
     void Start()
     {
         zombie_arr = new GameObject[2];
         zombie_chance = new int[2];
         bestiary = GameObject.Find("Home_Canvas").GetComponent<Bestiary>();
+        musik = GameObject.Find("GameMusic").GetComponent<GameMusic>();
         ChangeChance();
+        musik.sound.Play();
         zombie_kol = 0;
         WAVE = GameObject.Find("Wave");
         bill = GameObject.Find("Bill");
@@ -103,8 +108,11 @@ public class spawn : MonoBehaviour
             //yield return new WaitForSeconds(spawn_time);
             Zombies();
             SpawnPoint();
-            Instantiate(zombie,spawn_point.position,transform.rotation);
-            zombie_kol++;
+            if (zomb_test == true)
+            {
+                Instantiate(zombie, spawn_point.position, transform.rotation);
+                zombie_kol++;
+            }
             yield return new WaitForSeconds(spawn_time);
         }
 
@@ -122,13 +130,16 @@ public class spawn : MonoBehaviour
             spawn_point = spawn_point_2;
         }
     }
+    private bool zomb_test;
     void Zombies()
     {
+        zomb_test = false;
         int zombie_value = Random.Range(0, 100);
         for(int j = 0; j < l; j++)
         {
             if (zombie_value < zombie_chance[j])
             {
+                zomb_test = true;
                 zombie = zombie_arr[j];
                 break;
             }
@@ -157,23 +168,32 @@ public class spawn : MonoBehaviour
     }
     public void ChangeChance()
     {
+        rain = false;
         if (wave == 1)
         {
+            zombie_arr = new GameObject[2];
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
-            zombie_chance[0] = 68;zombie_chance[1] = 100;
+            zombie_chance = new int[2];
+            zombie_chance[0] = 68; zombie_chance[1] = 100;
             spawn_time = 3f;
             wave_time = 90;
             town.sprite = town_1;
             bestiary.zomb_kol = 2;//bestiary.Chek_zombies();
+            musik.sound = musik.sound_1;
+            l = 2;
         }
         else if (wave == 2)
         {
             wave_time = 126;
+            zombie_arr = new GameObject[2];
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie;
-            zombie_chance[0] = 62; zombie_chance[1] = 100;
-            spawn_time = 3.13f;
-            town.sprite = town_3;
+            zombie_chance = new int[2];
+            zombie_chance[0] = 70; zombie_chance[1] = 100;
+            spawn_time = 2.35f;
+            town.sprite = town_2;
             bestiary.zomb_kol = 3; //bestiary.Chek_zombies();
+            musik.sound = musik.sound_2;
+            l = 2;
         }
         else if (wave == 3)
         {
@@ -183,21 +203,23 @@ public class spawn : MonoBehaviour
             zombie_arr = new GameObject[3];
             zombie_arr[0] = default_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2] = bibo_zombie;
             zombie_chance = new int[3];
-            zombie_chance[0] = 40; zombie_chance[1] = 70;zombie_chance[2] =100;
-            town.sprite = town_2;
-            bestiary.zomb_kol = 4;// bestiary.Chek_zombies();
+            zombie_chance[0] = 40; zombie_chance[1] = 70; zombie_chance[2] = 100;
+            town.sprite = town_3;
+            bestiary.zomb_kol = 6;
+            musik.sound = musik.sound_1;
         }
         else if (wave == 4)
         {
             l = 3;
             spawn_time = 2.3f;
-            wave_time = 138;
+            wave_time = 132;
             zombie_arr = new GameObject[3];
-            zombie_arr[0] = lara_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2]=bibo_zombie;
+            zombie_arr[0] = lara_zombie; zombie_arr[1] = karl_zombie; zombie_arr[2] = bibo_zombie;
             zombie_chance = new int[3];
-            zombie_chance[0] =25;zombie_chance[1]=75; zombie_chance[2] = 100;
-            town.sprite = town_1;
-            bestiary.zomb_kol = 5;// bestiary.Chek_zombies();
+            zombie_chance[0] = 25; zombie_chance[1] = 75; zombie_chance[2] = 100;
+            town.sprite = town_4;
+            bestiary.zomb_kol = 8;
+            musik.sound = musik.sound_1;// bestiary.Chek_zombies();
             /*l = 1;
             spawn_time = 100f;
             wave_time = 132;
@@ -207,7 +229,7 @@ public class spawn : MonoBehaviour
             zombie_chance[0] = 100;
         */
         }
-        else if(wave==5)
+        else if (wave == 5)
         {
             l = 1;
             spawn_time = 0.8f;
@@ -216,8 +238,11 @@ public class spawn : MonoBehaviour
             zombie_arr[0] = martin_zombie;
             zombie_chance = new int[3];
             zombie_chance[0] = 100;
-            town.sprite = town_2;
-            bestiary.zomb_kol = 6;//bestiary.Chek_zombies();
+            town.sprite = town_5;
+            bestiary.zomb_kol = 9;
+            musik.sound = musik.sound_1;
+            rain = true;
+            //ice_granage;
         }
         else if (wave == 6)
         {
@@ -227,20 +252,22 @@ public class spawn : MonoBehaviour
             zombie_arr = new GameObject[2];
             zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie;
             zombie_chance = new int[2];
-            zombie_chance[0] = 40; zombie_chance[1] = 100;
-            town.sprite = town_3;
-            bestiary.zomb_kol = 7; //bestiary.Chek_zombies();
+            zombie_chance[0] = 60; zombie_chance[1] = 100;
+            town.sprite = town_6;
+            bestiary.zomb_kol = 10;
+            musik.sound = musik.sound_1;//bestiary.Chek_zombies();
         }
         else if (wave == 7)
         {
-            l = 3;
-            spawn_time = 3.35f;
+            l = 2;
+            spawn_time = 1.3f;
             wave_time = 150;
-            zombie_arr = new GameObject[3];
-            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie;zombie_arr[2] = default_zombie;
-            zombie_chance = new int[3];
-            zombie_chance[0] = 35;zombie_chance[1] = 70; zombie_chance[2] = 100;
+            zombie_arr = new GameObject[2];
+            zombie_arr[0] = giovanni_zombie;zombie_arr[1] = default_zombie;
+            zombie_chance = new int[2];
+            zombie_chance[0] = 10;zombie_chance[1] = 100;
             town.sprite = town_1;
+            musik.sound = musik.sound_1;
         }
         else if (wave == 8)
         {
@@ -248,33 +275,147 @@ public class spawn : MonoBehaviour
             spawn_time = 3.13f;
             wave_time = 150;
             zombie_arr = new GameObject[3];
-            zombie_arr[0] = mike_zombie; zombie_arr[1] = bibo_zombie; zombie_arr[2] = default_zombie;
+            zombie_arr[0] = bibo_zombie; zombie_arr[1] = default_zombie; zombie_arr[4] = richard_zombie;
             zombie_chance = new int[3];
-            zombie_chance[0] = 20; zombie_chance[1] = 60; zombie_chance[2] = 100;
+            zombie_chance[0] = 20; zombie_chance[1] = 50; zombie_chance[2] = 100;
             town.sprite = town_2;
+            musik.sound = musik.sound_1;
+           
         }
         else if (wave == 9)
         {
-            l = 3;
+            l = 2;
             spawn_time = 2.3f;
             wave_time = 162;
-            zombie_arr = new GameObject[3];
-            zombie_arr[0] = bo_zombie; zombie_arr[1] = bibo_zombie; zombie_arr[2] = default_zombie;
-            zombie_chance = new int[3];
-            zombie_chance[0] = 33; zombie_chance[1] = 66; zombie_chance[2] = 100;
-            town.sprite = town_1;
-            bestiary.zomb_kol = 8; //bestiary.Chek_zombies();
+            zombie_arr = new GameObject[2];
+            zombie_arr[0] = bo_zombie; zombie_arr[1] = richard_zombie;
+            zombie_chance = new int[2];
+            zombie_chance[0] = 66; zombie_chance[1] = 100;
+            town.sprite = town_3;
+            bestiary.zomb_kol = 11;
+            musik.sound = musik.sound_1;//bestiary.Chek_zombies();
         }
         else if (wave == 10)
         {
-            l = 7;
+            l = 8;
             spawn_time = 2.7f;
             wave_time = 150;
-            zombie_arr = new GameObject[7];
-            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie; zombie_arr[2] = default_zombie;zombie_arr[3] = bo_zombie;zombie_arr[4] = bibo_zombie;zombie_arr[5] = martin_zombie;zombie_arr[6] = karl_zombie;
-            zombie_chance = new int[7];
-            zombie_chance[0] = 10; zombie_chance[1] = 27; zombie_chance[2] =49 ; zombie_chance[3] = 59; zombie_chance[4] = 74; zombie_chance[5] =84 ; zombie_chance[6] =100 ;
+            zombie_arr = new GameObject[9];
+            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie; zombie_arr[2] = default_zombie; zombie_arr[3] = bo_zombie; zombie_arr[4] = bibo_zombie; zombie_arr[5] = martin_zombie; zombie_arr[6] = karl_zombie; zombie_arr[7] = gru_zombie; zombie_arr[8] = richard_zombie;
+            zombie_chance = new int[9];
+            zombie_chance[0] = 8; zombie_chance[1] = 23; zombie_chance[2] = 33; zombie_chance[3] = 41; zombie_chance[4] = 49; zombie_chance[5] = 57; zombie_chance[6] = 71; zombie_chance[7] = 85; zombie_chance[8] = 100;
+            town.sprite = town_4;
+            musik.sound = musik.sound_1;
+        }
+        else if (wave == 11)
+        {
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = gru_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
+            town.sprite = town_5;
+            musik.sound = musik.sound_2;
+            rain = true;
+        }
+        else if (wave == 12)
+        {
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = richard_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
+            town.sprite = town_6;
+            musik.sound = musik.sound_2;
+        }
+        else if (wave == 13)
+        {
+            l = 1;
+            wave_time = 200;
+            spawn_time = 20f;
+            zombie_arr = new GameObject[1];zombie_arr[0] = default_zombie;
+            zombie_chance = new int[1];zombie_chance[0] = 0;
+            town.sprite = town_1;
+            musik.sound = musik.sound_2;
+        }
+        else if (wave == 14)
+        {
+            wave_time = 200;
+            spawn_time = 5f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = default_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
             town.sprite = town_2;
+            musik.sound = musik.sound_2;
+            
+        }
+        else if (wave == 15)
+        {
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = bibo_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
+            town.sprite = town_3;
+            musik.sound = musik.sound_2;
+        }
+        else if (wave == 16)
+        {
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = lara_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
+            town.sprite = town_4;
+            musik.sound = musik.sound_2;
+           
+        }
+        else if (wave == 17)
+        {
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = mike_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
+            town.sprite = town_5;
+            musik.sound = musik.sound_2;
+            rain = true;
+        }
+        else if (wave == 18)
+        {
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = bo_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 100;
+            town.sprite = town_6;
+            musik.sound = musik.sound_2;
+        }
+        else if (wave == 19)
+        {
+            l = 1;
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = richard_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 0;
+            town.sprite = town_1;
+            musik.sound = musik.sound_2;
+        }
+        else if (wave == 20)
+        {
+            l = 8;
+            spawn_time = 6f;
+            wave_time = 180;
+            zombie_arr = new GameObject[9];
+            zombie_arr[0] = mike_zombie; zombie_arr[1] = lara_zombie; zombie_arr[2] = default_zombie; zombie_arr[3] = bo_zombie; zombie_arr[4] = bibo_zombie; zombie_arr[5] = martin_zombie; zombie_arr[6] = karl_zombie; zombie_arr[7] = gru_zombie; zombie_arr[8] = richard_zombie;
+            zombie_chance = new int[9];
+            zombie_chance[0] = 8; zombie_chance[1] = 23; zombie_chance[2] = 33; zombie_chance[3] = 41; zombie_chance[4] = 49; zombie_chance[5] = 57; zombie_chance[6] = 71; zombie_chance[7] = 85; zombie_chance[8] = 100;
+            town.sprite = town_2;
+            musik.sound = musik.sound_1;
+           
+        }
+        else if (wave == 21)
+        {
+            l = 1;
+            wave_time = 200;
+            spawn_time = 40f;
+            zombie_arr = new GameObject[1]; zombie_arr[0] = giovanni_zombie;
+            zombie_chance = new int[1]; zombie_chance[0] = 0;
+            town.sprite = town_1;
+            musik.sound = musik.sound_2;
         }
         else if (wave == 0)
         {
@@ -286,6 +427,7 @@ public class spawn : MonoBehaviour
             zombie_chance = new int[1];
             zombie_chance[0] = 100;
             town.sprite = town_3;
+            musik.sound = musik.sound_1;
         }
     }
 }

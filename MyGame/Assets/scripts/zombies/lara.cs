@@ -28,7 +28,7 @@ public class lara : MonoBehaviour
     public float speed;
     public float HP;
     private float hp = 0;
-
+    private shield_for_bill shield_scr;
     private bill bill;
     void Start()
     {
@@ -41,12 +41,17 @@ public class lara : MonoBehaviour
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();
         HP = script.HP;
         bill = player.GetComponent<bill>();
-
+        shield_scr = player.GetComponent<shield_for_bill>();
     }
     public float dist_to_player;
     void Update()
     {
-        if (debaff.freeze == true)
+        if (debaff.fire == true)
+        {
+            speed = default_speed;
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else if (debaff.freeze == true)
         {
             speed = default_speed / 2;
             sprite.color = new Color(0.2745f, 0.4117f, 1f, 1f);
@@ -56,7 +61,6 @@ public class lara : MonoBehaviour
             speed = default_speed;
             sprite.color = new Color(1f, 1f, 1f, 1f);
         }
-
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player)
@@ -121,7 +125,11 @@ public class lara : MonoBehaviour
             if (bill.invulnerability == false)
             {
                 bill.discard();
-                bill.HP -= zombie_damage;
+                if (shield_scr.HP > 0)
+                    shield_scr.HP -= zombie_damage;
+                else
+                    bill.HP -= zombie_damage;
+                shield_scr.start_reg();
             }
         }
     }

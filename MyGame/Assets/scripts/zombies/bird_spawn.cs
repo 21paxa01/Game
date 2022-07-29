@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bird_spawn : MonoBehaviour
 {
-    public GameObject bird;
+    public GameObject bird,boom_bird,now_bird;
     private GameObject[] bird_arr;
     private int[] bird_chance;
 
@@ -12,7 +12,6 @@ public class bird_spawn : MonoBehaviour
     private Transform spawn_point;
     public Transform spawn_point_2;
     private int l;
-    public static int bird_kol;
     private spawn script;
     private float spawn_time;
     public static bool start;
@@ -22,14 +21,12 @@ public class bird_spawn : MonoBehaviour
         chek = false;
         start = false;
         ChangeChance();
-        bird_kol = 0;
         script = GetComponent<spawn>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (start == true&&chek==true)
         {
             start = false;
@@ -56,7 +53,7 @@ public class bird_spawn : MonoBehaviour
         {
             if (bird_value < bird_chance[j])
             {
-                bird = bird_arr[j];
+                now_bird = bird_arr[j];
                 break;
             }
         }
@@ -70,8 +67,8 @@ public class bird_spawn : MonoBehaviour
             yield return new WaitForSeconds(spawn_time);
             Birds();
             SpawnPoint();
-            Instantiate(bird, spawn_point.position, transform.rotation);
-            bird_kol++;
+            Instantiate(now_bird, spawn_point.position, transform.rotation);
+            spawn.zombie_kol++;
         }
 
     }
@@ -93,33 +90,69 @@ public class bird_spawn : MonoBehaviour
     }
     public void ChangeChance()
     {
+        /*if (spawn.wave == 1)
+        {
+            chek = true;
+            l = 2;
+            bird_arr = new GameObject[2]; bird_arr[0] = bird; bird_arr[1] = boom_bird;
+            bird_chance = new int[2]; bird_chance[0] = 50; bird_chance[1] = 100;
+            spawn_time = 6.4f;
+        }*/
         if (spawn.wave == 2)
         {
             chek = true;
+            l = 1;
             bird_arr = new GameObject[1]; bird_arr[0] = bird;
             bird_chance = new int[1]; bird_chance[0] = 100;
-            spawn_time =9.4f;
+            spawn_time = 9.4f;
         }
-        else if (spawn.wave == 7)
+        else if (spawn.wave == 5)
         {
             chek = true;
+            l = 1;
+            bird_arr = new GameObject[1]; bird_arr[0] = boom_bird;
+            bird_chance = new int[1]; bird_chance[0] = 100;
+            spawn_time = 7.8f;
+        }
+        /*else if (spawn.wave == 7)
+        {
+            chek = true;
+            l = 1;
             bird_arr = new GameObject[1]; bird_arr[0] = bird;
             bird_chance = new int[1]; bird_chance[0] = 100;
-            spawn_time =7.8f;
-        }
+            spawn_time = 7.8f;
+        }*/
         else if (spawn.wave == 8)
         {
             chek = true;
+            l = 1;
             bird_arr = new GameObject[1]; bird_arr[0] = bird;
             bird_chance = new int[1]; bird_chance[0] = 100;
-            spawn_time =9.4f;
+            spawn_time = 9.4f;
         }
         else if (spawn.wave == 10)
         {
             chek = true;
+            l = 1;
             bird_arr = new GameObject[1]; bird_arr[0] = bird;
             bird_chance = new int[1]; bird_chance[0] = 100;
-            spawn_time =18f;
+            spawn_time = 18f;
+        }
+        else if (spawn.wave == 13)
+        {
+            chek = true;
+            l = 1;
+            bird_arr = new GameObject[1]; bird_arr[0] = boom_bird;
+            bird_chance = new int[1]; bird_chance[0] = 100;
+            spawn_time = 8f;
+        }
+        else if (spawn.wave == 19)
+        {
+            chek = true;
+            l = 1;
+            bird_arr = new GameObject[1]; bird_arr[0] = bird;
+            bird_chance = new int[1]; bird_chance[0] = 100;
+            spawn_time = 8f;
         }
         else
         {

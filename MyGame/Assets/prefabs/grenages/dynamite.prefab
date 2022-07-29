@@ -162,3 +162,4 @@ MonoBehaviour:
   line: {fileID: 990792093406844933, guid: 1391ca5f923cf1547bac28bb28aa365b, type: 3}
   rotate_distance: 90
   zomb_trig: 0
+  camera_boom: 1

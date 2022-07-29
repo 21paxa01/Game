@@ -6,11 +6,13 @@ public class zombie_debaffs : MonoBehaviour
 {
     public float freeze_time;
     public bool freeze;
-    public bool fire;
-    public float fire_time;
-    private float fire_time_def;
-    public float fire_damage;
+    public bool fire,smoke;
+    public float fire_time,smoke_time;
+    private float fire_time_def,smoke_time_def;
+    public float fire_damage,smoke_damage;
     public zombie_hp script;
+    public GameObject heal_effect;
+    private bool heal;
     void Start()
     {
         
@@ -40,6 +42,12 @@ public class zombie_debaffs : MonoBehaviour
         if(fire==false)
             StartCoroutine(Fire());
     }
+    public void start_smoke()
+    {
+        smoke_time_def = smoke_time;
+        if (smoke == false)
+            StartCoroutine(Smoke());
+    }
     IEnumerator Fire()
     {
         fire = true;
@@ -59,5 +67,40 @@ public class zombie_debaffs : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         fire = false;
+    }
+    IEnumerator Smoke()
+    {
+        smoke = true;
+        while (smoke_time_def > 0)
+        {
+            smoke_time_def -= 0.5f;
+            if (script.death == false)
+            {
+                if (script.hp + smoke_damage > script.HP)
+                {
+                    script.hp = script.HP;
+                }
+                else
+                    script.hp += smoke_damage;
+                script.fill = 1 - script.hp / script.HP;
+            }
+            yield return new WaitForSeconds(0.5f);
+        }
+        smoke = false;
+    }
+    IEnumerator Heal()
+    {
+        heal = true;
+        while (heal == true)
+        {
+            heal_effect.SetActive(true);
+            yield return new WaitForSeconds(0.4f);
+            heal_effect.SetActive(false);
+            heal = false;
+        }
+    }
+    public void StartHeal()
+    {
+        StartCoroutine(Heal());
     }
 }

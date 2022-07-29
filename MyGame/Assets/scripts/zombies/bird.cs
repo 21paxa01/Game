@@ -28,6 +28,7 @@ public class bird : MonoBehaviour
     private float kef_x;
     private float kef_y;
     private bill bill;
+    private shield_for_bill shield_scr;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -38,11 +39,17 @@ public class bird : MonoBehaviour
         script = GetComponent<zombie_hp>();
         HP = script.HP;
         bill = player.GetComponent<bill>();
+        shield_scr = player.GetComponent<shield_for_bill>();
     }
     public float dist_to_player;
     void Update()
     {
-        if (debaff.freeze == true)
+        if (debaff.fire == true)
+        {
+            speed = default_speed;
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else if (debaff.freeze == true)
         {
             speed = default_speed / 2;
             sprite.color = new Color(0.2745f, 0.4117f, 1f, 1f);
@@ -102,15 +109,19 @@ public class bird : MonoBehaviour
 
         if (other.name == "Bill")
         {
-            if (bill.invulnerability == false)
-                bill.HP -= bird_damage;
             if (player.transform.position.x > transform.position.x)
                 bill.kef = 1;
             else
                 bill.kef = -1;
             if (bill.invulnerability == false)
+            {
                 bill.discard();
-            discard();
+                if (shield_scr.HP > 0)
+                    shield_scr.HP -= bird_damage;
+                else
+                    bill.HP -= bird_damage;
+                shield_scr.start_reg();
+            }
         }
         if (other.name == "For_bird")
         {
@@ -145,7 +156,6 @@ public class bird : MonoBehaviour
     void Die()
     {
         Instantiate(money, money_spawn.position, transform.rotation);
-        bird_spawn.bird_kol--;
         bird_damage = 0;
 
     }

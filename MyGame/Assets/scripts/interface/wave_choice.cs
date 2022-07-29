@@ -22,7 +22,7 @@ public class wave_choice : MonoBehaviour
     }
     public void Right()
     {
-        if (i < 10)
+        if (i < 21)
             i++;
         spawn.wave = i;
     }

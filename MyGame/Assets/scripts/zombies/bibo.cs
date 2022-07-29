@@ -32,6 +32,7 @@ public class bibo  : MonoBehaviour
     public float HP;
     private float hp = 0;
     private bill bill;
+    private shield_for_bill shield_scr;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -43,11 +44,17 @@ public class bibo  : MonoBehaviour
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();
         HP = script.HP;
         bill = player.GetComponent<bill>();
+        shield_scr = player.GetComponent<shield_for_bill>();
     }
     public float dist_to_player;
     void Update()
     {
-        if (debaff.freeze == true)
+        if (debaff.fire == true)
+        {
+            speed = default_speed;
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else if (debaff.freeze == true)
         {
             speed = default_speed / 2;
             sprite.color = new Color(0.2745f, 0.4117f, 1f, 1f);
@@ -129,7 +136,11 @@ public class bibo  : MonoBehaviour
             if (bill.invulnerability == false)
             {
                 bill.discard();
-                bill.HP -= zombie_damage;
+                if (shield_scr.HP > 0)
+                    shield_scr.HP -= zombie_damage;
+                else
+                    bill.HP -= zombie_damage;
+                shield_scr.start_reg();
             }
         }
     }
@@ -143,15 +154,20 @@ public class bibo  : MonoBehaviour
             at_time = 0f;
             if (distToPlayer <= dist_to_player)
             {
-                if (bill.invulnerability == false)
-                    bill.HP -= zombie_damage;
                 test -= zombie_damage;
                 if (player.transform.position.x > transform.position.x)
                     bill.kef = 1;
                 else
                     bill.kef = -1;
                 if (bill.invulnerability == false)
+                {
                     bill.discard();
+                    if (shield_scr.HP > 0)
+                        shield_scr.HP -= zombie_damage;
+                    else
+                        bill.HP -= zombie_damage;
+                    shield_scr.start_reg();
+                }
                 yield return new WaitForSeconds(atack_time);
 
             }

@@ -18,9 +18,9 @@ public class Inventory : MonoBehaviour
     public GameObject snowgun;
     public GameObject stick;
     public GameObject axe;
-    public GameObject punk, skin_1, defoalt;
-    public GameObject inv_punk, inv_skin_1, inv_bill;
-    public GameObject infantry_grenade,dynamite,ice_grenade,fire_grenage;
+    public GameObject punk, travler, defoalt,zombie;
+    public GameObject inv_punk, inv_skin_1, inv_bill,inv_zombie;
+    public GameObject infantry_grenade,dynamite,ice_grenade,fire_grenage,smoke_grenage;
     public bool clear;
     public GameObject fon;
     public int i;
@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
     private Text category_text;
     private change_weapon change_weapon;
     public SpriteRenderer bill_sprite;
-    private bill bill;
+    public bill bill;
 
     public GameObject weapons_menu;
     public GameObject skins_menu;
@@ -70,24 +70,26 @@ public class Inventory : MonoBehaviour
         change_weapon = GameObject.Find("Bill").GetComponent<change_weapon>();
         save_script.Load_weapon();
         save_script.Load_grenades();
+        save_script.Load_skins();
         j = save_script.inv_j;
         k = save_script.inv_k;
+        s = save_script.inv_s;
         now_weapon = new int[2];
         now_weapon[0]=-1; now_weapon[1] = -1;
         i = 0;
         bill_sprite = GameObject.Find("Bill").GetComponent<SpriteRenderer>();
         weapons_arr = new GameObject[8];
-        weapons_arr[0] = pistol;weapons_arr[1] = shotgun;weapons_arr[2] = ak_47; weapons_arr[3] = rpg;weapons_arr[4] = p_90; weapons_arr[5] = snowgun;weapons_arr[6] = stick;weapons_arr[7] = axe;
+        weapons_arr[0] = pistol;weapons_arr[1] = shotgun;weapons_arr[2] = p_90; weapons_arr[3] = stick;weapons_arr[4] = ak_47; weapons_arr[5] = snowgun;weapons_arr[6] = rpg;weapons_arr[7] = axe;
         cells_arr = new GameObject[6];
         cells_arr[0] = cell1;cells_arr[1] = cell2; cells_arr[2] = cell3; cells_arr[3] = cell4; cells_arr[4] = cell5; cells_arr[5] = cell6;
         g_cells_arr = new GameObject[6];
         g_cells_arr[0] = g_cell1; g_cells_arr[1] = g_cell2; g_cells_arr[2] = g_cell3; g_cells_arr[3] = g_cell4; g_cells_arr[4] = g_cell5; g_cells_arr[5] = g_cell6;
-        grenades_arr = new GameObject[4];
-        grenades_arr[0] = infantry_grenade;grenades_arr[1] = dynamite;grenades_arr[2] = ice_grenade;grenades_arr[3] = fire_grenage;
-        skins_arr = new GameObject[3];
-        skins_arr[0]=defoalt; skins_arr[1] = skin_1;skins_arr[2] = punk;
-        now_skin = new GameObject[3];
-        now_skin[0] = inv_bill;now_skin[1] = inv_skin_1;now_skin[2] = inv_punk;
+        grenades_arr = new GameObject[5];
+        grenades_arr[0] = infantry_grenade;grenades_arr[1] = dynamite;grenades_arr[2] = ice_grenade;grenades_arr[3] = fire_grenage;grenades_arr[4] = smoke_grenage;
+        skins_arr = new GameObject[4];
+        skins_arr[0]=defoalt; skins_arr[1] = travler;skins_arr[2] = punk;skins_arr[3] = zombie;
+        now_skin = new GameObject[4];
+        now_skin[0] = inv_bill;now_skin[1] = inv_skin_1;now_skin[2] = inv_punk;now_skin[3] = inv_zombie;
         s_cells_arr = new GameObject[6];
         s_cells_arr[0] = s_cell1; s_cells_arr[1] = s_cell2; s_cells_arr[2] = s_cell3; s_cells_arr[3] = s_cell4; s_cells_arr[4] = s_cell5; s_cells_arr[5] = s_cell6;
         bill = GameObject.Find("Bill").GetComponent<bill>();
@@ -106,6 +108,9 @@ public class Inventory : MonoBehaviour
         blue_light_arr = new GameObject[8];
         blue_light_arr[0] = blue_light_1; blue_light_arr[1] = blue_light_2; blue_light_arr[2] = blue_light_3; blue_light_arr[3] = blue_light_4; blue_light_arr[4] = blue_light_5; blue_light_arr[5] = blue_light_6; blue_light_arr[6] = blue_light_7; blue_light_arr[7] = blue_light_8;
         Weapon();
+        skin_ind = 0;
+        s_i = 0;
+        bill.s_i = 0;
     }
 
     void Update()
@@ -151,17 +156,31 @@ public class Inventory : MonoBehaviour
     public void Grenade_ON()
     {
         grenades_arr[i].SetActive(true);
-        img = grenades_arr[i].GetComponent<Image>();
+        for (int x = 0; x < 5; x++) {
+            if (g_cell_ind_arr[x] == i)
+            {
+                img = g_cells_arr[x].GetComponent<Image>();
+                break;
+            } 
+        }
     }
     public void Skin_OFF()
     {
-        skins_arr[s_i].SetActive(false);
-        now_skin[s_i].SetActive(false);
+        for (int x = 0; x <= s; x++)
+            now_skin[x].SetActive(false);
+    }
+    private int skin_ind;
+    public void Active_Skin()
+    {
+        skins_arr[skin_ind].SetActive(false);
+        skin_ind = s_i;
+        skins_arr[skin_ind].SetActive(true);
+        bill.s_i = skin_ind;
     }
     public void Skin_ON()
     {
-        skins_arr[s_i].SetActive(true);
         now_skin[s_i].SetActive(true);
+        img = now_skin[s_i].GetComponent<Image>();
     }
     public void NewWeapon()
     {
@@ -289,10 +308,10 @@ public class Inventory : MonoBehaviour
         UpdateCells();
         blue_light_arr[4].SetActive(true); blue_light_arr[5].SetActive(true);
         cell = traps_cell_1.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
-        cell.anchoredPosition = new Vector2(cell.anchoredPosition.x, 29);
+        cell.anchoredPosition = new Vector2(cell.anchoredPosition.x,29);
         cell = traps_cell_2.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
         cell = traps_cell_3.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
-        cell.anchoredPosition = new Vector2(cell.anchoredPosition.x, 29);
+        cell.anchoredPosition = new Vector2(cell.anchoredPosition.x,29);
         skins_menu.SetActive(false); skins_light.SetActive(false); skins_trans.anchoredPosition = new Vector2(skins_trans.anchoredPosition.x, 281);
         granage_menu.SetActive(false); granage_light.SetActive(false); granage_trans.anchoredPosition = new Vector2(granage_trans.anchoredPosition.x, 281);
         weapons_menu.SetActive(false); weapon_light.SetActive(false); weapon_trans.anchoredPosition = new Vector2(weapon_trans.anchoredPosition.x, 281);
@@ -309,7 +328,7 @@ public class Inventory : MonoBehaviour
         cell.anchoredPosition = new Vector2(-454,cell.anchoredPosition.y);
         cell = granage_cell_2.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
         cell = granage_cell_3.GetComponent<RectTransform>(); cell.localScale = new Vector3(1.3f, 1.3f, 1f);
-        cell.anchoredPosition = new Vector2(-454, cell.anchoredPosition.y);
+        cell.anchoredPosition = new Vector2(-454,cell.anchoredPosition.y);
         skins_menu.SetActive(false); skins_light.SetActive(false); skins_trans.anchoredPosition = new Vector2(skins_trans.anchoredPosition.x, 281);
         traps_menu.SetActive(false);traps_light.SetActive(false); traps_trans.anchoredPosition = new Vector2(traps_trans.anchoredPosition.x, 281);
         weapons_menu.SetActive(false);weapon_light.SetActive(false); weapon_trans.anchoredPosition = new Vector2(weapon_trans.anchoredPosition.x, 281);

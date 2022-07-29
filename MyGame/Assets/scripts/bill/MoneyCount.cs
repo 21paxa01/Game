@@ -10,7 +10,7 @@ public class MoneyCount : MonoBehaviour
 {
     Text text;
     public static float money;
-    public static float mon=500f;
+    public static float mon=0f;
     void Start()
     {
         Load();

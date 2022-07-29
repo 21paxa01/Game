@@ -29,6 +29,7 @@ public class zombie : MonoBehaviour
     public float HP;
     private float hp = 0;
     private bill bill;
+    private shield_for_bill shield_scr;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -40,12 +41,18 @@ public class zombie : MonoBehaviour
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();
         HP = script.HP;
         bill = player.GetComponent<bill>();
+        shield_scr = player.GetComponent<shield_for_bill>();
     }
     public float dist_to_player;
     void Update()
     {
-        if (debaff.freeze == true)
-        { 
+        if (debaff.fire == true)
+        {
+            speed = default_speed;
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else if (debaff.freeze == true)
+        {
             speed = default_speed / 2;
             sprite.color = new Color(0.2745f, 0.4117f, 1f, 1f);
         }
@@ -54,10 +61,6 @@ public class zombie : MonoBehaviour
             speed = default_speed;
             sprite.color = new Color(1f, 1f, 1f, 1f);
         }
-        if(debaff.fire==true)
-            sprite.color = new Color(1f, 0f, 0f, 1f);
-        else
-            sprite.color = new Color(1f, 1f, 1f, 1f);
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player&&script.stop==false)
@@ -81,12 +84,12 @@ public class zombie : MonoBehaviour
 
         if (script.stop == false)
         {
-            if (player.transform.position.x < transform.position.x && distToPlayer > dist_to_player && death == false)
+            if (player.transform.position.x < transform.position.x+0.1f && distToPlayer > dist_to_player && death == false)
             {
                 physik.velocity = new Vector2(-speed, 0);
                 transform.localScale = new Vector2(-1, 1);
             }
-            if (player.transform.position.x > transform.position.x && distToPlayer > dist_to_player && death == false)
+            if (player.transform.position.x > transform.position.x-0.1f && distToPlayer > dist_to_player && death == false)
             {
                 physik.velocity = new Vector2(+speed, 0);
                 transform.localScale = new Vector2(1, 1);
@@ -119,13 +122,17 @@ public class zombie : MonoBehaviour
         if (other.name == "Bill" && death == false)
         {
             if (player.transform.position.x > transform.position.x)
-                bill.kef = 2;
+                bill.kef = 1;
             else
-                bill.kef = -2;
+                bill.kef = -1;
             if (bill.invulnerability == false)
             {
                 bill.discard();
-                bill.HP -= zombie_damage;
+                if (shield_scr.HP > 0)
+                    shield_scr.HP -= zombie_damage;
+                else
+                    bill.HP -= zombie_damage;
+                shield_scr.start_reg();
             }
         }
     }
@@ -161,14 +168,19 @@ public class zombie : MonoBehaviour
             at_time = 0f;
             if (distToPlayer <= dist_to_player)
             {
-                if(bill.invulnerability==false)
-                    bill.HP -= zombie_damage;
-                if (player.transform.position.x > transform.position.x)
-                    bill.kef = 1;
-                else
-                    bill.kef = -1;
                 if (bill.invulnerability == false)
+                {
+                    if (player.transform.position.x > transform.position.x)
+                        bill.kef = 1;
+                    else
+                        bill.kef = -1;
                     bill.discard();
+                    if (shield_scr.HP > 0)
+                        shield_scr.HP -= zombie_damage;
+                    else
+                        bill.HP -= zombie_damage;
+                    shield_scr.start_reg();
+                }
                 test -= zombie_damage;
                 yield return new WaitForSeconds(atack_time);
 

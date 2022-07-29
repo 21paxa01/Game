@@ -143,7 +143,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   ammo_damage: 1
   default_damage: 1
-  road: 0
+  road: 1
   test: 0
 --- !u!95 &8068605047083259096
 Animator:
