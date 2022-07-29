@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameMusic : MonoBehaviour
 {
+    public AudioSource sound_1,sound_2;
     public AudioSource sound;
     public static bool stop = false;
     public bool test;
@@ -15,6 +16,7 @@ public class GameMusic : MonoBehaviour
         i = 1f;
         save_script = GameObject.Find("save").GetComponent<Save>();
         save_script.Load_settings();
+        //sound = sound_1;
     }
 
     void Update()

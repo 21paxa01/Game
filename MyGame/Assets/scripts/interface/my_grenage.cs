@@ -15,6 +15,7 @@ public class my_grenage : MonoBehaviour
     private granade_cell cell_script;
     private grenage grenage_script;
     public Image sprite;
+    public int g_i;
     void Start()
     {
         script = inventory.GetComponent<Inventory>();
@@ -22,6 +23,7 @@ public class my_grenage : MonoBehaviour
         grenage = grenage_img.GetComponent<Image>();
         cell_script = cell.GetComponent<granade_cell>();
         sprite = cell.GetComponent<Image>();
+        g_i = -1;
     }
 
     void Update()
@@ -30,12 +32,17 @@ public class my_grenage : MonoBehaviour
     }
     public void Take_grenage()
     {
-        if (change_script.g_chek[script.g_cell_ind_arr[script.i]] == false&&script.stop== false&&script.category_i == 3)
+        if (change_script.g_chek[script.i] == false&&script.stop== false&&script.category_i == 3)
         {
             cell.SetActive(true);
             grenage_img.SetActive(true);
             grenage.sprite = script.img.sprite;
-            change_script.g_chek[script.g_cell_ind_arr[script.i]] = true;
+            change_script.g_chek[script.i] = true;
+            if (g_i != -1)
+            {
+                change_script.g_chek[g_i] = false;
+            }
+            g_i = script.i;
             cell_script.granade = change_script.grenages_arr[script.i];
             grenage_script = change_script.grenages_arr[script.i].GetComponent<grenage>();
             cell_script.reload_time = grenage_script.reload_time;

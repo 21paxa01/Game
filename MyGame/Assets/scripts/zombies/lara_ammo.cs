@@ -16,6 +16,7 @@ public class lara_ammo : MonoBehaviour
     private wall script_w;
     public GameObject player;
     private bill bill;
+    private shield_for_bill shield_scr;
     void Start()
     {
         Invoke("DestroyAmmo", destroyTime);
@@ -28,6 +29,7 @@ public class lara_ammo : MonoBehaviour
         StartCoroutine(Rotation());
         player = GameObject.Find("Bill");
         bill = player.GetComponent<bill>();
+        shield_scr = player.GetComponent<shield_for_bill>();
     }
 
 
@@ -55,14 +57,19 @@ public class lara_ammo : MonoBehaviour
     {
         if (other.name == "Bill" )
         {
-            if (bill.invulnerability == false)
-                bill.HP -= damage;
             if (player.transform.position.x > transform.position.x)
                 bill.kef = 1;
             else
                 bill.kef = -1;
             if (bill.invulnerability == false)
+            {
                 bill.discard();
+                if (shield_scr.HP > 0)
+                    shield_scr.HP -= damage;
+                else
+                    bill.HP -= damage;
+                shield_scr.start_reg();
+            }
             Destroy(gameObject);
         }
         if (other.name == "wall(Clone)" || other.name == "boom(Clone)")

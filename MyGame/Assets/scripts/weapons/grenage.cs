@@ -20,6 +20,7 @@ public class grenage : MonoBehaviour
     private float rotate_z;
     private float kef;
     public bool zomb_trig;
+    public bool camera_boom;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,9 +52,9 @@ public class grenage : MonoBehaviour
         {
             if (death == false)
             {
-                transform.position = new Vector3(transform.position.x,-3.08f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, -3.082f, transform.position.z);
                 StartCoroutine(Die());
-                StartCoroutine(Camera_boom());
+                //StartCoroutine(Camera_boom());
             }
         }
         if (other.CompareTag("zombie")&&zomb_trig==true)
@@ -78,28 +79,31 @@ public class grenage : MonoBehaviour
     }
     IEnumerator Die()
     {
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         zomb_trig = true;
         StopCoroutine(Line());
         death = true;
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         anim.SetBool("boom", true);
         yield return new WaitForSeconds(death_time);
         sprite.color = new Color(1f, 1f, 1f, 0f);
         damage = 0f;
+        Destroy(gameObject);
 
     }
     IEnumerator Camera_boom()
     {
         for (int i = 0; i < 10; i++)
         {
-            if (i % 2 == 0)
-                ShopCamera.x = -0.15f;
-            else
-                ShopCamera.x = 0.15f;
+            if (camera_boom == true)
+            {
+                if (i % 2 == 0)
+                    ShopCamera.x = -0.15f;
+                else
+                    ShopCamera.x = 0.15f;
+            }
             yield return new WaitForSeconds(0.05f);
         }
         ShopCamera.x = 0;
-        Destroy(gameObject);
     }
     IEnumerator Line()
     {

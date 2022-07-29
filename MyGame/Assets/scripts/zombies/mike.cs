@@ -28,6 +28,7 @@ public class mike : MonoBehaviour
     public float speed;
     public float HP;
     private float hp = 0;
+    private shield_for_bill shield_scr;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -39,11 +40,17 @@ public class mike : MonoBehaviour
         script = zombie_hp.gameObject.GetComponent<zombie_hp>();
         HP = script.HP;
         bill = player.GetComponent<bill>();
+        shield_scr = player.GetComponent<shield_for_bill>();
     }
     public float dist_to_player;
     void Update()
     {
-        if (debaff.freeze == true)
+        if (debaff.fire == true)
+        {
+            speed = default_speed;
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else if (debaff.freeze == true)
         {
             speed = default_speed / 2;
             sprite.color = new Color(0.2745f, 0.4117f, 1f, 1f);
@@ -53,7 +60,6 @@ public class mike : MonoBehaviour
             speed = default_speed;
             sprite.color = new Color(1f, 1f, 1f, 1f);
         }
-
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (stop == false)
@@ -122,13 +128,17 @@ public class mike : MonoBehaviour
         if (other.name == "Bill"&&death==false)
         {
             if (player.transform.position.x > transform.position.x)
-                bill.kef = 1;
+                bill.kef = 2;
             else
-                bill.kef = -1;
+                bill.kef = -2;
             if (bill.invulnerability == false)
             {
                 bill.discard();
-                bill.HP -= zombie_damage;
+                if (shield_scr.HP > 0)
+                    shield_scr.HP -= zombie_damage;
+                else
+                    bill.HP -=zombie_damage;
+                shield_scr.start_reg();
             }
         }
     }

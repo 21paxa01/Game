@@ -46,7 +46,12 @@ public class martin : MonoBehaviour
     public float dist_to_player;
     void Update()
     {
-        if (debaff.freeze == true)
+        if (debaff.fire == true)
+        {
+            speed = default_speed;
+            sprite.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else if (debaff.freeze == true)
         {
             speed = default_speed / 2;
             sprite.color = new Color(0.2745f, 0.4117f, 1f, 1f);
@@ -56,7 +61,6 @@ public class martin : MonoBehaviour
             speed = default_speed;
             sprite.color = new Color(1f, 1f, 1f, 1f);
         }
-
         hp = script.hp;
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= dist_to_player)

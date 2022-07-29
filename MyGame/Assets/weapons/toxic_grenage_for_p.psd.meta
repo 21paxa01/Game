@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: b0c890ffb0f2d5b4e92b9ff12f31921e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6459010214095365233
+    second: toxic_grenage_for_p_0
+  - first:
+      213: -5778198754827822521
+    second: toxic_grenage_for_p_1
+  - first:
+      213: -8587983729639317855
+    second: toxic_grenage_for_p_2
+  - first:
+      213: 7103615343516148616
+    second: toxic_grenage_for_p_3
+  - first:
+      213: 8147459362422185083
+    second: toxic_grenage_for_p_4
+  - first:
+      213: 7878663003220243735
+    second: toxic_grenage_for_p_5
+  - first:
+      213: -1249802011408702741
+    second: toxic_grenage_for_p_6
+  - first:
+      213: 3979595287346129940
+    second: toxic_grenage_for_p_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +92,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +137,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 29
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17426c3819303a950800000000000000
+      internalID: 6459010214095365233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 11
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a12e0c8d6bfcfa0800000000000000
+      internalID: -5778198754827822521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 11
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae930a8c4a51d880800000000000000
+      internalID: -8587983729639317855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 11
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8836b43b48c159260800000000000000
+      internalID: 7103615343516148616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 11
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cda1f7f17911170800000000000000
+      internalID: 8147459362422185083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 29
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71574fb2242a65d60800000000000000
+      internalID: 7878663003220243735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 27
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be26a6e31bfc7aee0800000000000000
+      internalID: -1249802011408702741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toxic_grenage_for_p_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 26
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ca51c34dc5a3730800000000000000
+      internalID: 3979595287346129940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -90,7 +318,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

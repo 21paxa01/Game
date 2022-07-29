@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: a932fac9e1de1294c93129bebf82ffb9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8076883045012288559
+    second: richard_0
+  - first:
+      213: -7282815095064100400
+    second: richard_1
+  - first:
+      213: 3298085505328487973
+    second: richard_2
+  - first:
+      213: -3979995435860285924
+    second: richard_3
+  - first:
+      213: -3825193493189966925
+    second: richard_4
+  - first:
+      213: 8153883754934108323
+    second: richard_5
+  - first:
+      213: 6563971040072648923
+    second: richard_6
+  - first:
+      213: 8505161474504098755
+    second: richard_7
+  - first:
+      213: 3566295677492736156
+    second: richard_8
+  - first:
+      213: -2442778259080850799
+    second: richard_9
+  - first:
+      213: -8938225120132488888
+    second: richard_10
+  - first:
+      213: 382446463699743613
+    second: richard_11
+  - first:
+      213: -2535918493332269813
+    second: richard_12
+  - first:
+      213: -1646083677228729187
+    second: richard_13
+  - first:
+      213: -1642728281977853266
+    second: richard_14
+  - first:
+      213: -2925289481569503282
+    second: richard_15
+  - first:
+      213: -5454517921381465919
+    second: richard_16
+  - first:
+      213: 5960529105044051415
+    second: richard_17
+  - first:
+      213: 3979042339705214127
+    second: richard_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: richard_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 205
+        width: 26
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbcaa9e9a529ef80800000000000000
+      internalID: -8076883045012288559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 205
+        width: 29
+        height: 44
+      alignment: 9
+      pivot: {x: 0.448, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d10addc14e3eea90800000000000000
+      internalID: -7282815095064100400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 205
+        width: 38
+        height: 44
+      alignment: 9
+      pivot: {x: 0.578, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e18f70b4725cd20800000000000000
+      internalID: 3298085505328487973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 205
+        width: 27
+        height: 45
+      alignment: 9
+      pivot: {x: 0.481, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c162fddec3734c8c0800000000000000
+      internalID: -3979995435860285924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 205
+        width: 43
+        height: 44
+      alignment: 9
+      pivot: {x: 0.302, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3c641e8ce2aeac0800000000000000
+      internalID: -3825193493189966925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_5
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 204
+        width: 61
+        height: 44
+      alignment: 9
+      pivot: {x: 0.213, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a00da0f21a682170800000000000000
+      internalID: 8153883754934108323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_6
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 205
+        width: 26
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd84b7f22e8e71b50800000000000000
+      internalID: 6563971040072648923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_7
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 205
+        width: 26
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3872d7c47680670800000000000000
+      internalID: 8505161474504098755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_8
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 164
+        width: 82
+        height: 22
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9037fc06070e7130800000000000000
+      internalID: 3566295677492736156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_9
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 164
+        width: 99
+        height: 22
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1925072ad12891ed0800000000000000
+      internalID: -2442778259080850799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 71
+        width: 26
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841a7082c9b05f380800000000000000
+      internalID: -8938225120132488888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_11
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 73
+        width: 25
+        height: 41
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d737d6e4809be4500800000000000000
+      internalID: 382446463699743613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_12
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 73
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b051691f09b9eccd0800000000000000
+      internalID: -2535918493332269813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_13
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 73
+        width: 39
+        height: 29
+      alignment: 9
+      pivot: {x: 0.8, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c763ced9fe729e0800000000000000
+      internalID: -1646083677228729187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 73
+        width: 48
+        height: 20
+      alignment: 9
+      pivot: {x: 0.9, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaae832c45bd339e0800000000000000
+      internalID: -1642728281977853266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_15
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 73
+        width: 69
+        height: 9
+      alignment: 9
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7fcd127b84767d0800000000000000
+      internalID: -2925289481569503282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 136
+        width: 26
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c04e0b89d8ad44b0800000000000000
+      internalID: -5454517921381465919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 135
+        width: 26
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5178b04ad08b250800000000000000
+      internalID: 5960529105044051415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: richard_18
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 202
+        width: 13
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa45e541de5683730800000000000000
+      internalID: 3979042339705214127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

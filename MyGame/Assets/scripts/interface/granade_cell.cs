@@ -11,14 +11,12 @@ public class granade_cell : MonoBehaviour
     private bool reload;
     private float x, y, z,r;
     private float destroy_time;
-    public GameObject removed_time,image;
-    private Text text;
+    public GameObject image;
     private Image img;
     public float fill;
     void Start()
     {
         bill = GameObject.Find("Bill").GetComponent<Transform>();
-        text = removed_time.GetComponent<Text>();
         img = image.GetComponent<Image>();
         fill = 0f;
     }
@@ -44,20 +42,20 @@ public class granade_cell : MonoBehaviour
     }
     IEnumerator Reload()
     {
-        fill = 1f;
-        removed_time.SetActive(true);
-        text.text = reload_time.ToString();
+        fill = 0f;
         reload = true;
         for (int i = 1; i <= reload_time * 10; i++)
         {
             yield return new WaitForSeconds(0.1f);
-            fill =1- i / (reload_time * 10);
-            if (i % 10 == 0)
-                text.text = (reload_time - i / 10).ToString();
+            fill =1-(1- i / (reload_time * 10));
 
         }
         reload = false;
         fill = 0f;
-        removed_time.SetActive(false);
+    }
+    public void Update_cell()
+    {
+        reload = false;
+        fill = 0f;
     }
 }

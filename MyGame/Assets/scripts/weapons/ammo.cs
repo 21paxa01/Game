@@ -42,9 +42,16 @@ public class ammo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "room" || other.name == "wall(Clone)" || other.name == "Shield")
+        if (other.name == "room")
         {
-            road = true;
+            if (road == true)
+            {
+                ammo_damage = 0f;
+                StartCoroutine(Die());
+            }
+        }
+        if(other.name == "wall(Clone)" || other.name == "Shield")
+        {
             ammo_damage = 0f;
             StartCoroutine(Die());
         }
